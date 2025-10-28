@@ -3,7 +3,6 @@ using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Physics;
 using Unity.Physics.Authoring;
-using Unity.Physics.Hybrid;
 using UnityEngine;
 using Material = Unity.Physics.Material;
 using TerrainCollider = Unity.Physics.TerrainCollider;
@@ -18,7 +17,7 @@ namespace Authoring
         {
             public override void Bake(TerrainAuthoring authoring)
             {
-                var terrain = GetComponent<UnityEngine.Terrain>();
+                var terrain = GetComponent<Terrain>();
 
                 DependsOn(terrain.terrainData);
                 var data = terrain.terrainData;
