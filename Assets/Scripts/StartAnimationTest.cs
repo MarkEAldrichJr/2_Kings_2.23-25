@@ -1,11 +1,18 @@
+using System;
 using UnityEngine;
 
 public class StartAnimationTest : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private Animator _animator;
+
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
+
     void Start()
     {
-        
+        _animator.Play("Attack1");
     }
 
     // Update is called once per frame
