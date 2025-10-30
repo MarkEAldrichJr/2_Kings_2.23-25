@@ -1,28 +1,24 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Entities;
-using Unity.Mathematics;
-using UnityEngine;
-
-public struct FixedInputEvent
+namespace Imported.Samples.Character_Controller._1._3._12.Standard_Characters.Common.Scripts
 {
-    private byte _wasEverSet;
-    private uint _lastSetTick;
-
-    public void Set(uint tick)
+    public struct FixedInputEvent
     {
-        _lastSetTick = tick;
-        _wasEverSet = 1;
-    }
+        private byte _wasEverSet;
+        private uint _lastSetTick;
 
-    public bool IsSet(uint tick)
-    {
-        if (_wasEverSet == 1)
+        public void Set(uint tick)
         {
-            return tick == _lastSetTick;
+            _lastSetTick = tick;
+            _wasEverSet = 1;
         }
 
-        return false;
+        public bool IsSet(uint tick)
+        {
+            if (_wasEverSet == 1)
+            {
+                return tick == _lastSetTick;
+            }
+
+            return false;
+        }
     }
 }

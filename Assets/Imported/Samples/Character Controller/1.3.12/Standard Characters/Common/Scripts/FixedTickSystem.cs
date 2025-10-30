@@ -1,32 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using Unity.Burst;
 using Unity.Entities;
-using UnityEngine;
 
-[UpdateInGroup(typeof(FixedStepSimulationSystemGroup), OrderLast = true)]
-[BurstCompile]
-public partial struct FixedTickSystem : ISystem
+namespace Imported.Samples.Character_Controller._1._3._12.Standard_Characters.Common.Scripts
 {
-    public struct Singleton : IComponentData
-    {
-        public uint Tick;
-    }
-
-    public void OnCreate(ref SystemState state)
-    {
-        if (!SystemAPI.HasSingleton<Singleton>())
-        {
-            Entity singletonEntity = state.EntityManager.CreateEntity();
-            state.EntityManager.AddComponentData(singletonEntity, new Singleton());
-        }
-    }
-
+    [UpdateInGroup(typeof(FixedStepSimulationSystemGroup), OrderLast = true)]
     [BurstCompile]
-    public void OnUpdate(ref SystemState state)
+    public partial struct FixedTickSystem : ISystem
     {
-        ref Singleton singleton = ref SystemAPI.GetSingletonRW<Singleton>().ValueRW;
-        singleton.Tick++;
+        public struct Singleton : IComponentData
+        {
+            public uint Tick;
+        }
+
+        public void OnCreate(ref SystemState state)
+        {
+            if (!SystemAPI.HasSingleton<Singleton>())
+            {
+                var singletonEntity = state.EntityManager.CreateEntity();
+                state.EntityManager.AddComponentData(singletonEntity, new Singleton());
+            }
+        }
+
+        [BurstCompile]
+        public void OnUpdate(ref SystemState state)
+        {
+            ref var singleton = ref SystemAPI.GetSingletonRW<Singleton>().ValueRW;
+            singleton.Tick++;
+        }
     }
 }

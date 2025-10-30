@@ -1,51 +1,49 @@
-using Imported.Samples.Character_Controller._1._3._12.Standard_Characters.ThirdPerson.Scripts;
+using Unity.CharacterController;
 using Unity.Entities;
 using Unity.Mathematics;
-using Unity.Physics.Authoring;
 using UnityEngine;
-using Unity.CharacterController;
-using Unity.Physics;
-using UnityEngine.Serialization;
 
-[DisallowMultipleComponent]
-public class ThirdPersonCharacterAuthoring : MonoBehaviour
+namespace Imported.Samples.Character_Controller._1._3._12.Standard_Characters.ThirdPerson.Scripts
 {
-    public AuthoringKinematicCharacterProperties CharacterProperties = AuthoringKinematicCharacterProperties.GetDefault();
-
-    public float RotationSharpness = 25f;
-    public float GroundMaxSpeed = 10f;
-    public float GroundedMovementSharpness = 15f;
-    public float AirAcceleration = 50f;
-    public float AirMaxSpeed = 10f;
-    public float AirDrag = 0f;
-    public float JumpSpeed = 10f;
-    public float3 Gravity = math.up() * -30f;
-    public bool PreventAirAccelerationAgainstUngroundedHits = true;
-    public BasicStepAndSlopeHandlingParameters StepAndSlopeHandling = BasicStepAndSlopeHandlingParameters.GetDefault();
-
-    public class Baker : Baker<ThirdPersonCharacterAuthoring>
+    [DisallowMultipleComponent]
+    public class ThirdPersonCharacterAuthoring : MonoBehaviour
     {
-        public override void Bake(ThirdPersonCharacterAuthoring authoring)
+        public AuthoringKinematicCharacterProperties characterProperties = AuthoringKinematicCharacterProperties.GetDefault();
+
+        public float rotationSharpness = 25f;
+        public float groundMaxSpeed = 10f;
+        public float groundedMovementSharpness = 15f;
+        public float airAcceleration = 50f;
+        public float airMaxSpeed = 10f;
+        public float airDrag;
+        public float jumpSpeed = 10f;
+        public float3 gravity = math.up() * -30f;
+        public bool preventAirAccelerationAgainstUngroundedHits = true;
+        public BasicStepAndSlopeHandlingParameters stepAndSlopeHandling = BasicStepAndSlopeHandlingParameters.GetDefault();
+
+        public class Baker : Baker<ThirdPersonCharacterAuthoring>
         {
-            KinematicCharacterUtilities.BakeCharacter(this, authoring.gameObject, authoring.CharacterProperties);
-
-            Entity entity = GetEntity(TransformUsageFlags.Dynamic | TransformUsageFlags.WorldSpace);
-
-            AddComponent(entity, new ThirdPersonCharacterComponent
+            public override void Bake(ThirdPersonCharacterAuthoring authoring)
             {
-                RotationSharpness = authoring.RotationSharpness,
-                GroundMaxSpeed = authoring.GroundMaxSpeed,
-                GroundedMovementSharpness = authoring.GroundedMovementSharpness,
-                AirAcceleration = authoring.AirAcceleration,
-                AirMaxSpeed = authoring.AirMaxSpeed,
-                AirDrag = authoring.AirDrag,
-                JumpSpeed = authoring.JumpSpeed,
-                Gravity = authoring.Gravity,
-                PreventAirAccelerationAgainstUngroundedHits = authoring.PreventAirAccelerationAgainstUngroundedHits,
-                StepAndSlopeHandling = authoring.StepAndSlopeHandling,
-            });
-            AddComponent(entity, new ThirdPersonCharacterControl());
+                KinematicCharacterUtilities.BakeCharacter(this, authoring.gameObject, authoring.characterProperties);
+
+                var entity = GetEntity(TransformUsageFlags.Dynamic | TransformUsageFlags.WorldSpace);
+
+                AddComponent(entity, new ThirdPersonCharacterComponent
+                {
+                    RotationSharpness = authoring.rotationSharpness,
+                    GroundMaxSpeed = authoring.groundMaxSpeed,
+                    GroundedMovementSharpness = authoring.groundedMovementSharpness,
+                    AirAcceleration = authoring.airAcceleration,
+                    AirMaxSpeed = authoring.airMaxSpeed,
+                    AirDrag = authoring.airDrag,
+                    JumpSpeed = authoring.jumpSpeed,
+                    Gravity = authoring.gravity,
+                    PreventAirAccelerationAgainstUngroundedHits = authoring.preventAirAccelerationAgainstUngroundedHits,
+                    StepAndSlopeHandling = authoring.stepAndSlopeHandling
+                });
+                AddComponent(entity, new ThirdPersonCharacterControl());
+            }
         }
     }
-
 }

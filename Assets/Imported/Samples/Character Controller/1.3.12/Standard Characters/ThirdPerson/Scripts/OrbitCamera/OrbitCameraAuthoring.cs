@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Imported.Samples.Character_Controller._1._3._12.Standard_Characters.ThirdPerson.Scripts.OrbitCamera;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
@@ -27,13 +28,13 @@ public class OrbitCameraAuthoring : MonoBehaviour
     public bool PreventFixedUpdateJitter = true;
 
     [Header("Misc")]
-    public List<GameObject> IgnoredEntities = new List<GameObject>();
+    public List<GameObject> IgnoredEntities = new();
 
     public class Baker : Baker<OrbitCameraAuthoring>
     {
         public override void Bake(OrbitCameraAuthoring authoring)
         {
-            Entity entity = GetEntity(TransformUsageFlags.Dynamic | TransformUsageFlags.WorldSpace);
+            var entity = GetEntity(TransformUsageFlags.Dynamic | TransformUsageFlags.WorldSpace);
 
             AddComponent(entity, new OrbitCamera
             {

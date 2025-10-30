@@ -1,22 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Unity.Entities;
+using UnityEngine;
 
-[DisallowMultipleComponent]
-public class CameraTargetAuthoring : MonoBehaviour
+namespace Imported.Samples.Character_Controller._1._3._12.Standard_Characters.ThirdPerson.Scripts.OrbitCamera
 {
-    public GameObject Target;
-
-    public class Baker : Baker<CameraTargetAuthoring>
+    [DisallowMultipleComponent]
+    public class CameraTargetAuthoring : MonoBehaviour
     {
-        public override void Bake(CameraTargetAuthoring authoring)
+        public GameObject target;
+
+        public class Baker : Baker<CameraTargetAuthoring>
         {
-            Entity entity = GetEntity(TransformUsageFlags.Dynamic);
-            AddComponent(entity, new CameraTarget
+            public override void Bake(CameraTargetAuthoring authoring)
             {
-                TargetEntity = GetEntity(authoring.Target, TransformUsageFlags.Dynamic),
-            });
+                var entity = GetEntity(TransformUsageFlags.Dynamic);
+                AddComponent(entity, new CameraTarget
+                {
+                    TargetEntity = GetEntity(authoring.target, TransformUsageFlags.Dynamic),
+                });
+            }
         }
     }
 }

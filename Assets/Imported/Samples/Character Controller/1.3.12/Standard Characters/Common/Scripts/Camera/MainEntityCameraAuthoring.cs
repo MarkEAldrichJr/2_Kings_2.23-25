@@ -1,17 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Unity.Entities;
+using UnityEngine;
 
-[DisallowMultipleComponent]
-public class MainEntityCameraAuthoring : MonoBehaviour
+namespace Imported.Samples.Character_Controller._1._3._12.Standard_Characters.Common.Scripts.Camera
 {
-    public class Baker : Baker<MainEntityCameraAuthoring>
+    [DisallowMultipleComponent]
+    public class MainEntityCameraAuthoring : MonoBehaviour
     {
-        public override void Bake(MainEntityCameraAuthoring authoring)
+        public class Baker : Baker<MainEntityCameraAuthoring>
         {
-            Entity entity = GetEntity(TransformUsageFlags.Dynamic);
-            AddComponent<MainEntityCamera>(entity);
+            public override void Bake(MainEntityCameraAuthoring authoring)
+            {
+                var entity = GetEntity(TransformUsageFlags.Dynamic);
+                AddComponent<MainEntityCamera>(entity);
+            }
         }
     }
 }

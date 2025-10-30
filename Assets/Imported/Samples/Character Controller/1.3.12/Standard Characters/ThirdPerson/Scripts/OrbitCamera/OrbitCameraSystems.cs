@@ -1,3 +1,4 @@
+using Imported.Samples.Character_Controller._1._3._12.Standard_Characters.ThirdPerson.Scripts.OrbitCamera;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
@@ -9,7 +10,7 @@ using Unity.CharacterController;
 [UpdateInGroup(typeof(SimulationSystemGroup))]
 [UpdateAfter(typeof(FixedStepSimulationSystemGroup))]
 [UpdateAfter(typeof(Imported.Samples.Character_Controller._1._3._12.Standard_Characters.ThirdPerson.Scripts.ThirdPersonPlayerVariableStepControlSystem))]
-[UpdateAfter(typeof(ThirdPersonCharacterVariableUpdateSystem))]
+[UpdateAfter(typeof(Imported.Samples.Character_Controller._1._3._12.Standard_Characters.ThirdPerson.Scripts.ThirdPersonCharacterVariableUpdateSystem))]
 [UpdateBefore(typeof(TransformSystemGroup))]
 [BurstCompile]
 public partial struct OrbitCameraSimulationSystem : ISystem
@@ -23,7 +24,7 @@ public partial struct OrbitCameraSimulationSystem : ISystem
     [BurstCompile]
     public void OnUpdate(ref SystemState state)
     {
-        OrbitCameraSimulationJob job = new OrbitCameraSimulationJob
+        var job = new OrbitCameraSimulationJob
         {
             DeltaTime = SystemAPI.Time.DeltaTime,
             LocalTransformLookup = SystemAPI.GetComponentLookup<LocalTransform>(false),
@@ -55,21 +56,21 @@ public partial struct OrbitCameraSimulationSystem : ISystem
                     ref ParentLookup,
                     ref PostTransformMatrixLookup,
                     ref CameraTargetLookup,
-                    out float4x4 targetWorldTransform))
+                    out var targetWorldTransform))
             {
-                float3 targetUp = targetWorldTransform.Up();
-                float3 targetPosition = targetWorldTransform.Translation();
+                var targetUp = targetWorldTransform.Up();
+                var targetPosition = targetWorldTransform.Translation();
 
                 // Update planar forward based on target up direction and rotation from parent
                 {
-                    quaternion tmpPlanarRotation = MathUtilities.CreateRotationWithUpPriority(targetUp, orbitCamera.PlanarForward);
+                    var tmpPlanarRotation = MathUtilities.CreateRotationWithUpPriority(targetUp, orbitCamera.PlanarForward);
 
                     // Rotation from character parent
                     if (orbitCamera.RotateWithCharacterParent &&
-                        KinematicCharacterBodyLookup.TryGetComponent(cameraControl.FollowedCharacterEntity, out KinematicCharacterBody characterBody))
+                        KinematicCharacterBodyLookup.TryGetComponent(cameraControl.FollowedCharacterEntity, out var characterBody))
                     {
                         // Only consider rotation around the character up, since the camera is already adjusting itself to character up
-                        quaternion planarRotationFromParent = characterBody.RotationFromParent;
+                        var planarRotationFromParent = characterBody.RotationFromParent;
                         KinematicCharacterUtilities.AddVariableRateRotationFromFixedRateRotation(ref tmpPlanarRotation, planarRotationFromParent, DeltaTime, characterBody.LastPhysicsUpdateDeltaTime);
                     }
 
@@ -77,8 +78,8 @@ public partial struct OrbitCameraSimulationSystem : ISystem
                 }
 
                 // Yaw
-                float yawAngleChange = cameraControl.LookDegreesDelta.x * orbitCamera.RotationSpeed;
-                quaternion yawRotation = quaternion.Euler(targetUp * math.radians(yawAngleChange));
+                var yawAngleChange = cameraControl.LookDegreesDelta.x * orbitCamera.RotationSpeed;
+                var yawRotation = quaternion.Euler(targetUp * math.radians(yawAngleChange));
                 orbitCamera.PlanarForward = math.rotate(yawRotation, orbitCamera.PlanarForward);
 
                 // Pitch
@@ -86,14 +87,14 @@ public partial struct OrbitCameraSimulationSystem : ISystem
                 orbitCamera.PitchAngle = math.clamp(orbitCamera.PitchAngle, orbitCamera.MinVAngle, orbitCamera.MaxVAngle);
 
                 // Calculate final rotation
-                quaternion cameraRotation = OrbitCameraUtilities.CalculateCameraRotation(targetUp, orbitCamera.PlanarForward, orbitCamera.PitchAngle);
+                var cameraRotation = OrbitCameraUtilities.CalculateCameraRotation(targetUp, orbitCamera.PlanarForward, orbitCamera.PitchAngle);
 
                 // Distance input
-                float desiredDistanceMovementFromInput = cameraControl.ZoomDelta * orbitCamera.DistanceMovementSpeed;
+                var desiredDistanceMovementFromInput = cameraControl.ZoomDelta * orbitCamera.DistanceMovementSpeed;
                 orbitCamera.TargetDistance = math.clamp(orbitCamera.TargetDistance + desiredDistanceMovementFromInput, orbitCamera.MinDistance, orbitCamera.MaxDistance);
 
                 // Calculate camera position (no smoothing or obstructions yet; these are done in the camera late update)
-                float3 cameraPosition = OrbitCameraUtilities.CalculateCameraPosition(targetPosition, cameraRotation, orbitCamera.TargetDistance);
+                var cameraPosition = OrbitCameraUtilities.CalculateCameraPosition(targetPosition, cameraRotation, orbitCamera.TargetDistance);
 
                 // Write back to component
                 LocalTransformLookup[entity] = LocalTransform.FromPositionRotation(cameraPosition, cameraRotation);
@@ -117,11 +118,11 @@ public partial struct OrbitCameraLateUpdateSystem : ISystem
     [BurstCompile]
     public void OnUpdate(ref SystemState state)
     {
-        OrbitCameraLateUpdateJob job = new OrbitCameraLateUpdateJob
+        var job = new OrbitCameraLateUpdateJob
         {
             DeltaTime = SystemAPI.Time.DeltaTime,
             PhysicsWorld = SystemAPI.GetSingleton<PhysicsWorldSingleton>().PhysicsWorld,
-            LocalToWorldLookup = SystemAPI.GetComponentLookup<LocalToWorld>(false),
+            LocalToWorldLookup = SystemAPI.GetComponentLookup<LocalToWorld>(),
             CameraTargetLookup = SystemAPI.GetComponentLookup<CameraTarget>(true),
             KinematicCharacterBodyLookup = SystemAPI.GetComponentLookup<KinematicCharacterBody>(true),
         };
@@ -142,7 +143,7 @@ public partial struct OrbitCameraLateUpdateSystem : ISystem
         [ReadOnly]
         public ComponentLookup<KinematicCharacterBody> KinematicCharacterBodyLookup;
 
-        void Execute(
+        private void Execute(
             Entity entity,
             ref OrbitCamera orbitCamera,
             in OrbitCameraControl cameraControl,
@@ -152,12 +153,12 @@ public partial struct OrbitCameraLateUpdateSystem : ISystem
                     cameraControl.FollowedCharacterEntity,
                     ref LocalToWorldLookup,
                     ref CameraTargetLookup,
-                    out LocalToWorld targetWorldTransform))
+                    out var targetWorldTransform))
             {
-                quaternion cameraRotation = OrbitCameraUtilities.CalculateCameraRotation(targetWorldTransform.Up, orbitCamera.PlanarForward, orbitCamera.PitchAngle);
+                var cameraRotation = OrbitCameraUtilities.CalculateCameraRotation(targetWorldTransform.Up, orbitCamera.PlanarForward, orbitCamera.PitchAngle);
 
-                float3 cameraForward = math.mul(cameraRotation, math.forward());
-                float3 targetPosition = targetWorldTransform.Position;
+                var cameraForward = math.mul(cameraRotation, math.forward());
+                var targetPosition = targetWorldTransform.Position;
 
                 // Distance smoothing
                 orbitCamera.SmoothedTargetDistance = math.lerp(orbitCamera.SmoothedTargetDistance, orbitCamera.TargetDistance, MathUtilities.GetSharpnessInterpolant(orbitCamera.DistanceMovementSharpness, DeltaTime));
@@ -168,9 +169,9 @@ public partial struct OrbitCameraLateUpdateSystem : ISystem
                 // camera getting obstructed by a moving physics body would have visible jitter.
                 if (orbitCamera.ObstructionRadius > 0f)
                 {
-                    float obstructionCheckDistance = orbitCamera.SmoothedTargetDistance;
+                    var obstructionCheckDistance = orbitCamera.SmoothedTargetDistance;
 
-                    CameraObstructionHitsCollector collector = new CameraObstructionHitsCollector(cameraControl.FollowedCharacterEntity, ignoredEntitiesBuffer, cameraForward);
+                    var collector = new CameraObstructionHitsCollector(cameraControl.FollowedCharacterEntity, ignoredEntitiesBuffer, cameraForward);
                     PhysicsWorld.SphereCastCustom(
                         targetPosition,
                         orbitCamera.ObstructionRadius,
@@ -180,7 +181,7 @@ public partial struct OrbitCameraLateUpdateSystem : ISystem
                         CollisionFilter.Default,
                         QueryInteraction.IgnoreTriggers);
 
-                    float newObstructedDistance = obstructionCheckDistance;
+                    var newObstructedDistance = obstructionCheckDistance;
                     if (collector.NumHits > 0)
                     {
                         newObstructedDistance = obstructionCheckDistance * collector.ClosestHit.Fraction;
@@ -188,8 +189,8 @@ public partial struct OrbitCameraLateUpdateSystem : ISystem
                         // Redo cast with the interpolated body transform to prevent FixedUpdate jitter in obstruction detection
                         if (orbitCamera.PreventFixedUpdateJitter)
                         {
-                            RigidBody hitBody = PhysicsWorld.Bodies[collector.ClosestHit.RigidBodyIndex];
-                            if (LocalToWorldLookup.TryGetComponent(hitBody.Entity, out LocalToWorld hitBodyLocalToWorld))
+                            var hitBody = PhysicsWorld.Bodies[collector.ClosestHit.RigidBodyIndex];
+                            if (LocalToWorldLookup.TryGetComponent(hitBody.Entity, out var hitBodyLocalToWorld))
                             {
                                 // Adjust the rigidbody transform for interpolation, so we can raycast it in that state
                                 hitBody.WorldFromBody = new RigidTransform(quaternion.LookRotationSafe(hitBodyLocalToWorld.Forward, hitBodyLocalToWorld.Up), hitBodyLocalToWorld.Position);
@@ -230,7 +231,7 @@ public partial struct OrbitCameraLateUpdateSystem : ISystem
                 }
 
                 // Place camera at the final distance (includes smoothing and obstructions)
-                float3 cameraPosition = OrbitCameraUtilities.CalculateCameraPosition(targetPosition, cameraRotation, orbitCamera.ObstructedDistance);
+                var cameraPosition = OrbitCameraUtilities.CalculateCameraPosition(targetPosition, cameraRotation, orbitCamera.ObstructedDistance);
 
                 // Write to LtW
                 LocalToWorldLookup[entity] = new LocalToWorld { Value = new float4x4(cameraRotation, cameraPosition) };
@@ -249,11 +250,11 @@ public static class OrbitCameraUtilities
         ref ComponentLookup<CameraTarget> cameraTargetLookup,
         out float4x4 worldTransform)
     {
-        bool foundValidCameraTarget = false;
+        var foundValidCameraTarget = false;
         worldTransform = float4x4.identity;
 
         // Camera target is either defined by the CameraTarget component, or if not, the transform of the followed character
-        if (cameraTargetLookup.TryGetComponent(targetCharacterEntity, out CameraTarget cameraTarget) &&
+        if (cameraTargetLookup.TryGetComponent(targetCharacterEntity, out var cameraTarget) &&
             localTransformLookup.HasComponent(cameraTarget.TargetEntity))
         {
             TransformHelpers.ComputeWorldTransformMatrix(
@@ -264,7 +265,7 @@ public static class OrbitCameraUtilities
                 ref postTransformMatrixLookup);
             foundValidCameraTarget = true;
         }
-        else if (localTransformLookup.TryGetComponent(targetCharacterEntity, out LocalTransform characterLocalTransform))
+        else if (localTransformLookup.TryGetComponent(targetCharacterEntity, out var characterLocalTransform))
         {
             worldTransform = float4x4.TRS(characterLocalTransform.Position, characterLocalTransform.Rotation, 1f);
             foundValidCameraTarget = true;
@@ -279,11 +280,11 @@ public static class OrbitCameraUtilities
         ref ComponentLookup<CameraTarget> cameraTargetLookup,
         out LocalToWorld worldTransform)
     {
-        bool foundValidCameraTarget = false;
+        var foundValidCameraTarget = false;
         worldTransform = default;
 
         // Get the interpolated transform of the target
-        if (cameraTargetLookup.TryGetComponent(targetCharacterEntity, out CameraTarget cameraTarget) &&
+        if (cameraTargetLookup.TryGetComponent(targetCharacterEntity, out var cameraTarget) &&
             localToWorldLookup.TryGetComponent(cameraTarget.TargetEntity, out worldTransform))
         {
             foundValidCameraTarget = true;
@@ -298,8 +299,8 @@ public static class OrbitCameraUtilities
 
     public static quaternion CalculateCameraRotation(float3 targetUp, float3 planarForward, float pitchAngle)
     {
-        quaternion pitchRotation = quaternion.Euler(math.right() * math.radians(pitchAngle));
-        quaternion cameraRotation = MathUtilities.CreateRotationWithUpPriority(targetUp, planarForward);
+        var pitchRotation = quaternion.Euler(math.right() * math.radians(pitchAngle));
+        var cameraRotation = MathUtilities.CreateRotationWithUpPriority(targetUp, planarForward);
         cameraRotation = math.mul(cameraRotation, pitchRotation);
         return cameraRotation;
     }
@@ -346,7 +347,7 @@ public struct CameraObstructionHitsCollector : ICollector<ColliderCastHit>
             return false;
         }
 
-        for (int i = 0; i < _ignoredEntitiesBuffer.Length; i++)
+        for (var i = 0; i < _ignoredEntitiesBuffer.Length; i++)
         {
             if (_ignoredEntitiesBuffer[i].Entity == hit.Entity)
             {

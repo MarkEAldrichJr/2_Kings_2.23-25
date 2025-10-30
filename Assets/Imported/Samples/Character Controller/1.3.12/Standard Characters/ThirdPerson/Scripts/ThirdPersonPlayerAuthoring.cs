@@ -17,7 +17,7 @@ namespace Imported.Samples.Character_Controller._1._3._12.Standard_Characters.Th
                 AddComponent(entity, new ThirdPersonPlayer
                 {
                     ControlledCharacter = GetEntity(authoring.controlledCharacter, TransformUsageFlags.Dynamic),
-                    ControlledCamera = GetEntity(authoring.controlledCamera, TransformUsageFlags.Dynamic),
+                    ControlledCamera = GetEntity(authoring.controlledCamera, TransformUsageFlags.Dynamic)
                 });
                 AddComponent<ThirdPersonPlayerInputs>(entity);
             }

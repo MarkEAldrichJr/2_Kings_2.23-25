@@ -1,20 +1,22 @@
-using Unity.Burst;
-using Unity.Collections;
 using Unity.Entities;
-using Unity.Jobs;
-using Unity.Mathematics;
 using Unity.Transforms;
 
-[UpdateInGroup(typeof(PresentationSystemGroup))]
-public partial class MainCameraSystem : SystemBase
+namespace Imported.Samples.Character_Controller._1._3._12.Standard_Characters.Common.Scripts.Camera
 {
-    protected override void OnUpdate()
+    [UpdateInGroup(typeof(PresentationSystemGroup))]
+    public partial class MainCameraSystem : SystemBase
     {
-        if (MainGameObjectCamera.Instance != null && SystemAPI.HasSingleton<MainEntityCamera>())
+        protected override void OnUpdate()
         {
-            Entity mainEntityCameraEntity = SystemAPI.GetSingletonEntity<MainEntityCamera>();
-            LocalToWorld targetLocalToWorld = SystemAPI.GetComponent<LocalToWorld>(mainEntityCameraEntity);
-            MainGameObjectCamera.Instance.transform.SetPositionAndRotation(targetLocalToWorld.Position, targetLocalToWorld.Rotation);
+            if (MainGameObjectCamera.Instance != null && SystemAPI.HasSingleton<MainEntityCamera>())
+            {
+                //TODO: Make MainEntityCamera and MainGameObjectCamera non-singletons, and get them references to each other.
+                //Maybe have the cameras keep a reference to the OrbitCamera entity and have them track their Transforms?
+                //TODO: Make Camera and bear child of a prefab that handles inputs.  Makes life easier I think, instead of setting world position of camera?
+                var mainEntityCameraEntity = SystemAPI.GetSingletonEntity<MainEntityCamera>();
+                var targetLocalToWorld = SystemAPI.GetComponent<LocalToWorld>(mainEntityCameraEntity);
+                MainGameObjectCamera.Instance.transform.SetPositionAndRotation(targetLocalToWorld.Position, targetLocalToWorld.Rotation);
+            }
         }
     }
 }
