@@ -5,24 +5,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Component/EntityPrefabComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Component/EntityPrefabComponent.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/Common/Scripts/Camera/MainCameraSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/Common/Scripts/Camera/MainCameraSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/Common/Scripts/Camera/MainEntityCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/Common/Scripts/Camera/MainEntityCamera.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/Common/Scripts/Camera/MainEntityCameraAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/Common/Scripts/Camera/MainEntityCameraAuthoring.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/Common/Scripts/Camera/MainGameObjectCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/Common/Scripts/Camera/MainGameObjectCamera.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/Common/Scripts/FixedTickSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/Common/Scripts/FixedTickSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/Common/Scripts/InputUtilities.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/Common/Scripts/InputUtilities.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Scripts/OrbitCamera/CameraTarget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Scripts/OrbitCamera/CameraTarget.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Scripts/OrbitCamera/CameraTargetAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Scripts/OrbitCamera/CameraTargetAuthoring.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Scripts/OrbitCamera/OrbitCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Scripts/OrbitCamera/OrbitCamera.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/Fantasy Forest Environment Free Sample/Materials/bark01_bottom.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Fantasy Forest Environment Free Sample/Materials/bark01_bottom.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/Fantasy Forest Environment Free Sample/Materials/tree_branches.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Fantasy Forest Environment Free Sample/Materials/tree_branches.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/Common/Scripts/Camera.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/Common/Scripts/Camera/MainCameraSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/Common/Scripts/Camera/MainCameraSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/Common/Scripts/Camera/MainEntityCamera.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/Common/Scripts/Camera/MainEntityCamera.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/Common/Scripts/Camera/MainEntityCameraAuthoring.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/Common/Scripts/Camera/MainEntityCameraAuthoring.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/Common/Scripts/Camera/MainGameObjectCamera.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/Common/Scripts/Camera/MainGameObjectCamera.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Prefabs/OrbitCamera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Prefabs/OrbitCamera.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Prefabs/ThirdPersonCharacter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Prefabs/ThirdPersonCharacter.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Scripts/OrbitCamera/OrbitCameraAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Scripts/OrbitCamera/OrbitCameraAuthoring.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Scripts/OrbitCamera/OrbitCameraSystems.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Scripts/OrbitCamera/OrbitCameraSystems.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Scripts/ThirdPersonCharacterAspect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Scripts/ThirdPersonCharacterAspect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Scripts/ThirdPersonCharacterAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Scripts/ThirdPersonCharacterAuthoring.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Scripts/ThirdPersonCharacterSystems.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Scripts/ThirdPersonCharacterSystems.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Scripts/ThirdPersonPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Scripts/ThirdPersonPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Scripts/ThirdPersonPlayerAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Scripts/ThirdPersonPlayerAuthoring.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Scripts/ThirdPersonPlayerSystems.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Scripts/ThirdPersonPlayerSystems.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player Avatar Variant.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player Avatar Variant.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SceneDependencyCache/66280fe4db679ffa9064301aa848bf22.sceneWithBuildSettings" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SceneDependencyCache/66280fe4db679ffa9064301aa848bf22.sceneWithBuildSettings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/LightingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/LightingData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-0_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-0_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-0_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-0_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-1_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-1_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-1_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-1_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-2_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-2_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-2_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-2_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-3_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-3_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-3_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-3_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-4_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-4_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-4_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-4_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-5_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-5_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-5_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-5_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-6_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-6_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-6_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-6_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-7_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-7_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-7_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-7_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mono/EntityTransformFollower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mono/EntityTransformFollower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptsAssembly.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptsAssembly.asmdef.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,11 +71,13 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/Common/Scripts/Camera/MainEntityCameraAuthoring.cs.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/Common/Scripts/Editor/InputSystemWarning.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Imported/Samples/Unity Physics/1.3.14.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Imported/_TerrainAutoUpgrade.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/AvatarAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/BearBaker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/TerrainAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Component/EntityPrefabComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Component/Move.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mono/EntityTransformFollower.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/README.cs" root0="FORCE_HIGHLIGHTING" />
@@ -147,7 +173,8 @@
       <workItem from="1761586549211" duration="6876000" />
       <workItem from="1761667045692" duration="8184000" />
       <workItem from="1761766594218" duration="6026000" />
-      <workItem from="1761783639239" duration="3046000" />
+      <workItem from="1761783639239" duration="3164000" />
+      <workItem from="1761849621826" duration="10261000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit.  Includes ECS libs, Bear and person models and animations. from packages">
       <option name="closed" value="true" />
@@ -197,7 +224,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761772656813</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Made a lot of minor syntax and readability changes.  Added notes on making the camera systems work with multiple cameras.  Need to review all instances of SystemAPI.GetSingleton">
+      <option name="closed" value="true" />
+      <created>1761786786470</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1761786786470</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,7 +265,8 @@
     <MESSAGE value="Unity Physics Samples" />
     <MESSAGE value="Added terrain.  Not sure if trees work yet, might need a separate system to spawn them.  Added Bear and Baldy.  Starting animation matching for them.  Added Input system.  Working on Co-op" />
     <MESSAGE value="Added ECS Character Controller.  Starting to piece together Input System.  Pressing buttons now spawns new players with controllers." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added ECS Character Controller.  Starting to piece together Input System.  Pressing buttons now spawns new players with controllers." />
+    <MESSAGE value="Made a lot of minor syntax and readability changes.  Added notes on making the camera systems work with multiple cameras.  Need to review all instances of SystemAPI.GetSingleton" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made a lot of minor syntax and readability changes.  Added notes on making the camera systems work with multiple cameras.  Need to review all instances of SystemAPI.GetSingleton" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
