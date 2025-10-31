@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Physics.Custom::Unity.Physics.Authoring.PhysicsCategoryNames
   m_CategoryNames:
   - Terrain
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Bald
+  - Tree
+  - Child
   - 
   - 
   - 

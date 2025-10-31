@@ -3,6 +3,7 @@ using Imported.Samples.Character_Controller._1._3._12.Standard_Characters.ThirdP
 using Imported.Samples.Character_Controller._1._3._12.Standard_Characters.ThirdPerson.Scripts.OrbitCamera;
 using Unity.Collections;
 using Unity.Entities;
+using Unity.Transforms;
 using UnityEngine;
 
 namespace Mono
@@ -28,19 +29,35 @@ namespace Mono
             
             if (entityQuery.TryGetSingleton<EntityPrefabComponent>(out var prefabs))
             {
-                _refStorage.Character = _entityManager.Instantiate(prefabs.ThirdPersonCharacter);
-                _refStorage.OrbitCamera = _entityManager.Instantiate(prefabs.OrbitCamera);
-                _refStorage.Player = _entityManager.Instantiate(prefabs.ThirdPersonPlayer);
-                
-                _entityManager.SetComponentData(_refStorage.Player, new ThirdPersonPlayer
-                {
-                    ControlledCharacter = _refStorage.Character,
-                    ControlledCamera = _refStorage.OrbitCamera
-                });
-
-                _refStorage.CameraTarget = 
-                    _entityManager.GetComponentData<CameraTarget>(_refStorage.Character).TargetEntity;
+                SpawnCharacterControllerEntities(prefabs);
+                MatchCharacterToAnimatorSpawn();
             }
+        }
+
+        private void SpawnCharacterControllerEntities(EntityPrefabComponent prefabs)
+        {
+            _refStorage.Character = _entityManager.Instantiate(prefabs.ThirdPersonCharacter);
+            _refStorage.OrbitCamera = _entityManager.Instantiate(prefabs.OrbitCamera);
+            _refStorage.Player = _entityManager.Instantiate(prefabs.ThirdPersonPlayer);
+                
+            _entityManager.SetComponentData(_refStorage.Player, new ThirdPersonPlayer
+            {
+                ControlledCharacter = _refStorage.Character,
+                ControlledCamera = _refStorage.OrbitCamera
+            });
+
+            _refStorage.CameraTarget = 
+                _entityManager.GetComponentData<CameraTarget>(_refStorage.Character).TargetEntity;
+        }
+
+        private void MatchCharacterToAnimatorSpawn()
+        {
+            _entityManager.SetComponentData(_refStorage.Character, new LocalTransform
+            {
+                Position = transform.position,
+                Rotation = transform.rotation,
+                Scale = transform.localScale.x
+            });
         }
     }
 }

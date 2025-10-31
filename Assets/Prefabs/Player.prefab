@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4734592581108408669}
   - component: {fileID: 2289537432432610581}
   - component: {fileID: 240127798017510318}
+  - component: {fileID: -1357480331125323694}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1425001504281502836}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.788, z: 0}
+  m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -91,7 +92,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9832fa8e10be7064b99aae65aed9c406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  refStorage: {fileID: 240127798017510318}
 --- !u!114 &240127798017510318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,6 +108,18 @@ MonoBehaviour:
   playerAvatar: {fileID: 4643148880037761451}
   playerAnimator: {fileID: 2144904426960900459}
   entityTransformFollower: {fileID: 6150520976453700175}
+--- !u!114 &-1357480331125323694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425001504281502836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff4bb15e9ee4da996cde5ed584dd57f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Mono.MoveAvatarToCharacterController
 --- !u!1 &4889445082767659328
 GameObject:
   m_ObjectHideFlags: 0
