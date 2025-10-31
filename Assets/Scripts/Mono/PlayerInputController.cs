@@ -8,7 +8,7 @@ namespace Mono
     [RequireComponent(typeof(PlayerInput))]
     public class PlayerInputController : MonoBehaviour
     {
-        [SerializeField] private bool debug = false;
+        [SerializeField] private bool debug;
         private PlayerReferenceStorage _playerRef;
         private EntityManager _entityManager;
 
