@@ -1,6 +1,5 @@
 using Imported.Samples.Character_Controller._1._3._12.Standard_Characters.ThirdPerson.Scripts;
 using Unity.Entities;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,6 +8,7 @@ namespace Mono
     [RequireComponent(typeof(PlayerInput))]
     public class PlayerInputController : MonoBehaviour
     {
+        [SerializeField] private bool debug = false;
         private PlayerReferenceStorage _playerRef;
         private EntityManager _entityManager;
 
@@ -24,22 +24,24 @@ namespace Mono
 
         public void OnDeviceLost()
         {
-            Debug.Log("Device Lost");
+            DebugLog("Device Lost");
         }
 
         public void OnDeviceRegained()
         {
-            Debug.Log("Device Regained");
+            DebugLog("Device Regained");
         }
 
         public void OnControlsChanged()
         {
-            Debug.Log("Controls Changed");
+            DebugLog("Controls Changed");
         }
     
         public void OnMove(InputValue value)
         {
             var moveValue = value.Get<Vector2>();
+            DebugLog($"Move Stick Value: {moveValue.ToString()}");
+            
             var inputs = _entityManager.GetComponentData<ThirdPersonPlayerInputs>(_playerRef.Player);
             inputs.MoveInput = moveValue;
             _entityManager.SetComponentData(_playerRef.Player, inputs);
@@ -53,6 +55,8 @@ namespace Mono
         public void OnLook(InputValue value)
         {
             var lookValue = value.Get<Vector2>();
+            DebugLog($"Look Stick Value: {lookValue.ToString()}");
+            
             var inputs = _entityManager.GetComponentData<ThirdPersonPlayerInputs>(_playerRef.Player);
             inputs.CameraLookInput = lookValue;
             _entityManager.SetComponentData(_playerRef.Player, inputs);
@@ -66,6 +70,14 @@ namespace Mono
         public void OnJump(InputValue value)
         {
         
+        }
+
+        private void DebugLog(string message)
+        {
+            if (debug)
+            {
+                Debug.Log(message);
+            }
         }
     }
 }
