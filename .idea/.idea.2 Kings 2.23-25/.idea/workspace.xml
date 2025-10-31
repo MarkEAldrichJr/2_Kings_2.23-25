@@ -5,16 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Mono/MoveAvatarToCharacterController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Mono/MoveAvatarToCharacterController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Mono/CameraFollow.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Mono/CameraFollow.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Prefabs/OrbitCamera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Prefabs/OrbitCamera.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Prefabs/ThirdPersonCharacter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Prefabs/ThirdPersonCharacter.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Scripts/ThirdPersonPlayerAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Scripts/ThirdPersonPlayerAuthoring.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh-NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh-NavMesh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mono/PlayerCharacterControllerSpawn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mono/PlayerCharacterControllerSpawn.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mono/PlayerInputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mono/PlayerInputController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/PhysicsCategoryNames.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/PhysicsCategoryNames.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +46,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/TerrainAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Component/EntityPrefabComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Component/Move.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mono/CameraFollow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mono/EntityTransformFollower.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mono/MoveAvatarToCharacterController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mono/PlayerReferenceStorage.cs" root0="FORCE_HIGHLIGHTING" />
@@ -146,7 +146,7 @@
       <workItem from="1761766594218" duration="6026000" />
       <workItem from="1761783639239" duration="3164000" />
       <workItem from="1761849621826" duration="10433000" />
-      <workItem from="1761918281088" duration="7068000" />
+      <workItem from="1761918281088" duration="13240000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit.  Includes ECS libs, Bear and person models and animations. from packages">
       <option name="closed" value="true" />
@@ -212,7 +212,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761863313397</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Character Controller now sticks to terrian.  Player Input now gets sent to the Character Controller.">
+      <option name="closed" value="true" />
+      <created>1761926645697</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1761926645697</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,7 +255,8 @@
     <MESSAGE value="Added ECS Character Controller.  Starting to piece together Input System.  Pressing buttons now spawns new players with controllers." />
     <MESSAGE value="Made a lot of minor syntax and readability changes.  Added notes on making the camera systems work with multiple cameras.  Need to review all instances of SystemAPI.GetSingleton" />
     <MESSAGE value="Changed the trees back to Lit URP because the Nature URP was ugly.  Removed camera components, soon to replace.  Added a script that spawns each character's third person controllers, and keeps a reference to them.  Will work on camera and transform tracking next." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed the trees back to Lit URP because the Nature URP was ugly.  Removed camera components, soon to replace.  Added a script that spawns each character's third person controllers, and keeps a reference to them.  Will work on camera and transform tracking next." />
+    <MESSAGE value="Character Controller now sticks to terrian.  Player Input now gets sent to the Character Controller." />
+    <option name="LAST_COMMIT_MESSAGE" value="Character Controller now sticks to terrian.  Player Input now gets sent to the Character Controller." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

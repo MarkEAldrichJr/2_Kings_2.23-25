@@ -44,9 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70c323b4be4b1fa4089d1a1fd2872754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 0.2
-  MaxVAngle: 89
-  MinVAngle: -89
+  RotationSpeed: 1
+  MaxVAngle: 85
+  MinVAngle: 15
   RotateWithCharacterParent: 0
   StartDistance: 5
   MinDistance: 0

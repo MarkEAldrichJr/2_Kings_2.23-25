@@ -24,12 +24,12 @@ namespace Mono
 
         public void OnDeviceLost()
         {
-            //destroy the prefab, its control and transform entities
+            Debug.Log("Device Lost");
         }
 
         public void OnDeviceRegained()
         {
-            //spawn prefab anew
+            Debug.Log("Device Regained");
         }
 
         public void OnControlsChanged()
@@ -44,41 +44,28 @@ namespace Mono
             inputs.MoveInput = moveValue;
             _entityManager.SetComponentData(_playerRef.Player, inputs);
 
-            var magnitude = math.distance(moveValue, float2.zero);
+            //var magnitude = math.distance(moveValue, float2.zero);
             
             //get animator
             //if magnitude is > x run, if <= x walk
         }
-
+        
         public void OnLook(InputValue value)
         {
-            //Rotate camera
+            var lookValue = value.Get<Vector2>();
+            var inputs = _entityManager.GetComponentData<ThirdPersonPlayerInputs>(_playerRef.Player);
+            inputs.CameraLookInput = lookValue;
+            _entityManager.SetComponentData(_playerRef.Player, inputs);
         }
-
+        
         public void OnAttack(InputValue value)
         {
         
         }
-
-        public void OnInteract(InputValue value)
-        {
         
-        }
-
-        public void OnCrouch(InputValue value)
-        {
-        
-        }
-
         public void OnJump(InputValue value)
         {
         
         }
-
-        public void OnSprint(InputValue value)
-        {
-        
-        }
-    
     }
 }
