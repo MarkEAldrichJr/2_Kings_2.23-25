@@ -52,12 +52,24 @@ namespace Mono
 
         private void MatchCharacterToAnimatorSpawn()
         {
+            var spawnEntities = GetPlayerSpawnEntities(_entityManager);
+            var spawnEntity = spawnEntities[Random.Range(0, spawnEntities.Length)];
+            var spawnTransform = _entityManager.GetComponentData<LocalToWorld>(spawnEntity);
+            
             _entityManager.SetComponentData(_refStorage.Character, new LocalTransform
             {
-                Position = transform.position,
-                Rotation = transform.rotation,
-                Scale = transform.localScale.x
+                Scale = 1f,
+                Position = spawnTransform.Position,
+                Rotation = spawnTransform.Rotation
             });
+        }
+        
+        private static NativeArray<Entity> GetPlayerSpawnEntities(EntityManager entityManager)
+        {
+            var query = entityManager.CreateEntityQuery(new EntityQueryBuilder(Allocator.Temp)
+                            .WithAll<PlayerSpawnTag>());
+            
+            return query.ToEntityArray(Allocator.Temp);
         }
     }
 }

@@ -78,8 +78,8 @@ namespace Authoring
 
                 trans.ValueRW.Scale = rand.ValueRW.Value.NextFloat(1 - scaleDelta, 1 + scaleDelta);
                 trans.ValueRW.Position.y = rand.ValueRW.Value.NextFloat(
-                    trans.ValueRO.Position.y - 1 - heightDelta,
-                    trans.ValueRO.Position.y - 1);
+                    trans.ValueRO.Position.y - heightDelta,
+                    trans.ValueRO.Position.y);
                 trans.ValueRW.Rotation = quaternion.EulerXYZ(math.radians(newTiltDelta));
             }
             state.EntityManager.RemoveComponent<RandomPosChange>(_query);

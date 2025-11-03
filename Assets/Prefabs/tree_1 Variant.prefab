@@ -13,6 +13,10 @@ PrefabInstance:
       value: tree_1 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1148613061152340, guid: eded051879df4c147b9010199d240258, type: 3}
+      propertyPath: m_TagString
+      value: Trees
+      objectReference: {fileID: 0}
+    - target: {fileID: 1148613061152340, guid: eded051879df4c147b9010199d240258, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -132,28 +136,5 @@ PrefabInstance:
     - {fileID: 136213828768348902, guid: eded051879df4c147b9010199d240258, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1148613061152340, guid: eded051879df4c147b9010199d240258, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4162294144543452465}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eded051879df4c147b9010199d240258, type: 3}
---- !u!1 &4813289632488635261 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1148613061152340, guid: eded051879df4c147b9010199d240258, type: 3}
-  m_PrefabInstance: {fileID: 4812142121101341993}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4162294144543452465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4813289632488635261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 415fc84939e0fc04a9999728a51e65aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  tiltDirectionDelta: {x: 1, y: 360, z: 1}
-  scaleDelta: 0.5
-  heightDelta: 2
