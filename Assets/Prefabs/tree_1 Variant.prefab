@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1148613061152340, guid: eded051879df4c147b9010199d240258, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4279449019447086, guid: eded051879df4c147b9010199d240258, type: 3}
       propertyPath: m_LocalPosition.x
@@ -154,3 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415fc84939e0fc04a9999728a51e65aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  tiltDirectionDelta: {x: 1, y: 360, z: 1}
+  scaleDelta: 0.5
+  heightDelta: 2
