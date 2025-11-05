@@ -1,4 +1,5 @@
-﻿using Component;
+﻿using System;
+using Component;
 using UnityEngine;
 
 namespace Mono
@@ -21,16 +22,28 @@ namespace Mono
         public void ChangeAnimation(AnimationStateEnum state)
         {
             Debug.Log($"Changing animation: {state}");
-        }
-
-        public void MoveAnimation(float velocity)
-        {
-            animator.Play(WalkForward);
-        }
-
-        public void AttackAnimation()
-        {
-            animator.Play("Attack1");
+            switch (state)
+            {
+                case AnimationStateEnum.Idle:
+                    animator.Play("Idle");
+                    break;
+                case AnimationStateEnum.Walk:
+                    animator.Play("Walk Forward");
+                    break;
+                case AnimationStateEnum.Run:
+                    animator.Play("RunForward");
+                    break;
+                case AnimationStateEnum.Jump:
+                    break;
+                case AnimationStateEnum.Sleep:
+                    break;
+                case AnimationStateEnum.Crouch:
+                    break;
+                case AnimationStateEnum.Prone:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(state), state, null);
+            }
         }
     }
 }

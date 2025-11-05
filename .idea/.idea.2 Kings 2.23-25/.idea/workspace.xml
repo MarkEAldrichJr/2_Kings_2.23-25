@@ -6,7 +6,26 @@
   <component name="ChangeListManager">
     <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/Fantasy Forest Environment Free Sample/Materials/bark01_bottom.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Fantasy Forest Environment Free Sample/Materials/bark01_bottom.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/Fantasy Forest Environment Free Sample/Materials/dirt01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Fantasy Forest Environment Free Sample/Materials/dirt01.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/Fantasy Forest Environment Free Sample/Materials/grass01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Fantasy Forest Environment Free Sample/Materials/grass01.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/Fantasy Forest Environment Free Sample/Materials/grassmesh.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Fantasy Forest Environment Free Sample/Materials/grassmesh.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/Fantasy Forest Environment Free Sample/Materials/skyMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Fantasy Forest Environment Free Sample/Materials/skyMaterial.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/Fantasy Forest Environment Free Sample/Meshes/Prefabs/grass01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Fantasy Forest Environment Free Sample/Meshes/Prefabs/grass01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/Fantasy Forest Environment Free Sample/Meshes/Prefabs/tree_1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Fantasy Forest Environment Free Sample/Meshes/Prefabs/tree_1.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mono/AnimatorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mono/AnimatorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mono/KillMainCameraWhenPlayersJoin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mono/KillMainCameraWhenPlayersJoin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mono/PlayerCharacterControllerSpawn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mono/PlayerCharacterControllerSpawn.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/AnimationSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/AnimationSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/SampleSceneProfile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/SampleSceneProfile.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrain/New Terrain.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Terrain/New Terrain.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrain/NewLayer 1.terrainlayer" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Terrain/NewLayer 1.terrainlayer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrain/NewLayer 2.terrainlayer" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Terrain/NewLayer 2.terrainlayer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrain/TerrainData_1279bc7d-f85e-434a-bf81-eeb84eccf0c2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Terrain/TerrainData_1279bc7d-f85e-434a-bf81-eeb84eccf0c2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrain/TerrainData_88dd2b3c-2565-4538-ac7c-536b7c827c78.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Terrain/TerrainData_88dd2b3c-2565-4538-ac7c-536b7c827c78.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrain/TerrainData_95e150e1-1cef-43b2-9b1b-098415cbb173.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Terrain/TerrainData_95e150e1-1cef-43b2-9b1b-098415cbb173.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +174,8 @@
       <workItem from="1762179157925" duration="5906000" />
       <workItem from="1762199269651" duration="6117000" />
       <workItem from="1762298166823" duration="7836000" />
-      <workItem from="1762349065980" duration="4681000" />
+      <workItem from="1762349065980" duration="4718000" />
+      <workItem from="1762376246830" duration="1699000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit.  Includes ECS libs, Bear and person models and animations. from packages">
       <option name="closed" value="true" />
@@ -301,7 +321,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762350964547</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Added KillMainCameraWhenPlayersJoin script.  Does exactly what it says on the tin.">
+      <option name="closed" value="true" />
+      <created>1762355213461</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1762355213461</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,7 +374,8 @@
     <MESSAGE value="Added an animationState to track what animation should be playing on the entity." />
     <MESSAGE value="Moved all the multiplied stuff into parents to hide them in the heirarchy" />
     <MESSAGE value="Renamed AnimationState component so it won't conflict with AnimationState.  Added NPC part to AnimationSystem, including NPCTag to keep it from running on the player.  Moved Idle-Walk and Walk-Run thresholds into AnimationState component." />
-    <option name="LAST_COMMIT_MESSAGE" value="Renamed AnimationState component so it won't conflict with AnimationState.  Added NPC part to AnimationSystem, including NPCTag to keep it from running on the player.  Moved Idle-Walk and Walk-Run thresholds into AnimationState component." />
+    <MESSAGE value="Added KillMainCameraWhenPlayersJoin script.  Does exactly what it says on the tin." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added KillMainCameraWhenPlayersJoin script.  Does exactly what it says on the tin." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

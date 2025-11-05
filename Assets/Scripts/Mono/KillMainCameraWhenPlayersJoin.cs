@@ -22,7 +22,7 @@ namespace Mono
 
         private void ActivateCamera()
         {
-            cam.SetActive(NumPlayers == 0);
+            cam?.SetActive(NumPlayers == 0);
         }
     }
 }

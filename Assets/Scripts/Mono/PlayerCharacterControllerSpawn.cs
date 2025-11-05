@@ -55,7 +55,7 @@ namespace Mono
                 WalkRunThreshold = walkRunThreshold
             });
             
-            if (!_refStorage.GetPlayerAnimator)
+            if (_refStorage.GetPlayerAnimator)
             {
                 _entityManager.AddComponentObject(_refStorage.Character,
                     _refStorage.GetPlayerAnimator);

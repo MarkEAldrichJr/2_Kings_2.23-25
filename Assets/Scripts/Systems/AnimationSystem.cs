@@ -32,6 +32,8 @@ namespace Systems
                 
                 var animator = _entityManager.GetComponentObject<AnimatorController>(e);
                 animator.ChangeAnimation(animationState.ValueRO.Value);
+
+                animationState.ValueRW.HasChangedThisFrame = false;
             }
         }
     }
