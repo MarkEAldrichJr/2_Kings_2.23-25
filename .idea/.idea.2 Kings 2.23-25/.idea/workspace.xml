@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Component/NpcTag.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Component/NpcTag.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Component/AnimationState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Component/AnimationStateComp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Component/AnimationState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Component/AnimationStateComp.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mono/PlayerCharacterControllerSpawn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mono/PlayerCharacterControllerSpawn.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/AnimationSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/AnimationSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,16 +35,20 @@
     <setting file="file://$PROJECT_DIR$/Assets/Imported/_TerrainAutoUpgrade.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Player.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/PlayerSpawn.prefab" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://U:/Unity Projects/2 Kings 2.23-25/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/AvatarAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/BearBaker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/TerrainAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Component/AnimationState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Component/AnimationStateComp.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Component/AnimationStateComp.cs.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Component/EntityPrefabComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Component/Move.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mono/CameraFollow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mono/EntityTransformFollower.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mono/MoveAvatarToCharacterController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://U:/Unity Projects/2 Kings 2.23-25/Assets/Scripts/Mono/PlayerCharacterControllerSpawn.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mono/PlayerReferenceStorage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/README.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/AnimationSystem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -156,7 +155,7 @@
       <workItem from="1762179157925" duration="5906000" />
       <workItem from="1762199269651" duration="6117000" />
       <workItem from="1762298166823" duration="7836000" />
-      <workItem from="1762349065980" duration="1631000" />
+      <workItem from="1762349065980" duration="4681000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit.  Includes ECS libs, Bear and person models and animations. from packages">
       <option name="closed" value="true" />
@@ -294,7 +293,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762349106070</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Renamed AnimationState component so it won't conflict with AnimationState.  Added NPC part to AnimationSystem, including NPCTag to keep it from running on the player.  Moved Idle-Walk and Walk-Run thresholds into AnimationState component.">
+      <option name="closed" value="true" />
+      <created>1762350964547</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1762350964547</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,7 +345,8 @@
     <MESSAGE value="Trees can now be spawned and changed in the editor, so they can be set to static once set.  Players now snap to a spawn point near Elisha when the game starts." />
     <MESSAGE value="Added an animationState to track what animation should be playing on the entity." />
     <MESSAGE value="Moved all the multiplied stuff into parents to hide them in the heirarchy" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved all the multiplied stuff into parents to hide them in the heirarchy" />
+    <MESSAGE value="Renamed AnimationState component so it won't conflict with AnimationState.  Added NPC part to AnimationSystem, including NPCTag to keep it from running on the player.  Moved Idle-Walk and Walk-Run thresholds into AnimationState component." />
+    <option name="LAST_COMMIT_MESSAGE" value="Renamed AnimationState component so it won't conflict with AnimationState.  Added NPC part to AnimationSystem, including NPCTag to keep it from running on the player.  Moved Idle-Walk and Walk-Run thresholds into AnimationState component." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
