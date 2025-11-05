@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Component;
+using UnityEngine;
 
 namespace Mono
 {
@@ -15,6 +16,11 @@ namespace Mono
         {
             animator = GetComponent<Animator>();
             trans.position = animator.transform.position;
+        }
+
+        public void ChangeAnimation(AnimationStateEnum state)
+        {
+            Debug.Log($"Changing animation: {state}");
         }
 
         public void MoveAnimation(float velocity)

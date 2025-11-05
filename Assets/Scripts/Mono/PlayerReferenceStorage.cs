@@ -8,12 +8,12 @@ namespace Mono
         [Header("Game Objects")]
         [SerializeField] private GameObject playerCamera;
         [SerializeField] private GameObject playerAvatar;
-        [SerializeField] private Animator playerAnimator;
+        [SerializeField] private AnimatorController playerAnimator;
         [SerializeField] private EntityTransformFollower entityTransformFollower;
         
         public GameObject GetPlayerCamera => playerCamera;
         public GameObject GetPlayerAvatar => playerAvatar;
-        public Animator GetPlayerAnimator => playerAnimator;
+        public AnimatorController GetPlayerAnimator => playerAnimator;
         public EntityTransformFollower GetEntityTransformFollower => entityTransformFollower;
 
         public Entity CameraTarget;

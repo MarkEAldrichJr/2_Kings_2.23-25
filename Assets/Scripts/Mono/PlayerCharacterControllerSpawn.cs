@@ -5,6 +5,7 @@ using Unity.Collections;
 using Unity.Entities;
 using Unity.Transforms;
 using UnityEngine;
+using AnimationState = Component.AnimationState;
 
 namespace Mono
 {
@@ -45,6 +46,14 @@ namespace Mono
                 ControlledCharacter = _refStorage.Character,
                 ControlledCamera = _refStorage.OrbitCamera
             });
+
+            //Adding animState to Character over Player.  Character has direct reference to Ground state
+            _entityManager.AddComponent<AnimationState>(_refStorage.Character);
+            if (!_refStorage.GetPlayerAnimator)
+            {
+                _entityManager.AddComponentObject(_refStorage.Character,
+                    _refStorage.GetPlayerAnimator);
+            }
 
             _refStorage.CameraTarget = 
                 _entityManager.GetComponentData<CameraTarget>(_refStorage.Character).TargetEntity;

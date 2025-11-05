@@ -24,38 +24,33 @@ namespace Mono
 
         public void OnDeviceLost()
         {
-            DebugLog("Device Lost");
+            DebugLog(debug, "Device Lost");
         }
 
         public void OnDeviceRegained()
         {
-            DebugLog("Device Regained");
+            DebugLog(debug, "Device Regained");
         }
 
         public void OnControlsChanged()
         {
-            DebugLog("Controls Changed");
+            DebugLog(debug, "Controls Changed");
         }
     
         public void OnMove(InputValue value)
         {
             var moveValue = value.Get<Vector2>();
-            DebugLog($"Move Stick Value: {moveValue.ToString()}");
+            DebugLog(debug, $"Move Stick Value: {moveValue.ToString()}");
             
             var inputs = _entityManager.GetComponentData<ThirdPersonPlayerInputs>(_playerRef.Player);
             inputs.MoveInput = moveValue;
             _entityManager.SetComponentData(_playerRef.Player, inputs);
-
-            //var magnitude = math.distance(moveValue, float2.zero);
-            
-            //get animator
-            //if magnitude is > x run, if <= x walk
         }
         
         public void OnLook(InputValue value)
         {
             var lookValue = value.Get<Vector2>();
-            DebugLog($"Look Stick Value: {lookValue.ToString()}");
+            DebugLog(debug, $"Look Stick Value: {lookValue.ToString()}");
             
             var inputs = _entityManager.GetComponentData<ThirdPersonPlayerInputs>(_playerRef.Player);
             inputs.CameraLookInput = lookValue;
@@ -64,7 +59,7 @@ namespace Mono
         
         public void OnAttack(InputValue value)
         {
-        
+            DebugLog(debug, "attack");
         }
         
         public void OnJump(InputValue value)
@@ -72,9 +67,9 @@ namespace Mono
         
         }
 
-        private void DebugLog(string message)
+        private static void DebugLog(bool shouldDebug, string message)
         {
-            if (debug)
+            if (shouldDebug)
             {
                 Debug.Log(message);
             }

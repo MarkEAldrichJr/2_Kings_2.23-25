@@ -16,6 +16,10 @@ namespace Authoring
                 {
                     Value = authoring.avatar
                 });
+                AddComponentObject(e, new AnimatorModelReference
+                {
+                    Controller = authoring.avatar.GetComponent<AnimatorController>()
+                });
             }
         }
     }
