@@ -2,10 +2,12 @@
 
 namespace Component
 {
-    public struct AnimationState : IComponentData
+    public struct AnimationStateComp : IComponentData
     {
         public AnimationStateEnum Value;
         public bool HasChangedThisFrame;
+        public float IdleWalkThreshold;
+        public float WalkRunThreshold;
     }
 
     public enum AnimationStateEnum

@@ -5,13 +5,15 @@ using Unity.Collections;
 using Unity.Entities;
 using Unity.Transforms;
 using UnityEngine;
-using AnimationState = Component.AnimationState;
 
 namespace Mono
 {
     [RequireComponent(typeof(PlayerReferenceStorage))]
     public class PlayerCharacterControllerSpawn : MonoBehaviour
     {
+        [SerializeField] private float idleWalkThreshold = 0.5f;
+        [SerializeField] private float walkRunThreshold = 1.5f;
+        
         private PlayerReferenceStorage _refStorage;
         private EntityManager _entityManager;
 
@@ -48,7 +50,11 @@ namespace Mono
             });
 
             //Adding animState to Character over Player.  Character has direct reference to Ground state
-            _entityManager.AddComponent<AnimationState>(_refStorage.Character);
+            _entityManager.AddComponentData(_refStorage.Character, new AnimationStateComp{
+                IdleWalkThreshold = idleWalkThreshold,
+                WalkRunThreshold = walkRunThreshold
+            });
+            
             if (!_refStorage.GetPlayerAnimator)
             {
                 _entityManager.AddComponentObject(_refStorage.Character,
