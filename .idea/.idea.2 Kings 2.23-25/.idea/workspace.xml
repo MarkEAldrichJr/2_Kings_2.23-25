@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,7 +33,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Player.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/PlayerSpawn.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://U:/Unity Projects/2 Kings 2.23-25/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/AvatarAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/BearBaker.cs" root0="FORCE_HIGHLIGHTING" />
@@ -47,13 +44,15 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mono/CameraFollow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mono/EntityTransformFollower.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mono/MoveAvatarToCharacterController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://U:/Unity Projects/2 Kings 2.23-25/Assets/Scripts/Mono/PlayerCharacterControllerSpawn.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mono/PlayerReferenceStorage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/README.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/AnimationSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Settings/DefaultVolumeProfile.asset" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://U:/Unity Projects/2 Kings 2.23-25/Assets/Settings/DefaultVolumeProfile.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Settings/InputActionsPlayer.inputactions" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@f6e02210e263/Unity.Entities/EntityComponentStoreDebug.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@be6c4fd0abf5/InputSystem/Plugins/PlayerInput/PlayerInputEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/com.projectdawn.navigation/ProjectDawn.Navigation/SpatialPartitioning/AABBTree.meta" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -156,6 +155,7 @@
       <workItem from="1762298166823" duration="7836000" />
       <workItem from="1762349065980" duration="4718000" />
       <workItem from="1762376246830" duration="1864000" />
+      <workItem from="1762393089201" duration="175000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit.  Includes ECS libs, Bear and person models and animations. from packages">
       <option name="closed" value="true" />
@@ -317,7 +317,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762380614271</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Played with Post Processing some more.  Baked Navmesh.  Added Agents Navigation Package.">
+      <option name="closed" value="true" />
+      <created>1762393209961</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1762393209961</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -364,7 +372,8 @@
     <MESSAGE value="Renamed AnimationState component so it won't conflict with AnimationState.  Added NPC part to AnimationSystem, including NPCTag to keep it from running on the player.  Moved Idle-Walk and Walk-Run thresholds into AnimationState component." />
     <MESSAGE value="Added KillMainCameraWhenPlayersJoin script.  Does exactly what it says on the tin." />
     <MESSAGE value="Player bear is now roughly animated.  Made grass cover the level.  Remod some trees to make a field partway through the map.  Added Post Processing." />
-    <option name="LAST_COMMIT_MESSAGE" value="Player bear is now roughly animated.  Made grass cover the level.  Remod some trees to make a field partway through the map.  Added Post Processing." />
+    <MESSAGE value="Played with Post Processing some more.  Baked Navmesh.  Added Agents Navigation Package." />
+    <option name="LAST_COMMIT_MESSAGE" value="Played with Post Processing some more.  Baked Navmesh.  Added Agents Navigation Package." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
