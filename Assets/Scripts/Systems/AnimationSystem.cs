@@ -39,7 +39,7 @@ namespace Systems
         }
     }
 
-    [UpdateInGroup(typeof(PresentationSystemGroup))]
+    [UpdateBefore(typeof(BearAttackSystem))]
     public partial struct AnimationStateDiscoverySystem : ISystem
     {
         [BurstCompile]
@@ -64,14 +64,16 @@ namespace Systems
         [BurstCompile]
         private void DiscoverPlayerAnimationState(ref SystemState state)
         {
-            foreach (var (animationState, characterBody, characterControl) in SystemAPI
-                         .Query<RefRW<AnimationStateComp>, RefRO<KinematicCharacterBody>, RefRW<ThirdPersonCharacterControl>>())
+            foreach (var (animationState, characterControl, characterBody, bearAttack) in SystemAPI
+                         .Query<RefRW<AnimationStateComp>, RefRW<ThirdPersonCharacterControl>,
+                             RefRO<KinematicCharacterBody>, RefRO<BearAttack>>())
             {
                 var currentState = animationState.ValueRO.Value;
                 var isGrounded = characterBody.ValueRO.IsGrounded;
                 var velocity = math.length(characterBody.ValueRO.RelativeVelocity);
                 
-                if (characterControl.ValueRO.Attack)
+                if (characterControl.ValueRO.Attack && 
+                    bearAttack.ValueRO.FrameCooldownFinishes <= SystemAPI.Time.ElapsedTime)
                 {
                     animationState.ValueRW.Value = AnimationStateEnum.Attack;
                 }
