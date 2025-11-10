@@ -25,5 +25,7 @@ namespace Imported.Samples.Character_Controller._1._3._12.Standard_Characters.Th
     {
         public float3 MoveVector;
         public bool Jump;
+        public bool Attack;
+        public bool Sleep;
     }
 }

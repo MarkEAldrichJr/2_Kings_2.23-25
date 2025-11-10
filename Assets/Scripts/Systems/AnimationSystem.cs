@@ -1,4 +1,5 @@
 ﻿using Component;
+using Imported.Samples.Character_Controller._1._3._12.Standard_Characters.ThirdPerson.Scripts;
 using Mono;
 using Unity.Burst;
 using Unity.CharacterController;
@@ -63,14 +64,18 @@ namespace Systems
         [BurstCompile]
         private void DiscoverPlayerAnimationState(ref SystemState state)
         {
-            foreach (var (animationState, characterBody) in SystemAPI
-                         .Query<RefRW<AnimationStateComp>, RefRO<KinematicCharacterBody>>())
+            foreach (var (animationState, characterBody, characterControl) in SystemAPI
+                         .Query<RefRW<AnimationStateComp>, RefRO<KinematicCharacterBody>, RefRW<ThirdPersonCharacterControl>>())
             {
                 var currentState = animationState.ValueRO.Value;
                 var isGrounded = characterBody.ValueRO.IsGrounded;
                 var velocity = math.length(characterBody.ValueRO.RelativeVelocity);
-
-                if (!isGrounded)
+                
+                if (characterControl.ValueRO.Attack)
+                {
+                    animationState.ValueRW.Value = AnimationStateEnum.Attack;
+                }
+                else if (!isGrounded)
                 {
                     animationState.ValueRW.Value = AnimationStateEnum.Jump;
                 }

@@ -92,6 +92,9 @@ namespace Imported.Samples.Character_Controller._1._3._12.Standard_Characters.Th
                     // Jump
                     characterControl.Jump = playerInputs.ValueRO.JumpPressed.IsSet(tick);
                     
+                    //Attack
+                    characterControl.Attack = playerInputs.ValueRO.AttackPressed.IsSet(tick);
+                    
                     SystemAPI.SetComponent(player.ValueRO.ControlledCharacter, characterControl);
                 }
             }

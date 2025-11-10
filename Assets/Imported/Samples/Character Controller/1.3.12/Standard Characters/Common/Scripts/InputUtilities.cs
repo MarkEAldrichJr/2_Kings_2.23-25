@@ -11,7 +11,7 @@ namespace Imported.Samples.Character_Controller._1._3._12.Standard_Characters.Co
             _wasEverSet = 1;
         }
 
-        public bool IsSet(uint tick)
+        public readonly bool IsSet(uint tick)
         {
             if (_wasEverSet == 1)
             {

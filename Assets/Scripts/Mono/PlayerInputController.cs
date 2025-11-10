@@ -63,7 +63,12 @@ namespace Mono
         
         public void OnAttack(InputValue value)
         {
-            DebugLog(debug, "attack");
+            if (!_entityManager.Exists(_playerRef.Player)) return;
+            var inputs = _entityManager.GetComponentData<ThirdPersonPlayerInputs>(_playerRef.Player);
+            var tick = _fixedTickQuery.GetSingleton<FixedTickSystem.FixedTickSingleton>();
+            inputs.AttackPressed.Set(tick.Tick);
+            
+            _entityManager.SetComponentData(_playerRef.Player, inputs);
         }
         
         public void OnJump(InputValue value)

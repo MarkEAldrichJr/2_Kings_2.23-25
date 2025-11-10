@@ -12,6 +12,7 @@ namespace Component
 
     public enum AnimationStateEnum
     {
-        Idle, Walk, Run, Jump, Sleep, Crouch, Prone
+        Idle, Walk, Run, Jump, Sleep, Crouch, Prone,
+        Attack
     }
 }

@@ -19,5 +19,6 @@ namespace Imported.Samples.Character_Controller._1._3._12.Standard_Characters.Th
         public float2 CameraLookInput;
         public float CameraZoomInput;
         public FixedInputEvent JumpPressed;
+        public FixedInputEvent AttackPressed;
     }
 }

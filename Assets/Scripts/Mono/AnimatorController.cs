@@ -10,8 +10,10 @@ namespace Mono
         [SerializeField] private Transform trans;
 
         private static readonly int WalkForward = Animator.StringToHash("Walk Forward");
-        private static readonly int Idle = Animator.StringToHash("Idle");
-        private static readonly int RunForward = Animator.StringToHash("RunForward");
+        private static readonly int Idle = Animator.StringToHash("Combat Idle");
+        private static readonly int RunForward = Animator.StringToHash("Run Forward");
+        private static readonly int Jump = Animator.StringToHash("Jump");
+        private static readonly int Attack1 = Animator.StringToHash("Attack1");
 
         public Transform Transform => trans;
 
@@ -26,16 +28,22 @@ namespace Mono
             switch (state)
             {
                 case AnimationStateEnum.Idle:
-                    animator.Play(Idle);
+                    animator.SetBool(Idle, true);
+                    animator.SetBool(RunForward, false);
+                    animator.SetBool(WalkForward, false);
                     break;
                 case AnimationStateEnum.Walk:
-                    animator.Play(WalkForward);
+                    animator.SetBool(WalkForward, true);
+                    animator.SetBool(Idle, false);
+                    animator.SetBool(RunForward, false);
                     break;
                 case AnimationStateEnum.Run:
-                    animator.Play(RunForward);
+                    animator.SetBool(RunForward, true);
+                    animator.SetBool(WalkForward, false);
+                    animator.SetBool(Idle, false);
                     break;
                 case AnimationStateEnum.Jump:
-                    //
+                    animator.SetTrigger(Jump);
                     break;
                 case AnimationStateEnum.Sleep:
                     //
@@ -45,6 +53,9 @@ namespace Mono
                     break;
                 case AnimationStateEnum.Prone:
                     //
+                    break;
+                case AnimationStateEnum.Attack:
+                    animator.SetTrigger(Attack1);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(state), state, null);
