@@ -5,6 +5,7 @@ using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
+using UnityEngine;
 
 namespace Systems
 {
@@ -25,43 +26,29 @@ namespace Systems
         [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
+            var haveActiveAttacks = false;
+            
             foreach (var (control, attack) in SystemAPI
                          .Query<RefRO<ThirdPersonCharacterControl>, RefRW<BearAttack>>())
             {
                 if (!control.ValueRO.Attack) continue;
-
                 if (attack.ValueRO.FrameCooldownFinishes > (uint)SystemAPI.Time.ElapsedTime)
                     continue; 
                 
                 attack.ValueRW.FrameCooldownFinishes =
                     (uint)SystemAPI.Time.ElapsedTime + attack.ValueRO.CooldownTime;
-
                 attack.ValueRW.FrameStopDamage =
                     (uint)SystemAPI.Time.ElapsedTime + attack.ValueRO.StopDamageTime;
+                
+                haveActiveAttacks = true;
             }
+            
+            if (!haveActiveAttacks) return;
 
             var attacks = _bearQuery.ToComponentDataArray<BearAttack>(Allocator.TempJob);
             var transforms = _bearQuery.ToComponentDataArray<LocalTransform>(Allocator.TempJob);
             var killList = new NativeList<Entity>(Allocator.TempJob);
             var killListWriter = killList.AsParallelWriter();
-
-            var numAttacks = 0;
-            foreach (var attack in attacks)
-            {
-                if (attack.FrameStopDamage < (uint)SystemAPI.Time.ElapsedTime)
-                {
-                    numAttacks++;
-                }
-            }
-
-            if (numAttacks == 0)
-            {
-                attacks.Dispose();
-                transforms.Dispose();
-                killList.Dispose();
-                
-                return;
-            }
             
             var scheduleParallel = new KillEvilChildrenJob
             {
@@ -70,13 +57,12 @@ namespace Systems
                 Transforms = transforms,
                 KillList = killListWriter
             }.ScheduleParallel(state.Dependency);
+            
             scheduleParallel.Complete();
+            state.EntityManager.DestroyEntity(killList.AsArray());
             
             attacks.Dispose();
             transforms.Dispose();
-            
-            state.EntityManager.DestroyEntity(killList.AsArray());
-            
             killList.Dispose();
         }
     }

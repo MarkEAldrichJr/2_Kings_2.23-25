@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/DeathByBearAuthoring.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/DeathByBearAuthoring.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Prefabs/ThirdPersonCharacter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Prefabs/ThirdPersonCharacter.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/BearAttackSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/BearAttackSystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -185,7 +181,7 @@
       <workItem from="1762393089201" duration="175000" />
       <workItem from="1762465327885" duration="39000" />
       <workItem from="1762520064522" duration="1000000" />
-      <workItem from="1762781166565" duration="17477000" />
+      <workItem from="1762781166565" duration="18093000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit.  Includes ECS libs, Bear and person models and animations. from packages">
       <option name="closed" value="true" />
@@ -395,7 +391,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762804803843</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Fixed Memory Leak in BearAttackSystem">
+      <option name="closed" value="true" />
+      <created>1762806991492</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1762806991492</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,7 +426,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Got terrian to work with Entities.  Simple ball demo." />
     <MESSAGE value="Unity Physics samples." />
     <MESSAGE value="Unity Physics Samples" />
     <MESSAGE value="Added terrain.  Not sure if trees work yet, might need a separate system to spawn them.  Added Bear and Baldy.  Starting animation matching for them.  Added Input system.  Working on Co-op" />
@@ -447,7 +450,8 @@
     <MESSAGE value="Changed the name of &quot;Singleton&quot; component to match what it actually does.  The player now jumps." />
     <MESSAGE value="Smoothed out Jump, Attack, Move animations.  Minor delay when player stops moving?" />
     <MESSAGE value="Created BearAttack setup that deletes evil children when they walk into aoe." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created BearAttack setup that deletes evil children when they walk into aoe." />
+    <MESSAGE value="Fixed Memory Leak in BearAttackSystem" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Memory Leak in BearAttackSystem" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

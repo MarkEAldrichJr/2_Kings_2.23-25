@@ -266,7 +266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Authoring.BearAttackAuthoring
   distanceForward: 2
   attackCooldownTime: 3
-  radius: 1
+  radius: 2
   stopDamageTime: 1
 --- !u!1 &2861637503494133753
 GameObject:
