@@ -192,7 +192,7 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Gamepad
+  m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 355053816285321692}
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a78a0ba114ff1b4b9da202aacc084d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: ScriptsAssembly::Mono.PlayerInputController
-  debug: 0
+  debug: 1
 --- !u!114 &2289537432432610581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,6 +221,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9832fa8e10be7064b99aae65aed9c406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  idleWalkThreshold: 0.5
+  walkRunThreshold: 1.5
 --- !u!114 &240127798017510318
 MonoBehaviour:
   m_ObjectHideFlags: 0

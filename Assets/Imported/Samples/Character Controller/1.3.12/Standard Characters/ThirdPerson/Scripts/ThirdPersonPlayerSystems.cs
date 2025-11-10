@@ -55,14 +55,14 @@ namespace Imported.Samples.Character_Controller._1._3._12.Standard_Characters.Th
         [BurstCompile]
         public void OnCreate(ref SystemState state)
         {
-            state.RequireForUpdate<Common.Scripts.FixedTickSystem.Singleton>();
+            state.RequireForUpdate<Common.Scripts.FixedTickSystem.FixedTickSingleton>();
             state.RequireForUpdate(SystemAPI.QueryBuilder().WithAll<ThirdPersonPlayer, ThirdPersonPlayerInputs>().Build());
         }
 
         [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
-            var tick = SystemAPI.GetSingleton<Common.Scripts.FixedTickSystem.Singleton>().Tick;
+            var tick = SystemAPI.GetSingleton<Common.Scripts.FixedTickSystem.FixedTickSingleton>().Tick;
 
             foreach (var (playerInputs, player) in SystemAPI.Query<RefRO<ThirdPersonPlayerInputs>, RefRO<ThirdPersonPlayer>>().WithAll<Simulate>())
             {
@@ -91,7 +91,7 @@ namespace Imported.Samples.Character_Controller._1._3._12.Standard_Characters.Th
 
                     // Jump
                     characterControl.Jump = playerInputs.ValueRO.JumpPressed.IsSet(tick);
-
+                    
                     SystemAPI.SetComponent(player.ValueRO.ControlledCharacter, characterControl);
                 }
             }

@@ -1,4 +1,6 @@
+using Imported.Samples.Character_Controller._1._3._12.Standard_Characters.Common.Scripts;
 using Imported.Samples.Character_Controller._1._3._12.Standard_Characters.ThirdPerson.Scripts;
+using Unity.Collections;
 using Unity.Entities;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,6 +13,7 @@ namespace Mono
         [SerializeField] private bool debug;
         private PlayerReferenceStorage _playerRef;
         private EntityManager _entityManager;
+        private EntityQuery _fixedTickQuery;
 
         private void Awake()
         {
@@ -20,6 +23,9 @@ namespace Mono
         private void Start()
         {
             _entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
+            _fixedTickQuery = _entityManager.CreateEntityQuery(
+                            new EntityQueryBuilder(Allocator.Temp)
+                                .WithAll<FixedTickSystem.FixedTickSingleton>());
         }
 
         public void OnDeviceLost()
@@ -40,7 +46,6 @@ namespace Mono
         public void OnMove(InputValue value)
         {
             var moveValue = value.Get<Vector2>();
-            DebugLog(debug, $"Move Stick Value: {moveValue.ToString()}");
             
             var inputs = _entityManager.GetComponentData<ThirdPersonPlayerInputs>(_playerRef.Player);
             inputs.MoveInput = moveValue;
@@ -50,7 +55,6 @@ namespace Mono
         public void OnLook(InputValue value)
         {
             var lookValue = value.Get<Vector2>();
-            DebugLog(debug, $"Look Stick Value: {lookValue.ToString()}");
             
             var inputs = _entityManager.GetComponentData<ThirdPersonPlayerInputs>(_playerRef.Player);
             inputs.CameraLookInput = lookValue;
@@ -64,7 +68,11 @@ namespace Mono
         
         public void OnJump(InputValue value)
         {
-        
+            var inputs = _entityManager.GetComponentData<ThirdPersonPlayerInputs>(_playerRef.Player);
+            var tick = _fixedTickQuery.GetSingleton<FixedTickSystem.FixedTickSingleton>();
+            inputs.JumpPressed.Set(tick.Tick);
+            
+            _entityManager.SetComponentData(_playerRef.Player, inputs);
         }
 
         private static void DebugLog(bool shouldDebug, string message)

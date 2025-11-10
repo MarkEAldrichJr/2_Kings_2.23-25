@@ -54,7 +54,7 @@ namespace Imported.Samples.Character_Controller._1._3._12.Standard_Characters.Th
             public ThirdPersonCharacterUpdateContext Context;
             public KinematicCharacterUpdateContext BaseContext;
 
-            void Execute(ThirdPersonCharacterAspect characterAspect)
+            private void Execute(ThirdPersonCharacterAspect characterAspect)
             {
                 characterAspect.PhysicsUpdate(ref Context, ref BaseContext);
             }
