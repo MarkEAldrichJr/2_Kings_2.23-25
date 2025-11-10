@@ -53,7 +53,15 @@ namespace Systems
                     numAttacks++;
                 }
             }
-            if (numAttacks == 0) return;
+
+            if (numAttacks == 0)
+            {
+                attacks.Dispose();
+                transforms.Dispose();
+                killList.Dispose();
+                
+                return;
+            }
             
             var scheduleParallel = new KillEvilChildrenJob
             {
@@ -62,10 +70,14 @@ namespace Systems
                 Transforms = transforms,
                 KillList = killListWriter
             }.ScheduleParallel(state.Dependency);
-            
             scheduleParallel.Complete();
             
+            attacks.Dispose();
+            transforms.Dispose();
+            
             state.EntityManager.DestroyEntity(killList.AsArray());
+            
+            killList.Dispose();
         }
     }
 
@@ -83,16 +95,17 @@ namespace Systems
 
             for (var i = 0; i < length; i++)
             {
-                if (BearAttacks[i].FrameStopDamage < TimeElapsed) continue;
-                
-                var attackPosition = Transforms[i].Position +
-                                     Transforms[i].Forward() * BearAttacks[i].DistanceForward;
-
-                var distanceToAttack = math.distance(attackPosition, transform.Position);
-
-                if (distanceToAttack < BearAttacks[i].Radius)
+                if (BearAttacks[i].FrameStopDamage > TimeElapsed)
                 {
-                    KillList.AddNoResize(entity);
+                    var attackPosition = Transforms[i].Position +
+                                         Transforms[i].Forward() * BearAttacks[i].DistanceForward;
+
+                    var distanceToAttack = math.distance(attackPosition, transform.Position);
+
+                    if (distanceToAttack < BearAttacks[i].Radius)
+                    {
+                        KillList.AddNoResize(entity);
+                    }
                 }
             }
         }

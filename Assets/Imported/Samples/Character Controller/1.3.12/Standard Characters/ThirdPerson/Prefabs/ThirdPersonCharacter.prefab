@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -6139925544746205195}
   - component: {fileID: 6689285571920954877}
   - component: {fileID: 7542772330835976783}
+  - component: {fileID: 2218204253234334118}
   m_Layer: 0
   m_Name: ThirdPersonCharacter
   m_TagString: Untagged
@@ -251,6 +252,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 2861637503494133753}
+--- !u!114 &2218204253234334118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692896102597148395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34a9d97c49c5421f888dc235715ce98f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Authoring.BearAttackAuthoring
+  distanceForward: 2
+  attackCooldownTime: 3
+  radius: 1
+  stopDamageTime: 1
 --- !u!1 &2861637503494133753
 GameObject:
   m_ObjectHideFlags: 0
