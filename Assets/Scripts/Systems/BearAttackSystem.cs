@@ -80,20 +80,17 @@ namespace Systems
 
             for (var i = 0; i < length; i++)
             {
-                if (TimeElapsed > BearAttacks[i].FrameToStart)
-                {
-                    if (TimeElapsed < BearAttacks[i].FrameStopDamage)
-                    {
-                        var attackPosition = Transforms[i].Position +
-                                             (Transforms[i].Forward() *
-                                             BearAttacks[i].DistanceForward);
+                if (BearAttacks[i].FrameToStart > TimeElapsed) continue;
+                if (TimeElapsed > BearAttacks[i].FrameStopDamage) continue;
+                
+                var attackPosition = Transforms[i].Position +
+                                     Transforms[i].Forward() *
+                                     BearAttacks[i].DistanceForward;
 
-                        var distanceToAttack = math.distance(attackPosition, transform.Position);
-                        if (distanceToAttack < BearAttacks[i].Radius)
-                        {
-                            KillList.AddNoResize(entity);
-                        }
-                    }
+                var distanceToAttack = math.distance(attackPosition, transform.Position);
+                if (distanceToAttack < BearAttacks[i].Radius)
+                {
+                    KillList.AddNoResize(entity);
                 }
             }
         }
