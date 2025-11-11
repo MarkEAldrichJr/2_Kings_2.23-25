@@ -4,13 +4,16 @@ namespace Component
 {
     public struct BearAttack : IComponentData
     {
-        public float DistanceForward;
-        public uint CooldownTime;
-        public uint FrameCooldownFinishes;
-
-        public uint StopDamageTime;
-        public uint FrameStopDamage;
+        public double StartTime; //start damaging AFTER windup
+        public double FrameToStart;
         
+        public double CooldownTime;
+        public double FrameCooldownFinishes;
+
+        public double StopDamageTime;
+        public double FrameStopDamage;
+        
+        public float DistanceForward;
         public float Radius;
     }
     

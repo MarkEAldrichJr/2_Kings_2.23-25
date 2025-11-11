@@ -5,7 +5,6 @@ using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
-using UnityEngine;
 
 namespace Systems
 {
@@ -17,33 +16,33 @@ namespace Systems
         [BurstCompile]
         public void OnCreate(ref SystemState state)
         {
-            state.RequireForUpdate<DeathByBearTag>();
             _bearQuery = state.GetEntityQuery(
                 new EntityQueryBuilder(Allocator.Temp)
                     .WithAll<LocalTransform, BearAttack>());
+            
+            state.RequireForUpdate<DeathByBearTag>();
+            state.RequireForUpdate(_bearQuery);
         }
 
         [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
-            var haveActiveAttacks = false;
+            var elapsedTime = SystemAPI.Time.ElapsedTime;
             
             foreach (var (control, attack) in SystemAPI
                          .Query<RefRO<ThirdPersonCharacterControl>, RefRW<BearAttack>>())
             {
                 if (!control.ValueRO.Attack) continue;
-                if (attack.ValueRO.FrameCooldownFinishes > (uint)SystemAPI.Time.ElapsedTime)
+                if (attack.ValueRO.FrameCooldownFinishes > elapsedTime)
                     continue; 
                 
                 attack.ValueRW.FrameCooldownFinishes =
-                    (uint)SystemAPI.Time.ElapsedTime + attack.ValueRO.CooldownTime;
+                    elapsedTime + attack.ValueRO.CooldownTime;
                 attack.ValueRW.FrameStopDamage =
-                    (uint)SystemAPI.Time.ElapsedTime + attack.ValueRO.StopDamageTime;
-                
-                haveActiveAttacks = true;
+                    elapsedTime + attack.ValueRO.StopDamageTime;
+                attack.ValueRW.FrameToStart = 
+                    elapsedTime + attack.ValueRO.StartTime;
             }
-            
-            if (!haveActiveAttacks) return;
 
             var attacks = _bearQuery.ToComponentDataArray<BearAttack>(Allocator.TempJob);
             var transforms = _bearQuery.ToComponentDataArray<LocalTransform>(Allocator.TempJob);
@@ -52,7 +51,7 @@ namespace Systems
             
             var scheduleParallel = new KillEvilChildrenJob
             {
-                TimeElapsed = (uint)SystemAPI.Time.ElapsedTime,
+                TimeElapsed = elapsedTime,
                 BearAttacks = attacks,
                 Transforms = transforms,
                 KillList = killListWriter
@@ -70,7 +69,7 @@ namespace Systems
     [BurstCompile]
     public partial struct KillEvilChildrenJob : IJobEntity
     {
-        [ReadOnly] public uint TimeElapsed;
+        [ReadOnly] public double TimeElapsed;
         [ReadOnly] public NativeArray<BearAttack> BearAttacks;
         [ReadOnly] public NativeArray<LocalTransform> Transforms;
         [WriteOnly] public NativeList<Entity>.ParallelWriter KillList;
@@ -81,16 +80,19 @@ namespace Systems
 
             for (var i = 0; i < length; i++)
             {
-                if (BearAttacks[i].FrameStopDamage > TimeElapsed)
+                if (TimeElapsed > BearAttacks[i].FrameToStart)
                 {
-                    var attackPosition = Transforms[i].Position +
-                                         Transforms[i].Forward() * BearAttacks[i].DistanceForward;
-
-                    var distanceToAttack = math.distance(attackPosition, transform.Position);
-
-                    if (distanceToAttack < BearAttacks[i].Radius)
+                    if (TimeElapsed < BearAttacks[i].FrameStopDamage)
                     {
-                        KillList.AddNoResize(entity);
+                        var attackPosition = Transforms[i].Position +
+                                             (Transforms[i].Forward() *
+                                             BearAttacks[i].DistanceForward);
+
+                        var distanceToAttack = math.distance(attackPosition, transform.Position);
+                        if (distanceToAttack < BearAttacks[i].Radius)
+                        {
+                            KillList.AddNoResize(entity);
+                        }
                     }
                 }
             }
