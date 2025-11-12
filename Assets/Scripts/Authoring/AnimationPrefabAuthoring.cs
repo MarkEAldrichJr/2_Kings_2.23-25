@@ -1,3 +1,4 @@
+using Component;
 using Unity.Entities;
 using UnityEngine;
 
@@ -17,6 +18,8 @@ namespace Authoring
                 {
                     Prefab = authoring.prefab
                 });
+                
+                AddComponent<AnimationStateComp>(entity);
             }
         }
     }

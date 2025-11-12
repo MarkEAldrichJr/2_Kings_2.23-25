@@ -45,17 +45,14 @@ namespace Mono
                 case AnimationStateEnum.Jump:
                     animator.SetTrigger(Jump);
                     break;
-                case AnimationStateEnum.Sleep:
-                    //
-                    break;
-                case AnimationStateEnum.Crouch:
-                    //
-                    break;
                 case AnimationStateEnum.Prone:
                     //
                     break;
                 case AnimationStateEnum.Attack:
                     animator.SetTrigger(Attack1);
+                    break;
+                case AnimationStateEnum.Fear:
+                    //
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(state), state, null);
