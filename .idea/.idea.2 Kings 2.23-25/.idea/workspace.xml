@@ -5,16 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/AnimationPrefabAuthoring.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Component/InitializeTag.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Component/InitializeTag.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/GameObjectSpawnSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/GameObjectSpawnSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/InitializationEndSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/InitializationEndSystem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Component/AnimatorRefComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Component/AnimatorRefComponent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/AnimatorMoveSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/AnimatorMoveSystem.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/FollowPlayerSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/FollowPlayerSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/GameObjectSpawnSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/GameObjectSpawnSystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,11 +44,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://U:/Unity Projects/2 Kings 2.23-25/Assets/Scenes/SampleScene/EntitiesSubScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/AnimationPrefabAuthoring.cs.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/AvatarAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/BearAttackAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/BearBaker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/DeathByBearAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/NpcAnimationAuthoring.cs.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/TerrainAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Component/AnimationStateComp.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Component/AnimationStateComp.cs.meta" root0="FORCE_HIGHLIGHTING" />
@@ -65,6 +62,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mono/PlayerReferenceStorage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/README.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/AnimationSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/AnimatorMoveSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/BearAttackSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://U:/Unity Projects/2 Kings 2.23-25/Assets/Scripts/Systems/FollowPlayerSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/GameObjectSpawnSystem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -182,7 +180,7 @@
       <workItem from="1762520064522" duration="1000000" />
       <workItem from="1762781166565" duration="18403000" />
       <workItem from="1762875938765" duration="5730000" />
-      <workItem from="1762963864363" duration="6861000" />
+      <workItem from="1762963864363" duration="7456000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit.  Includes ECS libs, Bear and person models and animations. from packages">
       <option name="closed" value="true" />
@@ -424,7 +422,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762882296357</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Entities with AnimationPrefabAuthoring can now spawn their own animator GO!">
+      <option name="closed" value="true" />
+      <created>1762971066490</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1762971066490</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -451,7 +457,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Added ECS Character Controller.  Starting to piece together Input System.  Pressing buttons now spawns new players with controllers." />
     <MESSAGE value="Made a lot of minor syntax and readability changes.  Added notes on making the camera systems work with multiple cameras.  Need to review all instances of SystemAPI.GetSingleton" />
     <MESSAGE value="Changed the trees back to Lit URP because the Nature URP was ugly.  Removed camera components, soon to replace.  Added a script that spawns each character's third person controllers, and keeps a reference to them.  Will work on camera and transform tracking next." />
     <MESSAGE value="Character Controller now sticks to terrian.  Player Input now gets sent to the Character Controller." />
@@ -476,7 +481,8 @@
     <MESSAGE value="Attack system now works.  Needs tweaking so deaths match attack animation." />
     <MESSAGE value="Bear attack now works properly, and kills DeathByBearTag holders midway through attack animations." />
     <MESSAGE value="Added an Entity that follows the player to test Agents Navigation.  Added NavMeshObstacles to trees so they stop generating Navmeshes inside themselves." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added an Entity that follows the player to test Agents Navigation.  Added NavMeshObstacles to trees so they stop generating Navmeshes inside themselves." />
+    <MESSAGE value="Entities with AnimationPrefabAuthoring can now spawn their own animator GO!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Entities with AnimationPrefabAuthoring can now spawn their own animator GO!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

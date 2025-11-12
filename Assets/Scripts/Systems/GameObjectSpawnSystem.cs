@@ -1,4 +1,5 @@
 ﻿using Authoring;
+using Component;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Transforms;
@@ -24,21 +25,6 @@ namespace Systems
 
         protected override void OnUpdate()
         {
-            /*foreach (var (prefab, transform, entity) in SystemAPI
-                         .Query<RefRO<AnimationGameObjectPrefab>, RefRO<LocalTransform>>()
-                         .WithEntityAccess())
-            {
-                var newBody = (GameObject)Object.Instantiate(prefab.ValueRO.Prefab,
-                    transform.ValueRO.Position,
-                    transform.ValueRO.Rotation);
-                
-                _entityManager.AddComponentData(entity, new AnimatorRefComponent
-                {
-                    AnimatorGo = newBody.GetComponent<Animator>(),
-                    TransGo = newBody.transform
-                });
-            }*/
-            
             var entities = _entityQuery.ToEntityArray(Allocator.Temp);
             var prefabs = _entityQuery.ToComponentDataArray<AnimationGameObjectPrefab>(Allocator.Temp);
             var transforms = _entityQuery.ToComponentDataArray<LocalTransform>(Allocator.Temp);
@@ -61,11 +47,5 @@ namespace Systems
             transforms.Dispose();
             prefabs.Dispose();
         }
-    }
-
-    public struct AnimatorRefComponent : IComponentData
-    {
-        public UnityObjectRef<Transform> TransGo;
-        public UnityObjectRef<Animator>  AnimatorGo;
     }
 }
