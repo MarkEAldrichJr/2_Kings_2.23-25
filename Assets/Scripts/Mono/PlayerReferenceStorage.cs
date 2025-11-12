@@ -9,12 +9,10 @@ namespace Mono
         [SerializeField] private GameObject playerCamera;
         [SerializeField] private GameObject playerAvatar;
         [SerializeField] private AnimatorController playerAnimator;
-        [SerializeField] private EntityTransformFollower entityTransformFollower;
         
         public GameObject GetPlayerCamera => playerCamera;
         public GameObject GetPlayerAvatar => playerAvatar;
         public AnimatorController GetPlayerAnimator => playerAnimator;
-        public EntityTransformFollower GetEntityTransformFollower => entityTransformFollower;
 
         public Entity CameraTarget;
         public Entity OrbitCamera;

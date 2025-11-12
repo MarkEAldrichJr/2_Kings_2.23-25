@@ -238,7 +238,6 @@ MonoBehaviour:
   playerCamera: {fileID: 4889445082767659328}
   playerAvatar: {fileID: 4643148880037761451}
   playerAnimator: {fileID: 7407201389689723548}
-  entityTransformFollower: {fileID: 6150520976453700175}
 --- !u!114 &-1357480331125323694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -579,9 +578,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7962199819078159310, guid: f5b41ba4c79702547a89de7544b80656, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6150520976453700175}
-    - targetCorrespondingSourceObject: {fileID: 7962199819078159310, guid: f5b41ba4c79702547a89de7544b80656, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 7407201389689723548}
   m_SourcePrefab: {fileID: 100100000, guid: f5b41ba4c79702547a89de7544b80656, type: 3}
 --- !u!95 &2144904426960900459 stripped
@@ -594,18 +590,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7962199819078159310, guid: f5b41ba4c79702547a89de7544b80656, type: 3}
   m_PrefabInstance: {fileID: 3319343976643959397}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6150520976453700175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4643148880037761451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0f193923112479395de3b5d5f0d46a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: ScriptsAssembly::Mono.EntityTransformFollower
 --- !u!114 &7407201389689723548
 MonoBehaviour:
   m_ObjectHideFlags: 0

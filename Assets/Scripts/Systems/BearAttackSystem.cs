@@ -8,7 +8,7 @@ using Unity.Transforms;
 
 namespace Systems
 {
-    [UpdateAfter(typeof(AnimationStateDiscoverySystem))]
+    [UpdateAfter(typeof(Animations.AnimationStateDiscoverySystem))]
     public partial struct BearAttackSystem : ISystem
     {
         private EntityQuery _bearQuery;
