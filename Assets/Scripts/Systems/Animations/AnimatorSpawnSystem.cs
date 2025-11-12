@@ -5,10 +5,10 @@ using Unity.Entities;
 using Unity.Transforms;
 using UnityEngine;
 
-namespace Systems
+namespace Systems.Animations
 {
     [UpdateInGroup(typeof(InitializationSystemGroup))]
-    public partial class GameObjectSpawnSystem : SystemBase
+    public partial class AnimatorSpawnSystem : SystemBase
     {
         private EntityManager _entityManager;
         private EntityQuery _entityQuery;

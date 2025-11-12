@@ -2,7 +2,7 @@
 using Unity.Collections;
 using Unity.Entities;
 
-namespace Systems
+namespace Systems.General
 {
     [UpdateInGroup(typeof(LateSimulationSystemGroup), OrderFirst = false, OrderLast = true)]
     public partial struct InitializationEndSystem : ISystem
