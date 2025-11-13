@@ -4,7 +4,7 @@ using Unity.Entities;
 
 namespace Systems.General
 {
-    [UpdateInGroup(typeof(LateSimulationSystemGroup), OrderFirst = false, OrderLast = true)]
+    [UpdateInGroup(typeof(LateSimulationSystemGroup))]
     public partial struct InitializationEndSystem : ISystem
     {
         private EntityQuery _entityQuery;
@@ -15,7 +15,7 @@ namespace Systems.General
                     new EntityQueryBuilder(Allocator.Temp)
                         .WithAll<InitializeTag>());
             
-            state.RequireForUpdate(_entityQuery);
+            state.RequireForUpdate<InitializeTag>();
         }
 
         public void OnUpdate(ref SystemState state)
