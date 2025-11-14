@@ -5,15 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Elisha.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Elisha/FollowTrailSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Elisha/FollowTrailSystem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Component/RequirePlayerTag.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Component/RequirePlayerTag.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Elisha/FollowTrailStartSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Elisha/FollowTrailStartSystem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/General/RequirePlayerRemoveSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/General/RequirePlayerRemoveSystem.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/FollowPlayerSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/FollowPlayerSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/General/InitializationEndSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/General/InitializationEndSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EntitiesClientSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EntitiesClientSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/Blink/Art/Animals/Stylized/Bear/Bear_Prefabs/BearAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Blink/Art/Animals/Stylized/Bear/Bear_Prefabs/BearAnimator.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/Blink/Art/Characters/Stylized/Demo_Characters/StylizedHumanAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Blink/Art/Characters/Stylized/Demo_Characters/StylizedHumanAnimator.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Authoring/FollowTrailAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/FollowTrailAuthoring.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Elisha/FollowTrailSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Elisha/FollowTrailSystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +189,8 @@
       <workItem from="1762875938765" duration="5730000" />
       <workItem from="1762963864363" duration="8616000" />
       <workItem from="1762973513251" duration="2769000" />
-      <workItem from="1763043877879" duration="13349000" />
+      <workItem from="1763043877879" duration="13438000" />
+      <workItem from="1763149296168" duration="1856000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit.  Includes ECS libs, Bear and person models and animations. from packages">
       <option name="closed" value="true" />
@@ -469,7 +472,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762976573467</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Elisha now follows a path around the map.">
+      <option name="closed" value="true" />
+      <created>1763070712550</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1763070712550</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -496,7 +507,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Added new methods to hide Debug Logs if not needed." />
     <MESSAGE value="Gave the player's bear a halo" />
     <MESSAGE value="Updated halo, gave it a glow.  Removed all the trees, rebuilding with custom tree entities." />
     <MESSAGE value="Tree entities now randomly rotate and change size when they spawn.  Added a couple trees as an example." />
@@ -521,7 +531,8 @@
     <MESSAGE value="Removed some unused assets (tech debt) and created two new prefabs for Elisha and Children." />
     <MESSAGE value="Modified AnimationStateEnum to match the new animation states.  Considering combining NPC and Player Animation controllers." />
     <MESSAGE value="Organized files.  Removed test visual prefab." />
-    <option name="LAST_COMMIT_MESSAGE" value="Organized files.  Removed test visual prefab." />
+    <MESSAGE value="Elisha now follows a path around the map." />
+    <option name="LAST_COMMIT_MESSAGE" value="Elisha now follows a path around the map." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -18,7 +18,7 @@ namespace Systems
         public void OnCreate(ref SystemState state)
         {
             var followBuilder = new EntityQueryBuilder(Allocator.Temp)
-                .WithAll<FollowTrail, LocalTransform>();
+                .WithAll<FollowTrail, LocalTransform>().WithNone<RequirePlayerTag>();
             _followTrailQuery = state.GetEntityQuery(followBuilder);
 
             var walkPointBuilder = new EntityQueryBuilder(Allocator.Temp)
@@ -33,7 +33,8 @@ namespace Systems
         public void OnUpdate(ref SystemState state)
         {
             foreach (var (trail, trans, body) in SystemAPI
-                         .Query<RefRW<FollowTrail>, RefRO<LocalTransform>, RefRW<AgentBody>>())
+                         .Query<RefRW<FollowTrail>, RefRO<LocalTransform>, RefRW<AgentBody>>()
+                         .WithNone<RequirePlayerTag>())
             {
                 var targetPos =  state.EntityManager.GetComponentData<LocalToWorld>(trail.ValueRO.Target).Position;
                 var dist = math.distancesq(targetPos, trans.ValueRO.Position);
@@ -45,21 +46,6 @@ namespace Systems
                 
                 targetPos = state.EntityManager.GetComponentData<LocalToWorld>(trail.ValueRO.Target).Position;
                 body.ValueRW.SetDestination(targetPos);
-            }
-        }
-    }
-
-    public partial struct FollowTrailStartSystem : ISystem
-    {
-        public void OnUpdate(ref SystemState state)
-        {
-            foreach (var (agentBody, trail) in SystemAPI
-                         .Query<RefRW<AgentBody>, RefRO<FollowTrail>>())
-            {
-                var firstDest = state.EntityManager
-                    .GetComponentData<LocalToWorld>(trail.ValueRO.Target).Position;
-                agentBody.ValueRW.SetDestination(firstDest);
-                agentBody.ValueRW.IsStopped = false;
             }
         }
     }

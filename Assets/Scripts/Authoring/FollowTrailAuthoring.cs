@@ -1,3 +1,4 @@
+using Systems;
 using Unity.Entities;
 using UnityEngine;
 
@@ -17,6 +18,7 @@ namespace Authoring
                     Target = GetEntity(authoring.firstPoint, TransformUsageFlags.Renderable)
                 });
                 AddComponent<InitializeTag>(entity);
+                AddComponent<RequirePlayerTag>(entity);
             }
         }
     }
