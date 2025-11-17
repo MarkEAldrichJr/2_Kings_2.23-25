@@ -6,9 +6,13 @@ namespace Authoring
 {
     public class PrefabAuthoring : MonoBehaviour
     {
+        [Header("Player")]
         public GameObject characterPrefab;
         public GameObject orbitCameraPrefab;
         public GameObject playerPrefab;
+        
+        [Header("NPCs")]
+        public GameObject baseChildPrefab;
         
         public class PrefabAuthoringBaker : Baker<PrefabAuthoring>
         {
@@ -17,6 +21,8 @@ namespace Authoring
                 var characterEntity = GetEntity(authoring.characterPrefab, TransformUsageFlags.Dynamic);
                 var orbitCameraEntity = GetEntity(authoring.orbitCameraPrefab, TransformUsageFlags.Dynamic);
                 var playerEntity = GetEntity(authoring.playerPrefab, TransformUsageFlags.None);
+                
+                var baseChildEntity = GetEntity(authoring.baseChildPrefab, TransformUsageFlags.Dynamic);
 
                 var prefabStorageEntity = GetEntity(TransformUsageFlags.None);
                 
@@ -24,7 +30,9 @@ namespace Authoring
                 {
                     OrbitCamera = orbitCameraEntity,
                     ThirdPersonCharacter = characterEntity,
-                    ThirdPersonPlayer = playerEntity
+                    ThirdPersonPlayer = playerEntity,
+                    
+                    BaseChild = baseChildEntity
                 });
             }
         }

@@ -7,8 +7,12 @@ namespace Component
     /// </summary>
     public struct EntityPrefabComponent : IComponentData
     {
+        //player
         public Entity ThirdPersonCharacter;
         public Entity ThirdPersonPlayer;
         public Entity OrbitCamera;
+        
+        //npcs
+        public Entity BaseChild;
     }
 }
