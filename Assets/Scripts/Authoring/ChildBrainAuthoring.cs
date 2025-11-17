@@ -1,4 +1,5 @@
 using Component;
+using Component.NPCs;
 using Unity.Entities;
 using UnityEngine;
 

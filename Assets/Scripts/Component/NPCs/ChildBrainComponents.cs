@@ -1,6 +1,6 @@
 ﻿using Unity.Entities;
 
-namespace Component
+namespace Component.NPCs
 {
     public struct MoveToTargetFlag : IComponentData, IEnableableComponent {}
     public struct AttackFlag : IComponentData, IEnableableComponent {}
