@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/FaithAuthoring.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/FaithAuthoring.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Component/ElishaFaith.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Component/ElishaFaith.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/ChildBrainSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/ChildBrainSystem.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Authoring/ChildBrainAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/ChildBrainAuthoring.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Component/NPCs/ChildBrainComponents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Component/NPCs/ChildBrainComponents.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/FaithSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/FaithSystem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/ChildBrainSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/ChildBrainSystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +62,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Animations.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/ChildBrainSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Elisha/FollowTrailSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/FaithSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Settings/DefaultVolumeProfile.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Settings/InputActionsPlayer.inputactions" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@f6e02210e263/Unity.Entities/EntityComponentStoreDebug.cs" root0="SKIP_HIGHLIGHTING" />
@@ -192,7 +186,7 @@
       <workItem from="1763043877879" duration="13438000" />
       <workItem from="1763149296168" duration="1996000" />
       <workItem from="1763397005766" duration="4000" />
-      <workItem from="1763397118645" duration="7779000" />
+      <workItem from="1763397118645" duration="8493000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit.  Includes ECS libs, Bear and person models and animations. from packages">
       <option name="closed" value="true" />
@@ -498,7 +492,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763398572165</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Child now switches states based on distance and state of Elisha and the bears.">
+      <option name="closed" value="true" />
+      <created>1763405114118</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1763405114118</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,7 +527,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Tree entities now randomly rotate and change size when they spawn.  Added a couple trees as an example." />
     <MESSAGE value="Trees can now be spawned and changed in the editor, so they can be set to static once set.  Players now snap to a spawn point near Elisha when the game starts." />
     <MESSAGE value="Added an animationState to track what animation should be playing on the entity." />
     <MESSAGE value="Moved all the multiplied stuff into parents to hide them in the heirarchy" />
@@ -550,7 +551,8 @@
     <MESSAGE value="Elisha now follows a path around the map." />
     <MESSAGE value="Elisha now only walks *after* the first player spawns." />
     <MESSAGE value="Created Child Agent Entity.  Holds locomotion, animator, and AI state." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created Child Agent Entity.  Holds locomotion, animator, and AI state." />
+    <MESSAGE value="Child now switches states based on distance and state of Elisha and the bears." />
+    <option name="LAST_COMMIT_MESSAGE" value="Child now switches states based on distance and state of Elisha and the bears." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -13,6 +13,9 @@ namespace Systems
     /// Changes Child state based on distance from players and Elisha
     /// Other Systems handle behavior in each state
     /// </summary>
+    
+    [UpdateInGroup(typeof(SimulationSystemGroup))]
+    [UpdateBefore(typeof(FaithSystem))]
     public partial struct ChildBrainDeciderSystem : ISystem
     {
         private EntityQuery _childQuery;
