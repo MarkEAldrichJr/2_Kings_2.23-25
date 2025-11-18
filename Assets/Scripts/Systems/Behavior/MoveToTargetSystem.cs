@@ -17,7 +17,7 @@ namespace Systems.Behavior
         public void OnCreate(ref SystemState state)
         {
             var builder = new EntityQueryBuilder(Allocator.Temp)
-                .WithAll<LocalTransform, MoveToTargetFlag>();
+                .WithAll<LocalTransform, MoveToTargetFlag, AgentBody, AgentLocomotion, MoveSpeeds>();
             state.RequireForUpdate(state.GetEntityQuery(builder));
 
             var elishaBuilder = new EntityQueryBuilder(Allocator.Temp)
@@ -34,14 +34,16 @@ namespace Systems.Behavior
             var elishaPos = elishaTransforms[0].Position;
             elishaTransforms.Dispose();
             
-            foreach (var body in SystemAPI
-                         .Query<RefRW<AgentBody>>()
+            foreach (var (body, locomotion, speed) in SystemAPI
+                         .Query<RefRW<AgentBody>, RefRW<AgentLocomotion>, RefRO<MoveSpeeds>>()
                          .WithAll<MoveToTargetFlag>())
             {
                 var dist = math.distancesq(body.ValueRO.Destination, elishaPos);
                 if (dist < 0.2f) continue;
                 
                 body.ValueRW.SetDestination(elishaPos);
+                body.ValueRW.IsStopped = false;
+                locomotion.ValueRW.Speed = speed.ValueRO.RunSpeed;
             }
         }
     }

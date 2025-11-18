@@ -5,20 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/AttackTargetSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/AttackTargetSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/FleeSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/FleeSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/MoveToTargetSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/MoveToTargetSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/SneakSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/SneakSystem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Component/NPCs/MoveSpeeds.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Component/NPCs/MoveSpeeds.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/ChildBrainSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/ChildBrainSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/ChildBrainSystem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/ChildBrainSystem.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/FaithSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Elisha/FaithSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/FaithSystem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Elisha/FaithSystem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Authoring/ChildBrainAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/ChildBrainAuthoring.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Component/Move.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Component/Move.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/AttackTargetSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/AttackTargetSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/MoveToTargetSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/MoveToTargetSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/SneakSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/SneakSystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,8 +59,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Component/BearAttack.cs.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Component/ElishaFaith.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Component/EntityPrefabComponent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Component/Move.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Component/NPCs/ChildBrainComponents.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Component/NPCs/MoveSpeeds.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mono/CameraFollow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mono/MoveAvatarToCharacterController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mono/PlayerReferenceStorage.cs" root0="FORCE_HIGHLIGHTING" />
@@ -204,7 +199,7 @@
       <workItem from="1763397118645" duration="8540000" />
       <workItem from="1763405884961" duration="373000" />
       <workItem from="1763475398963" duration="605000" />
-      <workItem from="1763476076143" duration="1250000" />
+      <workItem from="1763476076143" duration="2788000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit.  Includes ECS libs, Bear and person models and animations. from packages">
       <option name="closed" value="true" />
@@ -534,7 +529,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763406245861</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Organized scripts.  Child should now move to the target.">
+      <option name="closed" value="true" />
+      <created>1763477501375</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1763477501375</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -561,7 +564,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Moved all the multiplied stuff into parents to hide them in the heirarchy" />
     <MESSAGE value="Renamed AnimationState component so it won't conflict with AnimationState.  Added NPC part to AnimationSystem, including NPCTag to keep it from running on the player.  Moved Idle-Walk and Walk-Run thresholds into AnimationState component." />
     <MESSAGE value="Added KillMainCameraWhenPlayersJoin script.  Does exactly what it says on the tin." />
     <MESSAGE value="Player bear is now roughly animated.  Made grass cover the level.  Remod some trees to make a field partway through the map.  Added Post Processing." />
@@ -586,7 +588,8 @@
     <MESSAGE value="Child now switches states based on distance and state of Elisha and the bears." />
     <MESSAGE value="Added a faith system to handle game overs." />
     <MESSAGE value="Minor Faith Balancing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor Faith Balancing" />
+    <MESSAGE value="Organized scripts.  Child should now move to the target." />
+    <option name="LAST_COMMIT_MESSAGE" value="Organized scripts.  Child should now move to the target." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

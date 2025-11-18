@@ -9,6 +9,9 @@ namespace Authoring
     {
         [SerializeField] private float detectionRadius = 10f;
         [SerializeField] private float attackRadius = 5f;
+        [SerializeField] private float walkSpeed = 1.5f;
+        [SerializeField] private float runSpeed = 3.5f;
+        
         
         public class ChildBrainBaker : Baker<ChildBrainAuthoring>
         {
@@ -24,6 +27,11 @@ namespace Authoring
                 {
                     DetectionRadius = authoring.detectionRadius,
                     AttackRadius = authoring.attackRadius
+                });
+                AddComponent(entity, new MoveSpeeds
+                {
+                    WalkSpeed = authoring.walkSpeed,
+                    RunSpeed = authoring.runSpeed
                 });
                 
                 SetComponentEnabled<AttackFlag>(entity, false);
