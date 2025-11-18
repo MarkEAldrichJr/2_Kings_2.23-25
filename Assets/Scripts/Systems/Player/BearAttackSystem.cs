@@ -1,4 +1,5 @@
 ﻿using Component;
+using Component.NPCs;
 using Imported.Samples.Character_Controller._1._3._12.Standard_Characters.ThirdPerson.Scripts;
 using Unity.Burst;
 using Unity.Collections;
@@ -6,7 +7,7 @@ using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
 
-namespace Systems
+namespace Systems.Player
 {
     [UpdateAfter(typeof(Animations.AnimationStateDiscoverySystem))]
     public partial struct BearAttackSystem : ISystem
@@ -58,7 +59,7 @@ namespace Systems
             }.ScheduleParallel(state.Dependency);
             
             scheduleParallel.Complete();
-            state.EntityManager.DestroyEntity(killList.AsArray());
+            state.EntityManager.AddComponent<KillTag>(killList.AsArray());
             
             attacks.Dispose();
             transforms.Dispose();

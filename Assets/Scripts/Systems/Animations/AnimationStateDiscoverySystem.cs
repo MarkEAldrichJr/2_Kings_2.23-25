@@ -1,5 +1,8 @@
-﻿using Component;
+﻿using Authoring;
+using Component;
+using Component.NPCs;
 using Imported.Samples.Character_Controller._1._3._12.Standard_Characters.ThirdPerson.Scripts;
+using ProjectDawn.Navigation;
 using Unity.Burst;
 using Unity.CharacterController;
 using Unity.Collections;
@@ -8,7 +11,7 @@ using Unity.Mathematics;
 
 namespace Systems.Animations
 {
-    [UpdateBefore(typeof(BearAttackSystem))]
+    [UpdateBefore(typeof(Player.BearAttackSystem))]
     public partial struct AnimationStateDiscoverySystem : ISystem
     {
         [BurstCompile]
@@ -27,7 +30,8 @@ namespace Systems.Animations
         public void OnUpdate(ref SystemState state)
         {
             DiscoverPlayerAnimationState(ref state);
-            DiscoverNpcAnimationState(ref state);
+            DiscoverElishaAnimationState(ref state);
+            DiscoverChildAnimationState(ref state);
         }
 
         [BurstCompile]
@@ -70,13 +74,77 @@ namespace Systems.Animations
         }
         
         [BurstCompile]
-        private void DiscoverNpcAnimationState(ref SystemState state)
+        private void DiscoverElishaAnimationState(ref SystemState state)
+        {
+            foreach (var (animState, elishaFaith, body, locomotion) in SystemAPI
+                         .Query<RefRW<AnimationStateComp>, RefRO<ElishaFaith>, RefRW<AgentBody>, RefRO<AgentLocomotion>>()
+                         .WithAll<NpcTag, FollowTrail>())
+            {
+                var currentState = animState.ValueRO.Value;
+                var newState = currentState;
+
+                if (elishaFaith.ValueRO.NumChildren > 0)
+                {
+                    body.ValueRW.IsStopped = true;
+                    newState = AnimationStateEnum.Fear;
+                }
+                else
+                {
+                    if (locomotion.ValueRO.Speed > 0.1f)
+                        newState = AnimationStateEnum.Walk;
+                    else
+                        newState = AnimationStateEnum.Idle;
+                }
+
+                if (newState != currentState)
+                {
+                    animState.ValueRW.Value = newState;
+                    animState.ValueRW.HasChangedThisFrame = true;
+                }
+            }
+        }
+
+        [BurstCompile]
+        private void DiscoverChildAnimationState(ref SystemState state)
         {
             foreach (var animState in SystemAPI
                          .Query<RefRW<AnimationStateComp>>()
-                         .WithAll<NpcTag>())
+                         .WithAll<FleeFlag>())
             {
-                var currentState = animState.ValueRO.Value;
+                if (animState.ValueRO.Value == AnimationStateEnum.Fear) continue;
+
+                animState.ValueRW.Value = AnimationStateEnum.Fear;
+                animState.ValueRW.HasChangedThisFrame = true;
+            }
+            
+            foreach (var animState in SystemAPI
+                         .Query<RefRW<AnimationStateComp>>()
+                         .WithAll<MoveToTargetFlag>())
+            {
+                if (animState.ValueRO.Value == AnimationStateEnum.Run) continue;
+
+                animState.ValueRW.Value = AnimationStateEnum.Run;
+                animState.ValueRW.HasChangedThisFrame = true;
+            }
+            
+            foreach (var animState in SystemAPI
+                         .Query<RefRW<AnimationStateComp>>()
+                         .WithAll<SneakFlag>())
+            {
+                if (animState.ValueRO.Value == AnimationStateEnum.Walk) continue;
+
+                animState.ValueRW.Value = AnimationStateEnum.Walk;
+                animState.ValueRW.HasChangedThisFrame = true;
+            }
+            
+            foreach (var animState in SystemAPI
+                         .Query<RefRW<AnimationStateComp>>()
+                         .WithAll<AttackFlag>())
+            {
+                if (animState.ValueRO.Value == AnimationStateEnum.Attack) continue;
+
+                animState.ValueRW.Value = AnimationStateEnum.Attack;
+                animState.ValueRW.HasChangedThisFrame = true;
             }
         }
     }

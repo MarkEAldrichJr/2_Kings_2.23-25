@@ -1,4 +1,5 @@
-﻿using Unity.Entities;
+﻿using Mono;
+using Unity.Entities;
 using UnityEngine;
 
 namespace Component
@@ -6,6 +7,6 @@ namespace Component
     public struct AnimatorRefComponent : IComponentData
     {
         public UnityObjectRef<Transform> TransGo;
-        public UnityObjectRef<Animator>  AnimatorGo;
+        public UnityObjectRef<AnimatorController>  AnimatorGo;
     }
 }

@@ -9,13 +9,11 @@ namespace Mono
         [SerializeField] private Animator animator;
         [SerializeField] private Transform trans;
 
-        private static readonly int WalkForward = Animator.StringToHash("Walk Forward");
-        private static readonly int Idle = Animator.StringToHash("Combat Idle");
-        private static readonly int RunForward = Animator.StringToHash("Run Forward");
+        private static readonly int Walk = Animator.StringToHash("Walk");
+        private static readonly int Idle = Animator.StringToHash("Idle");
+        private static readonly int Run = Animator.StringToHash("Run");
         private static readonly int Jump = Animator.StringToHash("Jump");
-        private static readonly int Attack1 = Animator.StringToHash("Attack1");
-
-        public Transform Transform => trans;
+        private static readonly int Attack = Animator.StringToHash("Attack");
 
         private void Awake()
         {
@@ -29,17 +27,17 @@ namespace Mono
             {
                 case AnimationStateEnum.Idle:
                     animator.SetBool(Idle, true);
-                    animator.SetBool(RunForward, false);
-                    animator.SetBool(WalkForward, false);
+                    animator.SetBool(Run, false);
+                    animator.SetBool(Walk, false);
                     break;
                 case AnimationStateEnum.Walk:
-                    animator.SetBool(WalkForward, true);
+                    animator.SetBool(Walk, true);
                     animator.SetBool(Idle, false);
-                    animator.SetBool(RunForward, false);
+                    animator.SetBool(Run, false);
                     break;
                 case AnimationStateEnum.Run:
-                    animator.SetBool(RunForward, true);
-                    animator.SetBool(WalkForward, false);
+                    animator.SetBool(Run, true);
+                    animator.SetBool(Walk, false);
                     animator.SetBool(Idle, false);
                     break;
                 case AnimationStateEnum.Jump:
@@ -49,7 +47,7 @@ namespace Mono
                     //
                     break;
                 case AnimationStateEnum.Attack:
-                    animator.SetTrigger(Attack1);
+                    animator.SetTrigger(Attack);
                     break;
                 case AnimationStateEnum.Fear:
                     //

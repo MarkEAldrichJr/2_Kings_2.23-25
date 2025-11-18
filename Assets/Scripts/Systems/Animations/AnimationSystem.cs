@@ -2,31 +2,23 @@
 using Mono;
 using Unity.Entities;
 
-namespace Systems
+namespace Systems.Animations
 {
     public partial class AnimationSystem : SystemBase
     {
-        private EntityManager _entityManager;
-        
         protected override void OnCreate()
         {
-            _entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
         }
 
         protected override void OnUpdate()
         {
-            SetAnimationStateOnGOs();
-        }
-
-        private void SetAnimationStateOnGOs()
-        {
-            foreach (var (animationState, e) in SystemAPI
-                         .Query<RefRW<AnimationStateComp>>()
-                         .WithEntityAccess())
-            {
+            foreach (var (animationState, animRef) in SystemAPI
+                         .Query<RefRW<AnimationStateComp>, RefRO<AnimatorRefComponent>>())
+            { 
                 if (!animationState.ValueRO.HasChangedThisFrame) continue;
-                
-                var animator = _entityManager.GetComponentObject<AnimatorController>(e);
+
+                var animator = animRef.ValueRO.AnimatorGo.Value;
+                //var animator = animPrefab.ValueRO.Prefab.Value.GetComponent<AnimatorController>();
                 animator.ChangeAnimation(animationState.ValueRO.Value);
 
                 animationState.ValueRW.HasChangedThisFrame = false;

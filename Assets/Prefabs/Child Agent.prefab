@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 1379755194660631363}
   - component: {fileID: 6480388997867850012}
   - component: {fileID: 4385042238301324637}
-  - component: {fileID: 7310422012275615757}
   - component: {fileID: 1564830322059147557}
-  - component: {fileID: 7178983366747648303}
   - component: {fileID: -2129127308875943261}
+  - component: {fileID: 7178983366747648303}
+  - component: {fileID: 7310422012275615757}
   m_Layer: 0
   m_Name: Child Agent
   m_TagString: Untagged
@@ -70,18 +70,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: ProjectDawn.Navigation.Hybrid::ProjectDawn.Navigation.Hybrid.AgentCylinderShapeAuthoring
   Radius: 0.5
   Height: 2
---- !u!114 &7310422012275615757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2999348020274293141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7dc810a0c75419aa6672e571882bb40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Authoring.DeathByBearAuthoring
 --- !u!114 &1564830322059147557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,19 +93,6 @@ MonoBehaviour:
     x: 10
     y: 10
     z: 10
---- !u!114 &7178983366747648303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2999348020274293141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2098f248192ce13408002bc6c9751146, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Authoring.AnimationPrefabAuthoring
-  prefab: {fileID: 7252459093676922425, guid: b6ea0ef296f4f464fa2e99f68211d57f, type: 3}
 --- !u!114 &-2129127308875943261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,3 +106,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   detectionRadius: 5
+  attackRadius: 5
+  walkSpeed: 1.5
+  runSpeed: 3.5
+--- !u!114 &7178983366747648303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2999348020274293141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2098f248192ce13408002bc6c9751146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Authoring.AnimationPrefabAuthoring
+  prefab: {fileID: 7252459093676922425, guid: b6ea0ef296f4f464fa2e99f68211d57f, type: 3}
+--- !u!114 &7310422012275615757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2999348020274293141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7dc810a0c75419aa6672e571882bb40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Authoring.DeathByBearAuthoring

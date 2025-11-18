@@ -1,5 +1,6 @@
 ﻿using Authoring;
 using Component;
+using Mono;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Transforms;
@@ -36,7 +37,7 @@ namespace Systems.Animations
                 
                 _entityManager.AddComponentData(entities[i], new AnimatorRefComponent
                 {
-                    AnimatorGo = newBody.GetComponent<Animator>(),
+                    AnimatorGo = newBody.GetComponent<AnimatorController>(),
                     TransGo = newBody.transform
                 });
             }

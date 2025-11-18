@@ -1,4 +1,5 @@
-﻿using Component.NPCs;
+﻿using Component;
+using Component.NPCs;
 using ProjectDawn.Navigation;
 using Unity.Burst;
 using Unity.Collections;
@@ -20,7 +21,7 @@ namespace Systems.Behavior
             _random = Random.CreateFromIndex((uint)System.DateTime.Now.Millisecond);
             
             var builder = new EntityQueryBuilder(Allocator.Temp)
-                .WithAll<FleeFlag, LocalTransform, AgentBody>();
+                .WithAll<FleeFlag, LocalTransform, AgentBody, DeathByBearTag>();
             state.RequireForUpdate(state.GetEntityQuery(builder));
         }
 
@@ -29,7 +30,7 @@ namespace Systems.Behavior
         {
             foreach (var (transform, body) in SystemAPI
                          .Query<RefRO<LocalTransform>, RefRW<AgentBody>>()
-                         .WithAll<FleeFlag>())
+                         .WithAll<FleeFlag, DeathByBearTag>())
             {
                 var dist = math.distancesq(transform.ValueRO.Position, body.ValueRO.Destination);
                 if (dist > 0.1f) continue;
@@ -77,7 +78,7 @@ namespace Systems.Behavior
         {
             _random = Random.CreateFromIndex((uint)System.DateTime.Now.Millisecond - 7u);
             var builder = new EntityQueryBuilder(Allocator.Temp)
-                .WithAll<FleeFlag, StartFleeFlag, LocalTransform, AgentBody>();
+                .WithAll<StartFleeFlag, LocalTransform, AgentBody, DeathByBearTag>();
             state.RequireForUpdate(state.GetEntityQuery(builder));
         }
 
@@ -86,7 +87,7 @@ namespace Systems.Behavior
         {
             foreach (var (transform, body, entity) in SystemAPI
                          .Query<RefRO<LocalTransform>, RefRW<AgentBody>>()
-                         .WithAll<FleeFlag, StartFleeFlag>().WithEntityAccess())
+                         .WithAll<StartFleeFlag, DeathByBearTag>().WithEntityAccess())
             {
                 state.EntityManager.SetComponentEnabled<StartFleeFlag>(entity, false);
 
