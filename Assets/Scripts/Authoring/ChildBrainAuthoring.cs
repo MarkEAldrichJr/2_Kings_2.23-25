@@ -1,4 +1,3 @@
-using Component;
 using Component.NPCs;
 using Unity.Entities;
 using UnityEngine;
@@ -12,7 +11,6 @@ namespace Authoring
         [SerializeField] private float walkSpeed = 1.5f;
         [SerializeField] private float runSpeed = 3.5f;
         
-        
         public class ChildBrainBaker : Baker<ChildBrainAuthoring>
         {
             public override void Bake(ChildBrainAuthoring authoring)
@@ -22,6 +20,7 @@ namespace Authoring
                 AddComponent<MoveToTargetFlag>(entity);
                 AddComponent<AttackFlag>(entity);
                 AddComponent<FleeFlag>(entity);
+                AddComponent<StartFleeFlag>(entity);
                 AddComponent<SneakFlag>(entity);
                 AddComponent(entity, new Detection
                 {
@@ -37,12 +36,8 @@ namespace Authoring
                 SetComponentEnabled<AttackFlag>(entity, false);
                 SetComponentEnabled<SneakFlag>(entity, false);
                 SetComponentEnabled<FleeFlag>(entity, false);
+                SetComponentEnabled<StartFleeFlag>(entity, false);
             }
         }
     }
 }
-
-//Run toward Elisha
-// When withing range, mock him
-//when bears nearby, run away
-//Extra: When bears nearby but prone, sneak

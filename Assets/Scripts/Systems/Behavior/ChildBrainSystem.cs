@@ -77,7 +77,7 @@ namespace Systems.Behavior
                         }
                         else
                         {
-                            state.EntityManager.SetComponentEnabled<FleeFlag>(entity, true);
+                            StartFleeing(ref state, entity);
                         }
                     }
                 }
@@ -116,7 +116,7 @@ namespace Systems.Behavior
                 }
                 if (!bearIsClose) continue;
                 
-                state.EntityManager.SetComponentEnabled<FleeFlag>(entity, true);
+                StartFleeing(ref state, entity);
                 EndAttack(ref state, entity, elishaEntity, elishaFaith);
             }
 
@@ -159,7 +159,7 @@ namespace Systems.Behavior
 
                 if (dangerIsClose)
                 {
-                    state.EntityManager.SetComponentEnabled<FleeFlag>(entity, true);
+                    StartFleeing(ref state, entity);
                     state.EntityManager.SetComponentEnabled<SneakFlag>(entity, false);
                     continue;
                 }
@@ -202,6 +202,12 @@ namespace Systems.Behavior
             state.EntityManager.SetComponentEnabled<AttackFlag>(child, false);
             faith.NumChildren--;
             state.EntityManager.SetComponentData(elisha, faith);
+        }
+
+        private static void StartFleeing(ref SystemState state, Entity child)
+        {
+            state.EntityManager.SetComponentEnabled<FleeFlag>(child, true);
+            state.EntityManager.SetComponentEnabled<StartFleeFlag>(child, true);
         }
     }
 }
