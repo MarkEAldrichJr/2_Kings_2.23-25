@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Authoring/ChildBrainAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/ChildBrainAuthoring.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Component/NPCs/ChildBrainComponents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Component/NPCs/ChildBrainComponents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/ChildBrainSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/ChildBrainSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/FleeSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/FleeSystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +29,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/194e93e2111c4fa4ad34611248904b5811a00/39/02317868/NavMesh.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/Common/Scripts/Editor/InputSystemWarning.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Imported/Samples/Unity Physics/1.3.14.meta" root0="FORCE_HIGHLIGHTING" />
@@ -195,7 +193,7 @@
       <workItem from="1763397118645" duration="8540000" />
       <workItem from="1763405884961" duration="373000" />
       <workItem from="1763475398963" duration="605000" />
-      <workItem from="1763476076143" duration="3941000" />
+      <workItem from="1763476076143" duration="7162000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit.  Includes ECS libs, Bear and person models and animations. from packages">
       <option name="closed" value="true" />
@@ -541,7 +539,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763479122568</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Added a StartFleeFlag so the child can get an initial flee location before the main system starts.">
+      <option name="closed" value="true" />
+      <created>1763480381504</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1763480381504</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,7 +574,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Added KillMainCameraWhenPlayersJoin script.  Does exactly what it says on the tin." />
     <MESSAGE value="Player bear is now roughly animated.  Made grass cover the level.  Remod some trees to make a field partway through the map.  Added Post Processing." />
     <MESSAGE value="Played with Post Processing some more.  Baked Navmesh.  Added Agents Navigation Package." />
     <MESSAGE value="Played with terrain colors so the end of the grass isn't so jarring" />
@@ -593,7 +598,8 @@
     <MESSAGE value="Minor Faith Balancing" />
     <MESSAGE value="Organized scripts.  Child should now move to the target." />
     <MESSAGE value="Added behavior to Attack, Sneak, and Flee" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added behavior to Attack, Sneak, and Flee" />
+    <MESSAGE value="Added a StartFleeFlag so the child can get an initial flee location before the main system starts." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a StartFleeFlag so the child can get an initial flee location before the main system starts." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
