@@ -1,9 +1,10 @@
 ﻿using Component;
+using Systems.Behavior;
 using Unity.Burst;
 using Unity.Entities;
 using Unity.Mathematics;
 
-namespace Systems
+namespace Systems.Elisha
 {
     [UpdateInGroup(typeof(SimulationSystemGroup))]
     [UpdateAfter(typeof(ChildBrainDeciderSystem))]

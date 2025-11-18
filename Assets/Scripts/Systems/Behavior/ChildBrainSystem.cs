@@ -6,8 +6,9 @@ using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
+using Systems.Elisha;
 
-namespace Systems
+namespace Systems.Behavior
 {
     /// <summary>
     /// Changes Child state based on distance from players and Elisha
@@ -187,7 +188,6 @@ namespace Systems
             bearAnimationState.Dispose();
         }
 
-        [BurstCompile]
         private static void StartAttack(ref SystemState state, Entity child,
             Entity elisha, ElishaFaith faith)
         {
@@ -196,7 +196,6 @@ namespace Systems
             state.EntityManager.SetComponentData(elisha, faith);
         }
 
-        [BurstCompile]
         private static void EndAttack(ref SystemState state, Entity child,
             Entity elisha, ElishaFaith faith)
         {
