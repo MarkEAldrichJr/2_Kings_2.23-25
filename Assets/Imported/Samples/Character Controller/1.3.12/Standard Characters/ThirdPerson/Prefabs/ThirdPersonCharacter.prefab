@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7542772330835976783}
   - component: {fileID: 2218204253234334118}
   - component: {fileID: -6726333977371824455}
+  - component: {fileID: -8467633787361224706}
   m_Layer: 0
   m_Name: ThirdPersonCharacter
   m_TagString: Untagged
@@ -282,6 +283,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c9bdbf74de7f6449c4a08462a6e703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Authoring.BearBaker
+--- !u!114 &-8467633787361224706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692896102597148395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2098f248192ce13408002bc6c9751146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Authoring.AnimationPrefabAuthoring
+  prefab: {fileID: 6072904459303825260, guid: 34f77b0ad1a4b0f47ab9799f87c9367c, type: 3}
 --- !u!1 &2861637503494133753
 GameObject:
   m_ObjectHideFlags: 0

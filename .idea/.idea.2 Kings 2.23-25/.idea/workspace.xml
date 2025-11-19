@@ -5,23 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/NpcTagAuthoring.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Component/NPCs/KillTag.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Component/NPCs/KillTag.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Imported/Blink/Art/Animals/Stylized/Bear/Bear_Prefabs/BearAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Blink/Art/Animals/Stylized/Bear/Bear_Prefabs/BearAnimator.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Child Agent.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Child Agent.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Child Animator Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Child Animator Variant.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Elisha Animator Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Elisha Animator Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/Blink/Art/Characters/Stylized/Demo_Characters/StylizedHumanAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Blink/Art/Characters/Stylized/Demo_Characters/StylizedHumanAnimator.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Prefabs/ThirdPersonCharacter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/ThirdPerson/Prefabs/ThirdPersonCharacter.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Child Agent.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Child Agent.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Child Animator Variant.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Child Animator Variant.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Elisha Animator Variant.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Elisha Animator Variant.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Elisha Walking Point.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Elisha Walking Point.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayerSpawn.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayerSpawn.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tree Spawner.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tree Spawner.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/tree_1 Variant.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/tree_1 Variant.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Component/AnimatorRefComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Component/AnimatorRefComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Component/NPCs/NpcTag.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Component/NPCs/NpcTag.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mono/AnimatorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mono/AnimatorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mono/MoveAvatarToCharacterController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mono/MoveAvatarToCharacterController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mono/PlayerCharacterControllerSpawn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mono/PlayerCharacterControllerSpawn.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mono/PlayerReferenceStorage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mono/PlayerReferenceStorage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Animations/AnimationStateDiscoverySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Animations/AnimationStateDiscoverySystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Animations/AnimationSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Animations/AnimationSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Animations/AnimatorSpawnSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Animations/AnimatorSpawnSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/FleeSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/FleeSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Player/BearAttackSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Player/BearAttackSystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,10 +60,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Imported/Samples/Unity Physics/1.3.14.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Imported/_TerrainAutoUpgrade.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Input/InputSystem_Actions.inputactions" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Child Agent.prefab" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Elisha Animator Variant.prefab.meta" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Player.prefab" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Prefabs/PlayerSpawn.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/AnimationPrefabAuthoring.cs.meta" root0="FORCE_HIGHLIGHTING" />
@@ -62,6 +68,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/DeathByBearAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/FaithAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/NpcTagAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/NpcTagAuthoring.cs.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/TerrainAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Component/AnimationStateComp.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Component/AnimationStateComp.cs.meta" root0="FORCE_HIGHLIGHTING" />
@@ -72,7 +79,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Component/NPCs/ChildBrainComponents.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Component/NPCs/MoveSpeeds.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mono/CameraFollow.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mono/MoveAvatarToCharacterController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mono/PlayerReferenceStorage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/README.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Animations.meta" root0="FORCE_HIGHLIGHTING" />
@@ -87,6 +93,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Settings/InputActionsPlayer.inputactions" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@f6e02210e263/Unity.Entities/EntityComponentStoreDebug.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@f6e02210e263/Unity.Entities/EntityManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@be6c4fd0abf5/InputSystem/Plugins/PlayerInput/PlayerInput.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@be6c4fd0abf5/InputSystem/Plugins/PlayerInput/PlayerInputEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@1e1527b3a17b/Runtime/Passes/AdditionalLightsShadowCasterPass.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Packages/com.projectdawn.navigation/ProjectDawn.Navigation/SpatialPartitioning/AABBTree.meta" root0="FORCE_HIGHLIGHTING" />
@@ -209,7 +216,8 @@
       <workItem from="1763397118645" duration="8540000" />
       <workItem from="1763405884961" duration="373000" />
       <workItem from="1763475398963" duration="605000" />
-      <workItem from="1763476076143" duration="15626000" />
+      <workItem from="1763476076143" duration="15892000" />
+      <workItem from="1763561253157" duration="5507000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit.  Includes ECS libs, Bear and person models and animations. from packages">
       <option name="closed" value="true" />
@@ -571,7 +579,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763483426652</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Got animations semifunctional.  AnimStates are set correctly, but the animators need to be readjusted.">
+      <option name="closed" value="true" />
+      <created>1763503287040</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1763503287040</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -598,7 +614,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Played with Post Processing some more.  Baked Navmesh.  Added Agents Navigation Package." />
     <MESSAGE value="Played with terrain colors so the end of the grass isn't so jarring" />
     <MESSAGE value="Added name hashes to animator controller" />
     <MESSAGE value="Changed the name of &quot;Singleton&quot; component to match what it actually does.  The player now jumps." />
@@ -623,7 +638,8 @@
     <MESSAGE value="Added behavior to Attack, Sneak, and Flee" />
     <MESSAGE value="Added a StartFleeFlag so the child can get an initial flee location before the main system starts." />
     <MESSAGE value="Children now flee randomly from the bear." />
-    <option name="LAST_COMMIT_MESSAGE" value="Children now flee randomly from the bear." />
+    <MESSAGE value="Got animations semifunctional.  AnimStates are set correctly, but the animators need to be readjusted." />
+    <option name="LAST_COMMIT_MESSAGE" value="Got animations semifunctional.  AnimStates are set correctly, but the animators need to be readjusted." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

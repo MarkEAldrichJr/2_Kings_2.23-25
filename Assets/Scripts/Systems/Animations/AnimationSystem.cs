@@ -6,10 +6,6 @@ namespace Systems.Animations
 {
     public partial class AnimationSystem : SystemBase
     {
-        protected override void OnCreate()
-        {
-        }
-
         protected override void OnUpdate()
         {
             foreach (var (animationState, animRef) in SystemAPI
@@ -17,8 +13,7 @@ namespace Systems.Animations
             { 
                 if (!animationState.ValueRO.HasChangedThisFrame) continue;
 
-                var animator = animRef.ValueRO.AnimatorGo.Value;
-                //var animator = animPrefab.ValueRO.Prefab.Value.GetComponent<AnimatorController>();
+                var animator = animRef.ValueRO.AnimatorGo.Value.GetComponent<AnimatorController>();
                 animator.ChangeAnimation(animationState.ValueRO.Value);
 
                 animationState.ValueRW.HasChangedThisFrame = false;

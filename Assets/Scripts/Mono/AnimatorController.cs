@@ -26,19 +26,16 @@ namespace Mono
             switch (state)
             {
                 case AnimationStateEnum.Idle:
+                    UnsetAll(animator);
                     animator.SetBool(Idle, true);
-                    animator.SetBool(Run, false);
-                    animator.SetBool(Walk, false);
                     break;
                 case AnimationStateEnum.Walk:
+                    UnsetAll(animator);
                     animator.SetBool(Walk, true);
-                    animator.SetBool(Idle, false);
-                    animator.SetBool(Run, false);
                     break;
                 case AnimationStateEnum.Run:
+                    UnsetAll(animator);
                     animator.SetBool(Run, true);
-                    animator.SetBool(Walk, false);
-                    animator.SetBool(Idle, false);
                     break;
                 case AnimationStateEnum.Jump:
                     animator.SetTrigger(Jump);
@@ -50,11 +47,20 @@ namespace Mono
                     animator.SetTrigger(Attack);
                     break;
                 case AnimationStateEnum.Fear:
-                    //
+                    UnsetAll(animator);
+                    animator.SetBool(Idle, true);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(state), state, null);
             }
+        }
+
+        private void UnsetAll(Animator anim)
+        {
+            anim.SetBool(Walk, false);
+            anim.SetBool(Idle, false);
+            anim.SetBool(Run, false);
+            anim.SetBool(Jump, false);
         }
     }
 }

@@ -1,6 +1,5 @@
 using Component;
 using Imported.Samples.Character_Controller._1._3._12.Standard_Characters.ThirdPerson.Scripts;
-using Imported.Samples.Character_Controller._1._3._12.Standard_Characters.ThirdPerson.Scripts.OrbitCamera;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Transforms;
@@ -54,15 +53,6 @@ namespace Mono
                 IdleWalkThreshold = idleWalkThreshold,
                 WalkRunThreshold = walkRunThreshold
             });
-            
-            if (_refStorage.GetPlayerAnimator)
-            {
-                _entityManager.AddComponentObject(_refStorage.Character,
-                    _refStorage.GetPlayerAnimator);
-            }
-
-            _refStorage.CameraTarget = 
-                _entityManager.GetComponentData<CameraTarget>(_refStorage.Character).TargetEntity;
         }
 
         private void MatchCharacterToAnimatorSpawn()

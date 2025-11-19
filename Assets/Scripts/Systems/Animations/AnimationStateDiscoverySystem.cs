@@ -18,12 +18,8 @@ namespace Systems.Animations
         public void OnCreate(ref SystemState state)
         {
             var playerBuilder = new EntityQueryBuilder(Allocator.Temp)
-                .WithAll<AnimationStateComp, KinematicCharacterBody>();
-            state.RequireForUpdate(state.GetEntityQuery(playerBuilder));
-
-            var npcBuilder = new EntityQueryBuilder(Allocator.Temp)
                 .WithAll<AnimationStateComp>();
-            state.RequireForUpdate(state.GetEntityQuery(npcBuilder));
+            state.RequireForUpdate(state.GetEntityQuery(playerBuilder));
         }
 
         [BurstCompile]
@@ -68,6 +64,7 @@ namespace Systems.Animations
                     animationState.ValueRW.Value = AnimationStateEnum.Run;
                 }
                 
+                
                 animationState.ValueRW.HasChangedThisFrame = 
                     animationState.ValueRO.Value != currentState;
             }
@@ -91,7 +88,10 @@ namespace Systems.Animations
                 else
                 {
                     if (locomotion.ValueRO.Speed > 0.1f)
+                    {
                         newState = AnimationStateEnum.Walk;
+                        body.ValueRW.IsStopped = false;
+                    }
                     else
                         newState = AnimationStateEnum.Idle;
                 }
