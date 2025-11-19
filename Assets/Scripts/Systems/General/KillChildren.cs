@@ -24,17 +24,12 @@ namespace Systems.General
         {
             var killedGameObjects = new List<GameObject>();
             
-            foreach (var (animatorRef, animationState) in SystemAPI
-                         .Query<RefRO<AnimatorRefComponent>, RefRO<AnimationStateComp>>()
+            foreach (var animatorRef in SystemAPI
+                         .Query<RefRO<AnimatorRefComponent>>()
                          .WithAll<KillTag>())
             {
                 var animator = animatorRef.ValueRO.AnimatorGo.Value.gameObject;
                 killedGameObjects.Add(animator);
-
-                if (animationState.ValueRO.Value == AnimationStateEnum.Attack)
-                {
-                    //remove attacker from 
-                }
             }
 
             for (var i = 0; i < killedGameObjects.Count; i++)

@@ -64,7 +64,6 @@ namespace Systems.Animations
                     animationState.ValueRW.Value = AnimationStateEnum.Run;
                 }
                 
-                
                 animationState.ValueRW.HasChangedThisFrame = 
                     animationState.ValueRO.Value != currentState;
             }
@@ -100,9 +99,9 @@ namespace Systems.Animations
                          .Query<RefRW<AnimationStateComp>>()
                          .WithAll<FleeFlag>())
             {
-                if (animState.ValueRO.Value == AnimationStateEnum.Fear) continue;
+                if (animState.ValueRO.Value == AnimationStateEnum.Run) continue;
 
-                animState.ValueRW.Value = AnimationStateEnum.Fear;
+                animState.ValueRW.Value = AnimationStateEnum.Run;
                 animState.ValueRW.HasChangedThisFrame = true;
             }
             

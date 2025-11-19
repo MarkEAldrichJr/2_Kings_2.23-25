@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/General/KillChildren.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/General/KillChildren.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/ChildSpawner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/ChildSpawner.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/Blink/Art/Characters/Stylized/Demo_Characters/StylizedHumanAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Blink/Art/Characters/Stylized/Demo_Characters/StylizedHumanAnimator.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Animations/AnimationStateDiscoverySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Animations/AnimationStateDiscoverySystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/General/KillChildren.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/General/KillChildren.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +69,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/FleeSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/MoveToTargetSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/SneakSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/ChildSpawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Elisha/FaithSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Elisha/FollowTrailSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/General/KillChildren.cs" root0="FORCE_HIGHLIGHTING" />
@@ -197,15 +201,7 @@
       <workItem from="1763405884961" duration="373000" />
       <workItem from="1763475398963" duration="605000" />
       <workItem from="1763476076143" duration="15892000" />
-      <workItem from="1763561253157" duration="10823000" />
-    </task>
-    <task id="LOCAL-00001" summary="Initial Commit.  Includes ECS libs, Bear and person models and animations. from packages">
-      <option name="closed" value="true" />
-      <created>1761588054124</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1761588054124</updated>
+      <workItem from="1763561253157" duration="18498000" />
     </task>
     <task id="LOCAL-00002" summary="Got terrian to work with Entities.  Simple ball demo.">
       <option name="closed" value="true" />
@@ -591,7 +587,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763572384436</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Children now die when the bears maul them.">
+      <option name="closed" value="true" />
+      <created>1763579731674</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1763579731674</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -618,7 +622,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Smoothed out Jump, Attack, Move animations.  Minor delay when player stops moving?" />
     <MESSAGE value="Created BearAttack setup that deletes evil children when they walk into aoe." />
     <MESSAGE value="Fixed Memory Leak in BearAttackSystem" />
     <MESSAGE value="Attack system now works.  Needs tweaking so deaths match attack animation." />
@@ -643,7 +646,8 @@
     <MESSAGE value="Moved the bear animator prefab out of Player.  Player bear now moves and animates off same systems as NPCs." />
     <MESSAGE value="Fixed a bug where Elisha wouldn't animate or move." />
     <MESSAGE value="Children Stunning Elisha no longer breaks his pathing." />
-    <option name="LAST_COMMIT_MESSAGE" value="Children Stunning Elisha no longer breaks his pathing." />
+    <MESSAGE value="Children now die when the bears maul them." />
+    <option name="LAST_COMMIT_MESSAGE" value="Children now die when the bears maul them." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
