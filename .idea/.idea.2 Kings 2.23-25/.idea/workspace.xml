@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/General/KillChildren.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/General/KillChildren.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Animations/AnimationStateDiscoverySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Animations/AnimationStateDiscoverySystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,6 +68,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/SneakSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Elisha/FaithSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Elisha/FollowTrailSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/General/KillChildren.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Settings/DefaultVolumeProfile.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Settings/InputActionsPlayer.inputactions" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@f6e02210e263/Unity.Entities/EntityComponentStoreDebug.cs" root0="SKIP_HIGHLIGHTING" />
@@ -193,7 +197,7 @@
       <workItem from="1763405884961" duration="373000" />
       <workItem from="1763475398963" duration="605000" />
       <workItem from="1763476076143" duration="15892000" />
-      <workItem from="1763561253157" duration="8377000" />
+      <workItem from="1763561253157" duration="10823000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit.  Includes ECS libs, Bear and person models and animations. from packages">
       <option name="closed" value="true" />
@@ -579,7 +583,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763572031136</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Children Stunning Elisha no longer breaks his pathing.">
+      <option name="closed" value="true" />
+      <created>1763572384436</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1763572384436</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -606,7 +618,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Changed the name of &quot;Singleton&quot; component to match what it actually does.  The player now jumps." />
     <MESSAGE value="Smoothed out Jump, Attack, Move animations.  Minor delay when player stops moving?" />
     <MESSAGE value="Created BearAttack setup that deletes evil children when they walk into aoe." />
     <MESSAGE value="Fixed Memory Leak in BearAttackSystem" />
@@ -631,7 +642,8 @@
     <MESSAGE value="Got animations semifunctional.  AnimStates are set correctly, but the animators need to be readjusted." />
     <MESSAGE value="Moved the bear animator prefab out of Player.  Player bear now moves and animates off same systems as NPCs." />
     <MESSAGE value="Fixed a bug where Elisha wouldn't animate or move." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed a bug where Elisha wouldn't animate or move." />
+    <MESSAGE value="Children Stunning Elisha no longer breaks his pathing." />
+    <option name="LAST_COMMIT_MESSAGE" value="Children Stunning Elisha no longer breaks his pathing." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
