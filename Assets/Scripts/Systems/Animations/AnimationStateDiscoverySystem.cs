@@ -75,7 +75,7 @@ namespace Systems.Animations
         {
             foreach (var (animState, elishaFaith, body) in SystemAPI
                          .Query<RefRW<AnimationStateComp>, RefRO<ElishaFaith>, RefRW<AgentBody>>()
-                         .WithAll<NpcTag, FollowTrail>())
+                         .WithAll<NpcTag, FollowTrail>().WithNone<RequirePlayerTag>())
             {
                 var currentState = animState.ValueRO.Value;
                 
@@ -86,13 +86,8 @@ namespace Systems.Animations
                 }
                 else
                 {
-                    if (math.lengthsq(body.ValueRO.Velocity) > 0.1f)
-                    {
-                        animState.ValueRW.Value = AnimationStateEnum.Walk;
-                        body.ValueRW.IsStopped = false;
-                    }
-                    else
-                        animState.ValueRW.Value = AnimationStateEnum.Idle;
+                    body.ValueRW.IsStopped = false;
+                    animState.ValueRW.Value = AnimationStateEnum.Walk;
                 }
                 animState.ValueRW.HasChangedThisFrame = animState.ValueRO.Value != currentState;
             }
