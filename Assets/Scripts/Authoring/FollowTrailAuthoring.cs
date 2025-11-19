@@ -19,6 +19,7 @@ namespace Authoring
                 });
                 AddComponent<InitializeTag>(entity);
                 AddComponent<RequirePlayerTag>(entity);
+                AddComponent<FollowTrailStartTag>(entity);
             }
         }
     }
@@ -27,4 +28,6 @@ namespace Authoring
     {
         public Entity Target;
     }
+
+    public struct FollowTrailStartTag : IComponentData { }
 }

@@ -73,34 +73,28 @@ namespace Systems.Animations
         [BurstCompile]
         private void DiscoverElishaAnimationState(ref SystemState state)
         {
-            foreach (var (animState, elishaFaith, body, locomotion) in SystemAPI
-                         .Query<RefRW<AnimationStateComp>, RefRO<ElishaFaith>, RefRW<AgentBody>, RefRO<AgentLocomotion>>()
+            foreach (var (animState, elishaFaith, body) in SystemAPI
+                         .Query<RefRW<AnimationStateComp>, RefRO<ElishaFaith>, RefRW<AgentBody>>()
                          .WithAll<NpcTag, FollowTrail>())
             {
                 var currentState = animState.ValueRO.Value;
-                var newState = currentState;
-
+                
                 if (elishaFaith.ValueRO.NumChildren > 0)
                 {
                     body.ValueRW.IsStopped = true;
-                    newState = AnimationStateEnum.Fear;
+                    animState.ValueRW.Value = AnimationStateEnum.Fear;
                 }
                 else
                 {
-                    if (locomotion.ValueRO.Speed > 0.1f)
+                    if (math.lengthsq(body.ValueRO.Velocity) > 0.1f)
                     {
-                        newState = AnimationStateEnum.Walk;
+                        animState.ValueRW.Value = AnimationStateEnum.Walk;
                         body.ValueRW.IsStopped = false;
                     }
                     else
-                        newState = AnimationStateEnum.Idle;
+                        animState.ValueRW.Value = AnimationStateEnum.Idle;
                 }
-
-                if (newState != currentState)
-                {
-                    animState.ValueRW.Value = newState;
-                    animState.ValueRW.HasChangedThisFrame = true;
-                }
+                animState.ValueRW.HasChangedThisFrame = animState.ValueRO.Value != currentState;
             }
         }
 

@@ -13,7 +13,7 @@ namespace Systems.Animations
             { 
                 if (!animationState.ValueRO.HasChangedThisFrame) continue;
 
-                var animator = animRef.ValueRO.AnimatorGo.Value.GetComponent<AnimatorController>();
+                var animator = animRef.ValueRO.AnimatorGo.Value;
                 animator.ChangeAnimation(animationState.ValueRO.Value);
 
                 animationState.ValueRW.HasChangedThisFrame = false;

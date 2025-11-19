@@ -55,7 +55,7 @@ namespace Mono
             }
         }
 
-        private void UnsetAll(Animator anim)
+        private static void UnsetAll(Animator anim)
         {
             anim.SetBool(Walk, false);
             anim.SetBool(Idle, false);

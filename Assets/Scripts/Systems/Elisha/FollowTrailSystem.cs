@@ -6,7 +6,7 @@ using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
 
-namespace Systems
+namespace Systems.Elisha
 {
     [UpdateInGroup(typeof(SimulationSystemGroup))]
     public partial struct FollowTrailSystem : ISystem
@@ -18,7 +18,8 @@ namespace Systems
         public void OnCreate(ref SystemState state)
         {
             var followBuilder = new EntityQueryBuilder(Allocator.Temp)
-                .WithAll<FollowTrail, LocalTransform>().WithNone<RequirePlayerTag>();
+                .WithAll<FollowTrail, LocalTransform>()
+                .WithNone<RequirePlayerTag, FollowTrailStartTag>();
             _followTrailQuery = state.GetEntityQuery(followBuilder);
 
             var walkPointBuilder = new EntityQueryBuilder(Allocator.Temp)
