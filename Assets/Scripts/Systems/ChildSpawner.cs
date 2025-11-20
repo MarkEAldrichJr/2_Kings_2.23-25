@@ -53,7 +53,9 @@ namespace Systems
                     for (var i = 0; i < 30; i++)
                     {
                         var randomDir = _random.NextFloat2Direction();
-                        var randomDist = _random.NextFloat(20f, 300f);
+                        var randomDist = _random.NextFloat(
+                            settings.ValueRO.minMaxSpawnDistance.x,
+                            settings.ValueRO.minMaxSpawnDistance.y);
                         var randomOffset = new float3(randomDir.x * randomDist, 0f,
                             randomDir.y * randomDist);
                         var targetPos = elishaPos + randomOffset;

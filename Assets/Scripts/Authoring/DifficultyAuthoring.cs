@@ -1,4 +1,5 @@
 using Unity.Entities;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace Authoring
@@ -7,6 +8,9 @@ namespace Authoring
     {
         [SerializeField] private float initialSpawnTime;
         [SerializeField] private float spawnTimeDropPerSpike;
+        [SerializeField] private float minSpawnDistance;
+        [SerializeField] private float maxSpawnDistance;
+        
         [SerializeField] private float initialRunSpeed;
         [SerializeField] private float runSpeedRisePerSpike;
         [SerializeField] private float initialDamageRate;
@@ -27,7 +31,8 @@ namespace Authoring
                     RunSpeedRateChange = authoring.runSpeedRisePerSpike,
                     DamageRateMin = authoring.initialDamageRate,
                     DamageRateRateChange = authoring.damageRateRisePerSpike,
-                    DifficultySpikeRate = authoring.difficultySpikeRate
+                    DifficultySpikeRate = authoring.difficultySpikeRate,
+                    minMaxSpawnDistance = new float2(authoring.minSpawnDistance, authoring.minSpawnDistance)
                 });
                 
                 AddComponent(entity, new DifficultyCurrent
@@ -50,6 +55,7 @@ namespace Authoring
         public float DamageRateMin;
         public float DamageRateRateChange;
         public float DifficultySpikeRate;
+        public float2 minMaxSpawnDistance;
     }
 
     public struct DifficultyCurrent : IComponentData
