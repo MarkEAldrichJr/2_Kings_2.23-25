@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mono/UpdateGlobalUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mono/UpdateGlobalUI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,15 +201,7 @@
       <workItem from="1763476076143" duration="15892000" />
       <workItem from="1763561253157" duration="18556000" />
       <workItem from="1763646408485" duration="5318000" />
-      <workItem from="1763652747988" duration="1176000" />
-    </task>
-    <task id="LOCAL-00005" summary="Added terrain.  Not sure if trees work yet, might need a separate system to spawn them.  Added Bear and Baldy.  Starting animation matching for them.  Added Input system.  Working on Co-op">
-      <option name="closed" value="true" />
-      <created>1761691989298</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1761691989298</updated>
+      <workItem from="1763652747988" duration="1965000" />
     </task>
     <task id="LOCAL-00006" summary="Added ECS Character Controller.  Starting to piece together Input System.  Pressing buttons now spawns new players with controllers.">
       <option name="closed" value="true" />
@@ -596,7 +587,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763651386571</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Faith slider changes color as Elisha loses faith">
+      <option name="closed" value="true" />
+      <created>1763653954140</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1763653954140</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -623,7 +622,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Bear attack now works properly, and kills DeathByBearTag holders midway through attack animations." />
     <MESSAGE value="Added an Entity that follows the player to test Agents Navigation.  Added NavMeshObstacles to trees so they stop generating Navmeshes inside themselves." />
     <MESSAGE value="Entities with AnimationPrefabAuthoring can now spawn their own animator GO!" />
     <MESSAGE value="Spawned Animator now follows correct Entity.  Split off segments of Animator Ref Component and systems." />
@@ -648,7 +646,8 @@
     <MESSAGE value="Children now spawn at regular intervals, and hunt down Elisha." />
     <MESSAGE value="Removed trees the player will never see. Removed Mobile URP assets and unused Physics materials." />
     <MESSAGE value="Replaced magic numbers in child spawn with difficulty settings component.  Added UI element to show faith levels." />
-    <option name="LAST_COMMIT_MESSAGE" value="Replaced magic numbers in child spawn with difficulty settings component.  Added UI element to show faith levels." />
+    <MESSAGE value="Faith slider changes color as Elisha loses faith" />
+    <option name="LAST_COMMIT_MESSAGE" value="Faith slider changes color as Elisha loses faith" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
