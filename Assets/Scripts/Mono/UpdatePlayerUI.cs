@@ -47,8 +47,7 @@ namespace Mono
                 elishaFace.gameObject.SetActive(false);
                 return;
             }
-            else
-                elishaFace.gameObject.SetActive(true);
+            elishaFace.gameObject.SetActive(true);
 
             var canvasSize = _playerUICanvasRect.sizeDelta;
 
@@ -56,12 +55,6 @@ namespace Mono
                 (elishaViewPoint.x - 0.5f) * canvasSize.x,
                 (elishaViewPoint.y - 0.5f) * canvasSize.y
             );
-
-            /*RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                _playerUICanvasRect, 
-                elishaViewPoint, 
-                playerCamera, 
-                out var localPoint);*/
 
             elishaFace.rectTransform.anchoredPosition = localPos;
         }
