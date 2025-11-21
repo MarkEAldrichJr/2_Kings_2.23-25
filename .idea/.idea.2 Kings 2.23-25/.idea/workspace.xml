@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="">
+    <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="Players now have an icon leading them to Elisha.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mono/UpdatePlayerUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mono/UpdatePlayerUI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +33,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/194e93e2111c4fa4ad34611248904b5811a00/39/02317868/NavMesh.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3789ee403a53437cbb6b5d9ab6311f51573620/0b/dc4c0f0c/Math.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7b8172fcdd864e17924794813da717121f5e00/b2/d7f77e13/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://U:/Unity Projects/2 Kings 2.23-25/Assets/Imported/Blink/Art/Animals/Stylized/Bear/Bear_Prefabs/BearAnimator.controller" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Imported/Blink/Art/Animals/Stylized/Bear/Bear_Prefabs/BearAnimator.controller" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Imported/Samples/Character Controller/1.3.12/Standard Characters/Common/Scripts/Editor/InputSystemWarning.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Imported/Samples/Unity Physics/1.3.14.meta" root0="FORCE_HIGHLIGHTING" />
@@ -73,6 +75,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/General/KillChildren.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Settings/DefaultVolumeProfile.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Settings/InputActionsPlayer.inputactions" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scenes/01-  Single Line TextMesh Pro.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@f6e02210e263/Unity.Entities/EntityComponentStoreDebug.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@f6e02210e263/Unity.Entities/EntityManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@be6c4fd0abf5/InputSystem/Plugins/PlayerInput/PlayerInput.cs" root0="SKIP_HIGHLIGHTING" />
@@ -202,14 +205,7 @@
       <workItem from="1763561253157" duration="18556000" />
       <workItem from="1763646408485" duration="5318000" />
       <workItem from="1763652747988" duration="1965000" />
-    </task>
-    <task id="LOCAL-00006" summary="Added ECS Character Controller.  Starting to piece together Input System.  Pressing buttons now spawns new players with controllers.">
-      <option name="closed" value="true" />
-      <created>1761772656813</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1761772656813</updated>
+      <workItem from="1763761620053" duration="3018000" />
     </task>
     <task id="LOCAL-00007" summary="Made a lot of minor syntax and readability changes.  Added notes on making the camera systems work with multiple cameras.  Need to review all instances of SystemAPI.GetSingleton">
       <option name="closed" value="true" />
@@ -595,7 +591,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763653954140</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Added UI Elements to both the game start camera and the individual player cameras.">
+      <option name="closed" value="true" />
+      <created>1763761689036</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1763761689036</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -622,8 +626,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Added an Entity that follows the player to test Agents Navigation.  Added NavMeshObstacles to trees so they stop generating Navmeshes inside themselves." />
-    <MESSAGE value="Entities with AnimationPrefabAuthoring can now spawn their own animator GO!" />
     <MESSAGE value="Spawned Animator now follows correct Entity.  Split off segments of Animator Ref Component and systems." />
     <MESSAGE value="Removed some unused assets (tech debt) and created two new prefabs for Elisha and Children." />
     <MESSAGE value="Modified AnimationStateEnum to match the new animation states.  Considering combining NPC and Player Animation controllers." />
@@ -647,7 +649,9 @@
     <MESSAGE value="Removed trees the player will never see. Removed Mobile URP assets and unused Physics materials." />
     <MESSAGE value="Replaced magic numbers in child spawn with difficulty settings component.  Added UI element to show faith levels." />
     <MESSAGE value="Faith slider changes color as Elisha loses faith" />
-    <option name="LAST_COMMIT_MESSAGE" value="Faith slider changes color as Elisha loses faith" />
+    <MESSAGE value="Added UI Elements to both the game start camera and the individual player cameras." />
+    <MESSAGE value="Players now have an icon leading them to Elisha." />
+    <option name="LAST_COMMIT_MESSAGE" value="Players now have an icon leading them to Elisha." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
