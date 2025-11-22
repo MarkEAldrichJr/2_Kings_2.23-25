@@ -9,4 +9,9 @@ namespace Component
         public UnityObjectRef<Transform> TransGo;
         public UnityObjectRef<AnimatorController>  AnimatorGo;
     }
+
+    public struct AudioRefComponent : IComponentData
+    {
+        public UnityObjectRef<AnimatorAudioController> AudioControllerGo;
+    }
 }

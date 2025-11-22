@@ -42,7 +42,7 @@ namespace Systems.Animations
                 var velocity = math.length(characterBody.ValueRO.RelativeVelocity);
                 
                 if (characterControl.ValueRO.Attack && 
-                    bearAttack.ValueRO.FrameCooldownFinishes <= SystemAPI.Time.ElapsedTime)
+                    bearAttack.ValueRO.FrameCooldownFinishes < SystemAPI.Time.ElapsedTime)
                 {
                     animationState.ValueRW.Value = AnimationStateEnum.Attack;
                 }

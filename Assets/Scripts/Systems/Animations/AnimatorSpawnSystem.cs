@@ -40,6 +40,11 @@ namespace Systems.Animations
                     AnimatorGo = newBody.GetComponent<AnimatorController>(),
                     TransGo = newBody.transform
                 });
+                
+                _entityManager.AddComponentData(entities[i], new AudioRefComponent
+                {
+                    AudioControllerGo = newBody.GetComponent<AnimatorAudioController>()
+                });
             }
             
             _entityManager.RemoveComponent<AnimationGameObjectPrefab>(_entityQuery);
