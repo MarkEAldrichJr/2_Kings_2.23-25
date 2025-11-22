@@ -1,4 +1,10 @@
 using System;
+using Authoring;
+using Unity.Burst;
+using Unity.Collections;
+using Unity.Entities;
+using Unity.Mathematics;
+using Unity.Transforms;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -21,10 +27,17 @@ namespace Mono
         private AudioClip _audioState;
         private AudioSource _audioSource;
         private float _timer;
+
+        private EntityQuery _bearEntityQuery;
         private void Awake()
         {
             _audioSource = GetComponent<AudioSource>();
             _audioState = idleAudio;
+            
+            var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
+            _bearEntityQuery = entityManager.CreateEntityQuery(
+                new EntityQueryBuilder(Allocator.Temp)
+                .WithAll<BearTag, LocalTransform>());
         }
 
         public void SetAudioState(SoundClipEnum state)
@@ -53,12 +66,45 @@ namespace Mono
 
         private void PlayAudio(AudioClip clip)
         {
+            var dist = GetShortDistance.GetShortestDistance(ref _bearEntityQuery, transform.position);
+            if (dist > 50f) return;
+            dist = math.clamp(
+                math.remap( 50f, 0f, .1f, 1f,dist),
+                0.01f,
+                1f);
+            
+            _audioSource.volume = 0.7f * dist;
+            
             _audioSource.clip = clip;
             _audioSource.pitch = Random.Range(0.9f, 1.1f);
             _audioSource.Play();
         }
     }
 
+    [BurstCompile]
+    public static class GetShortDistance
+    {
+        [BurstCompile]
+        public static float GetShortestDistance(ref EntityQuery query, in float3 position)
+        {
+            var bears =  query.ToComponentDataArray<LocalTransform>(Allocator.Temp);
+            var shortestDistance = float.MaxValue;
+            foreach (var bear in bears)
+            {
+                var dist = math.distance(bear.Position, position);
+                if (dist < shortestDistance)
+                {
+                    shortestDistance = dist;
+                }
+            }
+
+            bears.Dispose();
+            return shortestDistance;
+        }
+    }
+    
+    
+    
     public enum SoundClipEnum
     {
         Attack, Run, Walk, Jump, Fear, Idle

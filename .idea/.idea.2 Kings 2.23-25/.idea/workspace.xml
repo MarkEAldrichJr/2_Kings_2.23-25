@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Animator Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Animator Variant.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Elisha Animator Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Elisha Animator Variant.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Bear.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Bear.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mono/AnimatorAudioController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mono/AnimatorAudioController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,15 +210,7 @@
       <workItem from="1763652747988" duration="1965000" />
       <workItem from="1763761620053" duration="3135000" />
       <workItem from="1763768808801" duration="2201000" />
-      <workItem from="1763819829035" duration="11534000" />
-    </task>
-    <task id="LOCAL-00011" summary="Added new methods to hide Debug Logs if not needed.">
-      <option name="closed" value="true" />
-      <created>1761935812991</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1761935812991</updated>
+      <workItem from="1763819829035" duration="16073000" />
     </task>
     <task id="LOCAL-00012" summary="Gave the player's bear a halo">
       <option name="closed" value="true" />
@@ -608,7 +596,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763830285273</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Added audio to gitignore so we don't flood the git with audio imports.  Tested audio system.  Needs work so we only have one AudioListener.">
+      <option name="closed" value="true" />
+      <created>1763832761265</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1763832761265</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -635,7 +631,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Organized files.  Removed test visual prefab." />
     <MESSAGE value="Elisha now follows a path around the map." />
     <MESSAGE value="Elisha now only walks *after* the first player spawns." />
     <MESSAGE value="Created Child Agent Entity.  Holds locomotion, animator, and AI state." />
@@ -660,7 +655,8 @@
     <MESSAGE value="Removed old and redundant code." />
     <MESSAGE value="Started work on Audio Sources" />
     <MESSAGE value="Created (untested) audio controllers.  I was gonna go for a universal audio channel controller, but don't have time." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created (untested) audio controllers.  I was gonna go for a universal audio channel controller, but don't have time." />
+    <MESSAGE value="Added audio to gitignore so we don't flood the git with audio imports.  Tested audio system.  Needs work so we only have one AudioListener." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added audio to gitignore so we don't flood the git with audio imports.  Tested audio system.  Needs work so we only have one AudioListener." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
