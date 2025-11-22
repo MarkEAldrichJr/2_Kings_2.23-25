@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/PlayAnimationAudioSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/PlayAnimationAudioSystem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Animator Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Animator Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Elisha Animator Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Elisha Animator Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Bear.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Bear.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Component/AnimatorRefComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Component/AnimatorRefComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayAudioClipOnSpawnAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayAudioClipOnSpawnAuthoring.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Animations/AnimationStateDiscoverySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Animations/AnimationStateDiscoverySystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Animations/AnimatorSpawnSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Animations/AnimatorSpawnSystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +68,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayAudioClipOnSpawnAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/README.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Animations.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://U:/Unity Projects/2 Kings 2.23-25/Assets/Scripts/Systems/Animations/AnimationStateDiscoverySystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/AttackTargetSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/ChildBrainSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/FleeSystem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -215,15 +214,7 @@
       <workItem from="1763652747988" duration="1965000" />
       <workItem from="1763761620053" duration="3135000" />
       <workItem from="1763768808801" duration="2201000" />
-      <workItem from="1763819829035" duration="9834000" />
-    </task>
-    <task id="LOCAL-00010" summary="Replaced InputActions singleton, multiple controller support is now complete.  Camera now properly follows player.  Player can now look around.">
-      <option name="closed" value="true" />
-      <created>1761935602186</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1761935602186</updated>
+      <workItem from="1763819829035" duration="11534000" />
     </task>
     <task id="LOCAL-00011" summary="Added new methods to hide Debug Logs if not needed.">
       <option name="closed" value="true" />
@@ -609,7 +600,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763771014446</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Created (untested) audio controllers.  I was gonna go for a universal audio channel controller, but don't have time.">
+      <option name="closed" value="true" />
+      <created>1763830285273</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1763830285273</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -636,7 +635,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Modified AnimationStateEnum to match the new animation states.  Considering combining NPC and Player Animation controllers." />
     <MESSAGE value="Organized files.  Removed test visual prefab." />
     <MESSAGE value="Elisha now follows a path around the map." />
     <MESSAGE value="Elisha now only walks *after* the first player spawns." />
@@ -661,7 +659,8 @@
     <MESSAGE value="Players now have an icon leading them to Elisha." />
     <MESSAGE value="Removed old and redundant code." />
     <MESSAGE value="Started work on Audio Sources" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started work on Audio Sources" />
+    <MESSAGE value="Created (untested) audio controllers.  I was gonna go for a universal audio channel controller, but don't have time." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created (untested) audio controllers.  I was gonna go for a universal audio channel controller, but don't have time." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

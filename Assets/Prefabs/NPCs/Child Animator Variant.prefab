@@ -149,7 +149,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -246,6 +246,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e22a507802e0648af6a52167977c6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  timerMax: 5
+  idleAudio: {fileID: 0}
+  runAudio: {fileID: 0}
+  walkAudio: {fileID: 0}
+  jumpAudio: {fileID: 0}
+  fearAudio: {fileID: 0}
+  attackAudio: {fileID: 0}
 --- !u!95 &7252459093676922426 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4957605393579145647, guid: 4f46098734d87e24490aef9267915ad2, type: 3}
