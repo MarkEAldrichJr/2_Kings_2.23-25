@@ -50,6 +50,10 @@ namespace Systems
 
                 if (currentFrame < current.ValueRO.SpawnFrame) continue;
                 current.ValueRW.TimeToSpawnNext *= settings.ValueRO.SpawnTimerRateChange;
+
+                current.ValueRW.TimeToSpawnNext = math.clamp(current.ValueRO.TimeToSpawnNext, 0.75f,
+                    double.MaxValue);
+                
                 current.ValueRW.SpawnFrame = currentFrame + current.ValueRO.TimeToSpawnNext;
 
                 var foundValidPos = false;
