@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="" />
+    <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/Blink/Art/Characters/Stylized/Humans/Materials_Humans/Body.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Blink/Art/Characters/Stylized/Humans/Materials_Humans/Body.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Animator Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Animator Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainGameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainGameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Authoring/DifficultyAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/DifficultyAuthoring.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/ChildSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/ChildSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,7 +70,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayAudioClipOnSpawnAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/README.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Animations.meta" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://U:/Unity Projects/2 Kings 2.23-25/Assets/Scripts/Systems/Animations/AnimationSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/AttackTargetSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/ChildBrainSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/FleeSystem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -118,6 +126,18 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../UnityBuilds/2 Kings 2 23 25\2 Kings 2.23-25.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="U:\UnityBuilds\2 Kings 2 23 25" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="PTY_MODE" value="Auto" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.2.6f2\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath &quot;U:\Unity Projects\2 Kings 2.23-25&quot; -debugCodeOptimization" />
@@ -213,14 +233,7 @@
       <workItem from="1763768808801" duration="2201000" />
       <workItem from="1763819829035" duration="16153000" />
       <workItem from="1763907896641" duration="7697000" />
-    </task>
-    <task id="LOCAL-00016" summary="Added an animationState to track what animation should be playing on the entity.">
-      <option name="closed" value="true" />
-      <created>1762306238428</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1762306238428</updated>
+      <workItem from="1763928415190" duration="3396000" />
     </task>
     <task id="LOCAL-00017" summary="Moved all the multiplied stuff into parents to hide them in the heirarchy">
       <option name="closed" value="true" />
@@ -606,7 +619,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763918541910</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Added a prompt to join, edited some main text material.  Tested build.">
+      <option name="closed" value="true" />
+      <created>1763928459667</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1763928459667</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -633,7 +654,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Added a faith system to handle game overs." />
     <MESSAGE value="Minor Faith Balancing" />
     <MESSAGE value="Organized scripts.  Child should now move to the target." />
     <MESSAGE value="Added behavior to Attack, Sneak, and Flee" />
@@ -658,7 +678,8 @@
     <MESSAGE value="Sound is now fully functional.  It's held together with duct tape, but it works so I can move on." />
     <MESSAGE value="Added a game over scene, fleshed out sound effects some more, added a restart button to the end screen.  Have not tested in build yet." />
     <MESSAGE value="Removed unneeded using" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed unneeded using" />
+    <MESSAGE value="Added a prompt to join, edited some main text material.  Tested build." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a prompt to join, edited some main text material.  Tested build." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

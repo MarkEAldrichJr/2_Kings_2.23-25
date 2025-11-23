@@ -6,6 +6,7 @@ using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
 using UnityEngine.AI;
+using Random = Unity.Mathematics.Random;
 
 namespace Systems
 {
@@ -34,6 +35,10 @@ namespace Systems
         [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
+            //stop spawning if the framerate drops too low.
+            var timeLastFrame = SystemAPI.Time.DeltaTime;
+            if (timeLastFrame > 0.033333f) return;
+            
             var elishaPos = _elishaQuery.GetSingleton<LocalTransform>().Position;
             var prefab = SystemAPI.GetSingleton<EntityPrefabComponent>().BaseChild;
             var currentFrame = SystemAPI.Time.ElapsedTime;
@@ -42,65 +47,42 @@ namespace Systems
                          .Query<RefRO<DifficultySettings>, RefRW<DifficultyCurrent>>())
             {
                 #region SpawnNewChild
-                if (current.ValueRO.SpawnFrame < currentFrame)
+
+                if (currentFrame < current.ValueRO.SpawnFrame) continue;
+                current.ValueRW.TimeToSpawnNext *= settings.ValueRO.SpawnTimerRateChange;
+                current.ValueRW.SpawnFrame = currentFrame + current.ValueRO.TimeToSpawnNext;
+
+                var foundValidPos = false;
+                var spawnPos = elishaPos;
+                for (var i = 0; i < 30; i++)
                 {
-                    current.ValueRW.SpawnFrame = CalculateNextSpawnFrame(currentFrame,
-                        current.ValueRO.DifficultyIncreaseCount, settings.ValueRO.SpawnTimerMax,
-                        settings.ValueRO.SpawnTimerRateChange);
+                    var randomDir = _random.NextFloat2Direction();
+                    var randomDist = _random.NextFloat(
+                        settings.ValueRO.MinMaxSpawnDistance.x,
+                        settings.ValueRO.MinMaxSpawnDistance.y);
+                    var randomOffset = new float3(randomDir.x * randomDist, 0f,
+                        randomDir.y * randomDist);
+                    var targetPos = elishaPos + randomOffset;
 
-                    var foundValidPos = false;
-                    var spawnPos = elishaPos;
-                    for (var i = 0; i < 30; i++)
+                    if (NavMesh.SamplePosition(targetPos, out var navHit,
+                            15f, NavMesh.AllAreas))
                     {
-                        var randomDir = _random.NextFloat2Direction();
-                        var randomDist = _random.NextFloat(
-                            settings.ValueRO.minMaxSpawnDistance.x,
-                            settings.ValueRO.minMaxSpawnDistance.y);
-                        var randomOffset = new float3(randomDir.x * randomDist, 0f,
-                            randomDir.y * randomDist);
-                        var targetPos = elishaPos + randomOffset;
-
-                        if (NavMesh.SamplePosition(targetPos, out var navHit,
-                                15f, NavMesh.AllAreas))
-                        {
-                            spawnPos = navHit.position;
-                            foundValidPos = true;
-                        }
-
-                        if (foundValidPos) break;
+                        spawnPos = navHit.position;
+                        foundValidPos = true;
                     }
-
-                    if (foundValidPos)
-                    {
-                        var spawn = state.EntityManager.Instantiate(prefab);
-                        var trans = state.EntityManager.GetComponentData<LocalTransform>(spawn);
-                
-                        trans.Position = spawnPos;
-                        state.EntityManager.SetComponentData(spawn, trans);
-                    }
+                    if (foundValidPos) break;
                 }
-                #endregion
 
-                #region RaiseDifficulty
-                if (current.ValueRO.DifficultyIncreaseFrame < currentFrame)
+                if (foundValidPos)
                 {
-                    current.ValueRW.DifficultyIncreaseFrame =
-                        currentFrame + settings.ValueRO.DifficultySpikeRate;
-
-                    current.ValueRW.DifficultyIncreaseCount++;
+                    var spawn = state.EntityManager.Instantiate(prefab);
+                    var trans = state.EntityManager.GetComponentData<LocalTransform>(spawn);
+                
+                    trans.Position = spawnPos;
+                    state.EntityManager.SetComponentData(spawn, trans);
                 }
                 #endregion
             }
-        }
-
-        [BurstCompile]
-        public static double CalculateNextSpawnFrame(
-            double currentFrame,            //The frame this method is called on
-            uint numberDifficultySpikes,    //How many times difficulty has been increased
-            double maxTimer,                //initial timer maximum
-            double changeRate)              //percent decrease in time after each difficulty increase
-        {
-            return currentFrame + maxTimer - maxTimer * (changeRate * numberDifficultySpikes);
         }
     }
 }

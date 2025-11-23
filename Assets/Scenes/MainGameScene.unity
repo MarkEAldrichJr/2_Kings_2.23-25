@@ -1346,7 +1346,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   audioSource: {fileID: 1146175707}
-  audioClips: []
+  audioClips:
+  - {fileID: 8300000, guid: 8a22d470c3c5b6646b83ae166f145fd2, type: 3}
+  - {fileID: 8300000, guid: 8a22d470c3c5b6646b83ae166f145fd2, type: 3}
 --- !u!82 &1146175707
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1360,7 +1362,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
