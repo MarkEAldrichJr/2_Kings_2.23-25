@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Imported/Blink/Art/Characters/Stylized/Humans/Materials_Humans/Body.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Blink/Art/Characters/Stylized/Humans/Materials_Humans/Body.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Animator Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Animator Variant.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainGameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainGameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Authoring/DifficultyAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/DifficultyAuthoring.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/ChildSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/ChildSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mono/OnSpawnColorSwap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mono/OnSpawnColorSwap.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,23 +227,7 @@
       <workItem from="1763768808801" duration="2201000" />
       <workItem from="1763819829035" duration="16153000" />
       <workItem from="1763907896641" duration="7697000" />
-      <workItem from="1763928415190" duration="3396000" />
-    </task>
-    <task id="LOCAL-00017" summary="Moved all the multiplied stuff into parents to hide them in the heirarchy">
-      <option name="closed" value="true" />
-      <created>1762349106070</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1762349106070</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Renamed AnimationState component so it won't conflict with AnimationState.  Added NPC part to AnimationSystem, including NPCTag to keep it from running on the player.  Moved Idle-Walk and Walk-Run thresholds into AnimationState component.">
-      <option name="closed" value="true" />
-      <created>1762350964547</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1762350964547</updated>
+      <workItem from="1763928415190" duration="4233000" />
     </task>
     <task id="LOCAL-00019" summary="Added KillMainCameraWhenPlayersJoin script.  Does exactly what it says on the tin.">
       <option name="closed" value="true" />
@@ -627,7 +605,23 @@
       <option name="project" value="LOCAL" />
       <updated>1763928459667</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Made the game have a smoother difficulty curve.  Children's clothes, skin, and hair now randomized.">
+      <option name="closed" value="true" />
+      <created>1763931879763</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1763931879763</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Limited child spawn rate to not get too insane after a short while.">
+      <option name="closed" value="true" />
+      <created>1763932078485</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1763932078485</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -654,8 +648,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Minor Faith Balancing" />
-    <MESSAGE value="Organized scripts.  Child should now move to the target." />
     <MESSAGE value="Added behavior to Attack, Sneak, and Flee" />
     <MESSAGE value="Added a StartFleeFlag so the child can get an initial flee location before the main system starts." />
     <MESSAGE value="Children now flee randomly from the bear." />
@@ -679,7 +671,9 @@
     <MESSAGE value="Added a game over scene, fleshed out sound effects some more, added a restart button to the end screen.  Have not tested in build yet." />
     <MESSAGE value="Removed unneeded using" />
     <MESSAGE value="Added a prompt to join, edited some main text material.  Tested build." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a prompt to join, edited some main text material.  Tested build." />
+    <MESSAGE value="Made the game have a smoother difficulty curve.  Children's clothes, skin, and hair now randomized." />
+    <MESSAGE value="Limited child spawn rate to not get too insane after a short while." />
+    <option name="LAST_COMMIT_MESSAGE" value="Limited child spawn rate to not get too insane after a short while." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

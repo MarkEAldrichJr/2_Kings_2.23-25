@@ -24,12 +24,12 @@ namespace Mono
         private void OnEnable()
         {
             var armorGradient = CreateNewGradient(armorLow, armorHigh);
-            var hairColor = CreateNewGradient(hairLow, hairHigh).Evaluate(Random.value);
-            var skinColor = CreateNewGradient(skinLow, skinHigh).Evaluate(Random.value);
+            var hairColor = CreateNewGradient(hairLow, hairHigh).Evaluate(Random.Range(0f,1f));
+            var skinColor = CreateNewGradient(skinLow, skinHigh).Evaluate(Random.Range(0f,1f));
             
             foreach (var meshRenderer in armorMeshRenderers)
             {
-                meshRenderer.material.color = armorGradient.Evaluate(Random.value);
+                meshRenderer.material.color = armorGradient.Evaluate(Random.Range(0f,1f));
             }
             foreach (var meshRenderer in hairMeshRenderers)
             {
