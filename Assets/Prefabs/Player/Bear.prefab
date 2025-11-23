@@ -1825,7 +1825,7 @@ GameObject:
   - component: {fileID: 8076060456146807924}
   m_Layer: 0
   m_Name: Bear
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1899,9 +1899,9 @@ MonoBehaviour:
   idleAudio: {fileID: 0}
   runAudio: {fileID: 0}
   walkAudio: {fileID: 0}
-  jumpAudio: {fileID: 0}
+  jumpAudio: {fileID: 8300000, guid: c77b3bb64d3576145afb8b1794ca96ec, type: 3}
   fearAudio: {fileID: 0}
-  attackAudio: {fileID: 0}
+  attackAudio: {fileID: 8300000, guid: 6027b44a807f01e42aabb103f6b8a19f, type: 3}
 --- !u!82 &8076060456146807924
 AudioSource:
   m_ObjectHideFlags: 0

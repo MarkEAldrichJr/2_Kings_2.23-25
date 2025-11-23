@@ -208,8 +208,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Mono.AnimatorAudioController
   timerMax: 5
   idleAudio: {fileID: 0}
-  runAudio: {fileID: 0}
-  walkAudio: {fileID: 0}
+  runAudio: {fileID: 8300000, guid: d6ef3355734d3f84293aadfaeb08cb62, type: 3}
+  walkAudio: {fileID: 8300000, guid: d6ef3355734d3f84293aadfaeb08cb62, type: 3}
   jumpAudio: {fileID: 0}
   fearAudio: {fileID: 0}
   attackAudio: {fileID: 0}

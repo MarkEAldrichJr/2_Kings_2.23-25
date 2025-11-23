@@ -28,9 +28,17 @@ namespace Mono
         private AudioSource _audioSource;
         private float _timer;
 
+        private float _attackTimerMax;
+        private float _attackTimer;
+
         private EntityQuery _bearEntityQuery;
         private void Awake()
         {
+            if (attackAudio)
+            {
+                _attackTimerMax = attackAudio.length;
+            }
+
             _audioSource = GetComponent<AudioSource>();
             _audioState = idleAudio;
             
@@ -41,7 +49,7 @@ namespace Mono
         }
 
         public void SetAudioState(SoundClipEnum state)
-        {
+        {            
             _audioState = state switch
             {
                 SoundClipEnum.Attack => attackAudio,
@@ -52,13 +60,22 @@ namespace Mono
                 SoundClipEnum.Walk => walkAudio,
                 _ => throw new ArgumentOutOfRangeException(nameof(state), state, null)
             };
+            if (gameObject.CompareTag("Player") && state == SoundClipEnum.Attack)
+            {
+                _attackTimer = _attackTimerMax;
+                PlayAudio(_audioState);
+            }
+            
+            if (gameObject.CompareTag("Player") && _attackTimer > 0) return;
             PlayAudio(_audioState);
         }
         
         private void Update()
         {
+            _attackTimer -= Time.deltaTime;
             _timer += Time.deltaTime;
             if (_timer < timerMax) return;
+            if (_audioSource.isPlaying) return;
             _timer = 0f;
             
             PlayAudio(_audioState);

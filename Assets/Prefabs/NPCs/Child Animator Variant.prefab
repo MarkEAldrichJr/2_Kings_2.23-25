@@ -248,11 +248,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   timerMax: 5
   idleAudio: {fileID: 0}
-  runAudio: {fileID: 0}
+  runAudio: {fileID: 8300000, guid: e158ff0e1b95dac468f88887cf1ce52d, type: 3}
   walkAudio: {fileID: 0}
   jumpAudio: {fileID: 0}
-  fearAudio: {fileID: 0}
-  attackAudio: {fileID: 0}
+  fearAudio: {fileID: 8300000, guid: 658f049cda9696e4f813ad958a6deeff, type: 3}
+  attackAudio: {fileID: 8300000, guid: 0841799cc3033374082dc64f9fbce18a, type: 3}
 --- !u!95 &7252459093676922426 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4957605393579145647, guid: 4f46098734d87e24490aef9267915ad2, type: 3}
