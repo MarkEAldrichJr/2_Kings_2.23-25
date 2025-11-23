@@ -15,6 +15,8 @@ namespace Mono
         private EntityManager _entityManager;
         private EntityQuery _fixedTickQuery;
 
+        private float _timeSinceSpawn;
+
         private void Awake()
         {
             _playerRef = GetComponent<PlayerReferenceStorage>();
@@ -28,19 +30,10 @@ namespace Mono
                                 .WithAll<FixedTickSystem.FixedTickSingleton>());
         }
 
-        public void OnDeviceLost()
+        private void Update()
         {
-            DebugLog(debug, "Device Lost");
-        }
-
-        public void OnDeviceRegained()
-        {
-            DebugLog(debug, "Device Regained");
-        }
-
-        public void OnControlsChanged()
-        {
-            DebugLog(debug, "Controls Changed");
+            if (_timeSinceSpawn > 1f) return;
+            _timeSinceSpawn += Time.deltaTime;
         }
     
         public void OnMove(InputValue value)
@@ -63,6 +56,7 @@ namespace Mono
         
         public void OnAttack(InputValue value)
         {
+            if (_timeSinceSpawn < 0.1f) return;
             if (!_entityManager.Exists(_playerRef.Player)) return;
             var inputs = _entityManager.GetComponentData<ThirdPersonPlayerInputs>(_playerRef.Player);
             var tick = _fixedTickQuery.GetSingleton<FixedTickSystem.FixedTickSingleton>();
@@ -73,6 +67,8 @@ namespace Mono
         
         public void OnJump(InputValue value)
         {
+            if (_timeSinceSpawn < 0.1f) return;
+            
             var inputs = _entityManager.GetComponentData<ThirdPersonPlayerInputs>(_playerRef.Player);
             var tick = _fixedTickQuery.GetSingleton<FixedTickSystem.FixedTickSingleton>();
             inputs.JumpPressed.Set(tick.Tick);

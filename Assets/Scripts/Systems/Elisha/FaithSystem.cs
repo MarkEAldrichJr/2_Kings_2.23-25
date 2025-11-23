@@ -20,7 +20,7 @@ namespace Systems.Elisha
         public void OnUpdate(ref SystemState state)
         {
             var deltaTime = SystemAPI.Time.DeltaTime;
-            
+            var endgame = false;
             foreach (var faith in SystemAPI.Query<RefRW<ElishaFaith>>())
             {
                 var dmg = faith.ValueRO.NumChildren * faith.ValueRO.DamagePerChild * deltaTime;
@@ -33,9 +33,17 @@ namespace Systems.Elisha
 
                 if (faith.ValueRO.CurrentFaith < 0f)
                 {
-                    //TODO: handle game over
+                    endgame = true;
                 }
+            }
+
+            if (endgame)
+            { 
+                var gameOverEntity = state.EntityManager.CreateEntity();
+                state.EntityManager.AddComponent<GameOverTag>(gameOverEntity);
             }
         }
     }
+
+    public struct GameOverTag : IComponentData { }
 }

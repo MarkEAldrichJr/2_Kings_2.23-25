@@ -25,8 +25,6 @@ namespace Mono
             SetFaithColorGradient();
         }
 
-        
-
         private void Start()
         {
             var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
@@ -54,7 +52,8 @@ namespace Mono
         }
         private void UpdateFaithSlider()
         {
-            var faith = _entityQuery.GetSingleton<ElishaFaith>();
+            if(!_entityQuery.TryGetSingleton<ElishaFaith>(out var faith))return;
+            
             var faithRatio = faith.CurrentFaith / faith.FaithMax;
             if (Mathf.Approximately(_faithLastFrame, faithRatio)) return;
             

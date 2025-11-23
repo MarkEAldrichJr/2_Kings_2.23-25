@@ -7,7 +7,8 @@ using UnityEngine;
 
 namespace Systems.General
 {
-    public partial class KillChildren : SystemBase
+    [UpdateInGroup(typeof(LateSimulationSystemGroup))]
+    public partial class KillNpCs : SystemBase
     {
         private EntityQuery _entityQuery;
         
