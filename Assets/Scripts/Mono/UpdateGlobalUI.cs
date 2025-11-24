@@ -60,7 +60,6 @@ namespace Mono
             if (Mathf.Approximately(_faithLastFrame, faithRatio)) return;
             
             faithSlider.value = faithRatio;
-
             sliderImage.color = _faithColorGradient.Evaluate(faithRatio);
             
             _faithLastFrame = faithRatio;

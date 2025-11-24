@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="" />
+    <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mono/UpdateGlobalUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mono/UpdateGlobalUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Elisha/FaithSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Elisha/FaithSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,6 +62,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mono/CameraFollow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mono/PlayerReferenceStorage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mono/RestartGame.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://U:/Unity Projects/2 Kings 2.23-25/Assets/Scripts/Mono/UpdateGlobalUI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mono/UpdateGlobalUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayAudioClipOnSpawnAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/README.cs" root0="FORCE_HIGHLIGHTING" />
@@ -225,14 +231,7 @@
       <workItem from="1763907896641" duration="7697000" />
       <workItem from="1763928415190" duration="4540000" />
       <workItem from="1763933061732" duration="516000" />
-    </task>
-    <task id="LOCAL-00021" summary="Played with Post Processing some more.  Baked Navmesh.  Added Agents Navigation Package.">
-      <option name="closed" value="true" />
-      <created>1762393209961</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1762393209961</updated>
+      <workItem from="1763948260988" duration="1024000" />
     </task>
     <task id="LOCAL-00022" summary="Played with terrain colors so the end of the grass isn't so jarring">
       <option name="closed" value="true" />
@@ -618,7 +617,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763933435028</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="Removed all the grass for this build so it will hopefully run in my old gaming laptop.  Still trying to figure out why the player dies too early in builds">
+      <option name="closed" value="true" />
+      <created>1763948375978</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1763948375978</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -645,7 +652,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Children now flee randomly from the bear." />
     <MESSAGE value="Got animations semifunctional.  AnimStates are set correctly, but the animators need to be readjusted." />
     <MESSAGE value="Moved the bear animator prefab out of Player.  Player bear now moves and animates off same systems as NPCs." />
     <MESSAGE value="Fixed a bug where Elisha wouldn't animate or move." />
@@ -670,7 +676,8 @@
     <MESSAGE value="Limited child spawn rate to not get too insane after a short while." />
     <MESSAGE value="Got color swap to do a better job giving random colors." />
     <MESSAGE value="Turn mouse off an on during gameplay." />
-    <option name="LAST_COMMIT_MESSAGE" value="Turn mouse off an on during gameplay." />
+    <MESSAGE value="Removed all the grass for this build so it will hopefully run in my old gaming laptop.  Still trying to figure out why the player dies too early in builds" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed all the grass for this build so it will hopefully run in my old gaming laptop.  Still trying to figure out why the player dies too early in builds" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
