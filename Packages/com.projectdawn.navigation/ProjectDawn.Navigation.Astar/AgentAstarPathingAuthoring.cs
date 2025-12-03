@@ -2,6 +2,10 @@ using Unity.Entities;
 using UnityEngine;
 using ProjectDawn.Navigation.Hybrid;
 using ProjectDawn.Entities;
+using Unity.Collections;
+using Unity.Mathematics;
+
+
 
 #if ENABLE_ASTAR_PATHFINDING_PROJECT
 using Pathfinding.ECS;
@@ -27,10 +31,12 @@ namespace ProjectDawn.Navigation.Astar
         AgentAstarPath m_Path = AgentAstarPath.Default;
 
         [SerializeField]
-        ManagedSettings m_ManagedState = new()
+        ManagedSettings m_ManagedSettings = new()
         {
             pathfindingSettings = PathRequestSettings.Default,
         };
+
+        ManagedState m_ManagedState;
 
         Entity m_Entity;
 
@@ -45,9 +51,14 @@ namespace ProjectDawn.Navigation.Astar
         public MovementState DefaultMovementState => new(transform.position);
 
         /// <summary>
+        /// <see cref="Pathfinding.ECS.ManagedSettings"/> component of this <see cref="ManagedSettings"/> Entity.
+        /// </summary>
+        public ManagedSettings ManagedSettings => m_ManagedSettings;
+
+        /// <summary>
         /// <see cref="Pathfinding.ECS.ManagedState"/> component of this <see cref="AgentAuthoring"/> Entity.
         /// </summary>
-        public ManagedSettings ManagedState => m_ManagedState;
+        public ManagedState ManagedState => m_ManagedState;
 
         /// <summary>
         /// <see cref="AgentAstarPath"/> component of this <see cref="AgentAuthoring"/> Entity.
@@ -72,10 +83,16 @@ namespace ProjectDawn.Navigation.Astar
 
         void Awake()
         {
+            m_ManagedState = new ManagedState
+            {
+                pathTracer = new PathTracer(Allocator.Persistent),
+            };
+
             var world = World.DefaultGameObjectInjectionWorld;
             m_Entity = GetComponent<AgentAuthoring>().GetOrCreateEntity();
             world.EntityManager.AddComponentData(m_Entity, m_Path);
             world.EntityManager.AddComponentData(m_Entity, m_ManagedState);
+            world.EntityManager.AddComponentData(m_Entity, m_ManagedSettings);
             world.EntityManager.AddComponentData(m_Entity, DefaultMovementState);
 
             if (m_LinkTraversalMode != AstarLinkTraversalMode.None)
@@ -108,6 +125,11 @@ namespace ProjectDawn.Navigation.Astar
                 if (m_LinkTraversalMode == AstarLinkTraversalMode.StateMachine)
                     world.EntityManager.RemoveComponent<AstarLinkTraversalStateMachine>(m_Entity);
             }
+            if (m_ManagedState != null)
+            {
+                m_ManagedState.Dispose();
+                m_ManagedState = null;
+            }
         }
 
         void OnEnable()
@@ -130,10 +152,27 @@ namespace ProjectDawn.Navigation.Astar
         {
             public override void Bake(AgentAstarPathingAuthoring authoring)
             {
+                var state = new SetupManagedState
+                {
+                    graphMask = authoring.ManagedSettings.pathfindingSettings.graphMask,
+                    traversableTags = authoring.ManagedSettings.pathfindingSettings.traversableTags,
+                    LinkTraversalMode = authoring.m_LinkTraversalMode
+                };
+
+                var source = authoring.ManagedSettings.pathfindingSettings.tagCostMultipliers;
+                int length = math.min(source.Length, 32);
+
+                unsafe
+                {
+                    for (int i = 0; i < length; i++)
+                        state.tagCostMultipliers[i] = source[i];
+                }
+
                 var entity = GetEntity(TransformUsageFlags.Dynamic);
                 AddComponent(entity, authoring.DefaultPath);
-                AddComponentObject(entity, authoring.m_ManagedState);
+                AddComponent(entity, state);
                 AddComponent(entity, authoring.DefaultMovementState);
+
             }
         }
 #endif

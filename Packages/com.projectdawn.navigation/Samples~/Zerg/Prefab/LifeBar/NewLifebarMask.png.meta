@@ -126,6 +126,6 @@ AssetOrigin:
   serializedVersion: 1
   productId: 239233
   packageName: Agents Navigation
-  packageVersion: 4.4.2
+  packageVersion: 
   assetPath: Packages/com.projectdawn.navigation/Samples~/Zerg/Prefab/LifeBar/NewLifebarMask.png
-  uploadId: 814428
+  uploadId: 0

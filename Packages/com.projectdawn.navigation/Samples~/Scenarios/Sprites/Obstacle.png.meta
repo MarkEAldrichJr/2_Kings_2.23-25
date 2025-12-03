@@ -110,6 +110,6 @@ AssetOrigin:
   serializedVersion: 1
   productId: 239233
   packageName: Agents Navigation
-  packageVersion: 4.4.2
+  packageVersion: 
   assetPath: Packages/com.projectdawn.navigation/Samples~/Scenarios/Sprites/Obstacle.png
-  uploadId: 814428
+  uploadId: 0

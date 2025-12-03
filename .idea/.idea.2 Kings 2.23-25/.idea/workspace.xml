@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mono/UpdateGlobalUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mono/UpdateGlobalUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Elisha/FaithSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Elisha/FaithSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-    </list>
+    <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,6 +69,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/SneakSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/ChildSpawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Elisha/FaithSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://U:/Unity Projects/2 Kings 2.23-25/Assets/Scripts/Systems/Elisha/FaithSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Elisha/FollowTrailSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/GameOverKillEveryoneSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/General/GameOverSceneSystem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -127,10 +123,8 @@
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="U:\UnityBuilds\2 Kings 2 23 25" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="ENV_FILE_PATHS" value="" />
       <option name="REDIRECT_INPUT_PATH" value="" />
-      <option name="PTY_MODE" value="Auto" />
       <option name="MIXED_MODE_DEBUG" value="0" />
       <method v="2" />
     </configuration>
@@ -139,10 +133,8 @@
       <option name="PROGRAM_PARAMETERS" value="-projectPath &quot;U:\Unity Projects\2 Kings 2.23-25&quot; -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="U:\Unity Projects\2 Kings 2.23-25" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="ENV_FILE_PATHS" value="" />
       <option name="REDIRECT_INPUT_PATH" value="" />
-      <option name="PTY_MODE" value="Auto" />
       <option name="MIXED_MODE_DEBUG" value="0" />
       <method v="2" />
     </configuration>
@@ -151,10 +143,8 @@
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;U:\Unity Projects\2 Kings 2.23-25&quot; -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="U:\Unity Projects\2 Kings 2.23-25" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="ENV_FILE_PATHS" value="" />
       <option name="REDIRECT_INPUT_PATH" value="" />
-      <option name="PTY_MODE" value="Auto" />
       <option name="MIXED_MODE_DEBUG" value="0" />
       <method v="2" />
     </configuration>
@@ -231,15 +221,7 @@
       <workItem from="1763907896641" duration="7697000" />
       <workItem from="1763928415190" duration="4540000" />
       <workItem from="1763933061732" duration="516000" />
-      <workItem from="1763948260988" duration="1024000" />
-    </task>
-    <task id="LOCAL-00022" summary="Played with terrain colors so the end of the grass isn't so jarring">
-      <option name="closed" value="true" />
-      <created>1762465357982</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1762465357982</updated>
+      <workItem from="1763948260988" duration="1152000" />
     </task>
     <task id="LOCAL-00023" summary="Added name hashes to animator controller">
       <option name="closed" value="true" />
@@ -625,7 +607,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763948375978</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="GlobalUI was updated to hopefully stop it from exiting the game early on builds.  I have no idea why this helps, but it does.">
+      <option name="closed" value="true" />
+      <created>1763950329870</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1763950329870</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -652,7 +642,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Got animations semifunctional.  AnimStates are set correctly, but the animators need to be readjusted." />
     <MESSAGE value="Moved the bear animator prefab out of Player.  Player bear now moves and animates off same systems as NPCs." />
     <MESSAGE value="Fixed a bug where Elisha wouldn't animate or move." />
     <MESSAGE value="Children Stunning Elisha no longer breaks his pathing." />
@@ -677,7 +666,8 @@
     <MESSAGE value="Got color swap to do a better job giving random colors." />
     <MESSAGE value="Turn mouse off an on during gameplay." />
     <MESSAGE value="Removed all the grass for this build so it will hopefully run in my old gaming laptop.  Still trying to figure out why the player dies too early in builds" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed all the grass for this build so it will hopefully run in my old gaming laptop.  Still trying to figure out why the player dies too early in builds" />
+    <MESSAGE value="GlobalUI was updated to hopefully stop it from exiting the game early on builds.  I have no idea why this helps, but it does." />
+    <option name="LAST_COMMIT_MESSAGE" value="GlobalUI was updated to hopefully stop it from exiting the game early on builds.  I have no idea why this helps, but it does." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

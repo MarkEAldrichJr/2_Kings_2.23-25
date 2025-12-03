@@ -35,7 +35,7 @@ namespace ProjectDawn.Navigation.Astar
 
         void OnEnable()
         {
-            var managedState = serializedObject.FindProperty("m_ManagedState");
+            var managedState = serializedObject.FindProperty("m_ManagedSettings");
             m_AutoRepath = serializedObject.FindProperty("m_Path").FindPropertyRelative("AutoRepath");
             m_Grounded = serializedObject.FindProperty("m_Path").FindPropertyRelative("Grounded");
             m_Pathfinding = managedState.FindPropertyRelative("pathfindingSettings");

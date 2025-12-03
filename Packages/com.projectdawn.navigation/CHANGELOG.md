@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this package will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
+## [4.4.4] - 2025-11-13
+- Fixed astar entities baking
+
+## [4.4.3] - 2025-11-04
+- Re-uploaded again as might been issue with 4.4.2 in asset store
+
 ## [4.4.2] - 2025-11-03
 - Fixed astar integration
 - Fixed AABBTree Spatial component not to throw errors in entity hierarchy

@@ -1,20 +1,24 @@
 #if ENABLE_ASTAR_PATHFINDING_PROJECT
 using Pathfinding;
 using Pathfinding.ECS;
+using System;
+using Unity.Collections;
 using Unity.Entities;
 using static Unity.Entities.SystemAPI;
 
 namespace ProjectDawn.Navigation.Astar
 {
-    public struct SetupManagedState : IComponentData
+    public unsafe struct SetupManagedState : IComponentData
     {
         public GraphMask graphMask;
+        public int traversableTags;
+        public fixed float tagCostMultipliers[32];
         public AstarLinkTraversalMode LinkTraversalMode;
     }
 
     [RequireMatchingQueriesForUpdate]
     [UpdateInGroup(typeof(InitializationSystemGroup))]
-    public partial struct AstarSetupSystem : ISystem
+    public unsafe partial struct AstarSetupSystem : ISystem
     {
         void ISystem.OnUpdate(ref SystemState state)
         {
@@ -22,9 +26,14 @@ namespace ProjectDawn.Navigation.Astar
 
             foreach (var (setup, entity) in Query<SetupManagedState>().WithEntityAccess())
             {
-                var managedState = new ManagedSettings();
-                managedState.enableLocalAvoidance = false;
-                managedState.pathfindingSettings.graphMask = setup.graphMask;
+                var managedSettings = new ManagedSettings();
+                managedSettings.pathfindingSettings.graphMask = setup.graphMask;
+                managedSettings.pathfindingSettings.traversableTags = setup.traversableTags;
+                managedSettings.pathfindingSettings.tagCostMultipliers = new Span<float>(setup.tagCostMultipliers, 32).ToArray();
+                ecb.AddComponent(entity, managedSettings);
+
+                var managedState = new ManagedState();
+                managedState.pathTracer = new PathTracer(Allocator.Persistent);
                 ecb.AddComponent(entity, managedState);
 
                 if (setup.LinkTraversalMode != AstarLinkTraversalMode.None)
