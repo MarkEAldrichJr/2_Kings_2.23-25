@@ -111,6 +111,8 @@ MonoBehaviour:
   attackRadius: 5
   walkSpeed: 1.5
   runSpeed: 3.5
+  attackDamage: 5
+  timeBetweenAttacks: 3
 --- !u!114 &7178983366747648303
 MonoBehaviour:
   m_ObjectHideFlags: 0

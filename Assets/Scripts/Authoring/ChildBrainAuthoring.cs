@@ -10,6 +10,9 @@ namespace Authoring
         [SerializeField] private float attackRadius = 5f;
         [SerializeField] private float walkSpeed = 1.5f;
         [SerializeField] private float runSpeed = 3.5f;
+
+        [SerializeField] private float attackDamage = 1f;
+        [SerializeField] private float timeBetweenAttacks = 1f;
         
         public class ChildBrainBaker : Baker<ChildBrainAuthoring>
         {
@@ -18,7 +21,12 @@ namespace Authoring
                 var entity = GetEntity(authoring, TransformUsageFlags.Dynamic);
                 
                 AddComponent<MoveToTargetFlag>(entity);
-                AddComponent<AttackFlag>(entity);
+                AddComponent(entity, new AttackFlag
+                {
+                    AttackDamage = authoring.attackDamage,
+                    TimeSinceLastAttack = 0f,
+                    TimeBetweenAttacks = authoring.timeBetweenAttacks
+                });
                 AddComponent<FleeFlag>(entity);
                 AddComponent<StartFleeFlag>(entity);
                 AddComponent<SneakFlag>(entity);

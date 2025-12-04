@@ -25,18 +25,17 @@ namespace Systems.Elisha
             foreach (var (faith, damage) in SystemAPI
                          .Query<RefRW<ElishaFaith>, DynamicBuffer<FaithDamageElement>>())
             {
-                if (damage.Length > 0f)
-                    faith.ValueRW.TimeSinceLastDamage = 0f;
                 faith.ValueRW.TimeSinceLastDamage += deltaTime;
-                
                 var totalDamage = 0f;
-                for (var i = 0; i < damage.Length; i++)
-                {
-                    totalDamage += damage[i].Damage;
-                    //damage.RemoveAt(i);
-                }
-                damage.Clear();
                 
+                if (damage.Length > 0f)
+                {
+                    faith.ValueRW.TimeSinceLastDamage = 0f;
+                    for (var i = 0; i < damage.Length; i++)
+                        totalDamage += damage[i].Damage;
+                    damage.Clear();
+                }
+
                 var heal = faith.ValueRO.CurrentFaith * faith.ValueRO.FaithRegen * deltaTime;
                 var newFaith = faith.ValueRO.CurrentFaith + heal - totalDamage;
                 faith.ValueRW.CurrentFaith = newFaith;

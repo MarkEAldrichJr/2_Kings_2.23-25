@@ -29,13 +29,13 @@ namespace Systems.Behavior
                          .Query<RefRW<AgentBody>, RefRW<AttackFlag>>())
             {
                 body.ValueRW.IsStopped = true;
-                if (attack.ValueRO.timeSinceLastAttack > 1)
+                if (attack.ValueRO.TimeSinceLastAttack > attack.ValueRO.TimeBetweenAttacks)
                 {
                     damageBuffer.Add(new FaithDamageElement
                     {
-                        Damage = attack.ValueRO.attackDamage
+                        Damage = attack.ValueRO.AttackDamage
                     });
-                    attack.ValueRW.timeSinceLastAttack = 0f;
+                    attack.ValueRW.TimeSinceLastAttack = 0f;
                 }
             }
             var deltaTime = SystemAPI.Time.DeltaTime;
@@ -43,8 +43,7 @@ namespace Systems.Behavior
                          .Query<RefRW<AttackFlag>>()
                          .WithOptions(EntityQueryOptions.IgnoreComponentEnabledState))
             {
-                attack.ValueRW.timeSinceLastAttack += deltaTime;
-                attack.ValueRW.attackDamage = 5f;
+                attack.ValueRW.TimeSinceLastAttack += deltaTime;
             }
         }
     }

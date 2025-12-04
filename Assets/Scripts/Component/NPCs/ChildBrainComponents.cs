@@ -6,8 +6,9 @@ namespace Component.NPCs
 
     public struct AttackFlag : IComponentData, IEnableableComponent
     {
-        public float timeSinceLastAttack;
-        public float attackDamage;
+        public float TimeSinceLastAttack;
+        public float AttackDamage;
+        public float TimeBetweenAttacks;
     }
     public struct FleeFlag : IComponentData, IEnableableComponent {}
     public struct StartFleeFlag : IComponentData, IEnableableComponent {}

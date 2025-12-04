@@ -6,11 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainGameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainGameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Agent.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Agent.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Authoring/ChildBrainAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/ChildBrainAuthoring.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Component/NPCs/ChildBrainComponents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Component/NPCs/ChildBrainComponents.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/AttackTargetSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/AttackTargetSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Elisha/FaithSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Elisha/FaithSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,15 +231,7 @@
       <workItem from="1763933061732" duration="516000" />
       <workItem from="1763948260988" duration="1152000" />
       <workItem from="1764805774747" duration="4586000" />
-      <workItem from="1764878157888" duration="3731000" />
-    </task>
-    <task id="LOCAL-00025" summary="Smoothed out Jump, Attack, Move animations.  Minor delay when player stops moving?">
-      <option name="closed" value="true" />
-      <created>1762794071373</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1762794071373</updated>
+      <workItem from="1764878157888" duration="4423000" />
     </task>
     <task id="LOCAL-00026" summary="Created BearAttack setup that deletes evil children when they walk into aoe.">
       <option name="closed" value="true" />
@@ -625,7 +617,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764810398735</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="Fixed Dynamic Buffer damage change.">
+      <option name="closed" value="true" />
+      <created>1764882011369</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1764882011369</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -652,7 +652,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Children Stunning Elisha no longer breaks his pathing." />
     <MESSAGE value="Children now die when the bears maul them." />
     <MESSAGE value="Children now spawn at regular intervals, and hunt down Elisha." />
     <MESSAGE value="Removed trees the player will never see. Removed Mobile URP assets and unused Physics materials." />
@@ -677,7 +676,8 @@
     <MESSAGE value="GlobalUI was updated to hopefully stop it from exiting the game early on builds.  I have no idea why this helps, but it does." />
     <MESSAGE value="Updated Agents Navigation." />
     <MESSAGE value="Replaced old timed damage system with a less-expensive Dynamic Buffer damage system.  Still needs Dynamic Buffer structural changes removed from ideomatic foreach" />
-    <option name="LAST_COMMIT_MESSAGE" value="Replaced old timed damage system with a less-expensive Dynamic Buffer damage system.  Still needs Dynamic Buffer structural changes removed from ideomatic foreach" />
+    <MESSAGE value="Fixed Dynamic Buffer damage change." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Dynamic Buffer damage change." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
