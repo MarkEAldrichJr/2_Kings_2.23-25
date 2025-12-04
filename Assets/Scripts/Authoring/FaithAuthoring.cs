@@ -7,7 +7,6 @@ namespace Authoring
     public class FaithAuthoring : MonoBehaviour
     {
         [SerializeField] private float maxFaith = 100f;
-        [SerializeField] private float damagePerChild = 5f;
         [SerializeField] private float faithRegen = 0.3f;
         
         private class FaithAuthoringBaker : Baker<FaithAuthoring>
@@ -18,11 +17,11 @@ namespace Authoring
                 AddComponent(entity, new ElishaFaith
                 {
                     CurrentFaith = authoring.maxFaith,
-                    DamagePerChild = authoring.damagePerChild,
                     FaithMax = authoring.maxFaith,
                     FaithRegen = authoring.faithRegen,
-                    NumChildren = 0u
+                    TimeSinceLastDamage = 5f
                 });
+                AddBuffer<FaithDamageElement>(entity);
             }
         }
     }

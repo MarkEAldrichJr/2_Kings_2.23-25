@@ -3,7 +3,12 @@
 namespace Component.NPCs
 {
     public struct MoveToTargetFlag : IComponentData, IEnableableComponent {}
-    public struct AttackFlag : IComponentData, IEnableableComponent {}
+
+    public struct AttackFlag : IComponentData, IEnableableComponent
+    {
+        public float timeSinceLastAttack;
+        public float attackDamage;
+    }
     public struct FleeFlag : IComponentData, IEnableableComponent {}
     public struct StartFleeFlag : IComponentData, IEnableableComponent {}
     public struct SneakFlag : IComponentData, IEnableableComponent {}

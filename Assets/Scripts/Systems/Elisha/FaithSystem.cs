@@ -20,11 +20,19 @@ namespace Systems.Elisha
         public void OnUpdate(ref SystemState state)
         {
             var deltaTime = SystemAPI.Time.DeltaTime;
-            foreach (var faith in SystemAPI.Query<RefRW<ElishaFaith>>())
+            foreach (var (faith, damage) in SystemAPI
+                         .Query<RefRW<ElishaFaith>, DynamicBuffer<FaithDamageElement>>())
             {
-                var dmg = faith.ValueRO.NumChildren * faith.ValueRO.DamagePerChild * deltaTime;
+                if (damage.Length > 0f)
+                    faith.ValueRW.TimeSinceLastDamage = 0f;
+                faith.ValueRW.TimeSinceLastDamage += deltaTime;
+                
+                var totalDamage = 0f;
+                foreach (var dmg in damage)
+                    totalDamage += dmg.Damage;
+                
                 var heal = faith.ValueRO.CurrentFaith * faith.ValueRO.FaithRegen * deltaTime;
-                var newFaith = faith.ValueRO.CurrentFaith + heal - dmg;
+                var newFaith = faith.ValueRO.CurrentFaith + heal - totalDamage;
                 faith.ValueRW.CurrentFaith = newFaith;
 
                 faith.ValueRW.CurrentFaith = math.clamp(faith.ValueRO.CurrentFaith, -1f,

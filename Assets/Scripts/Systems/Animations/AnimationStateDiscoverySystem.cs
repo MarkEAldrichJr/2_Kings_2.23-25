@@ -78,7 +78,7 @@ namespace Systems.Animations
             {
                 var currentState = animState.ValueRO.Value;
                 
-                if (elishaFaith.ValueRO.NumChildren > 0)
+                if (elishaFaith.ValueRO.TimeSinceLastDamage < 1.1)
                 {
                     body.ValueRW.IsStopped = true;
                     animState.ValueRW.Value = AnimationStateEnum.Fear;

@@ -54,8 +54,6 @@ namespace Systems.Behavior
 
             var elishaEntity = SystemAPI.GetSingletonEntity<ElishaFaith>();
             var elishaTransform = state.EntityManager.GetComponentData<LocalTransform>(elishaEntity);
-            var elishaFaith = state.EntityManager.GetComponentData<ElishaFaith>(elishaEntity);
-            
             
             foreach (var (detection, localTransform, entity) in SystemAPI
                          .Query<RefRO<Detection>, RefRO<LocalTransform>>()
@@ -86,10 +84,10 @@ namespace Systems.Behavior
 
                 var distToElisha = math.distance(localTransform.ValueRO.Position,
                     elishaTransform.Position);
-                if (distToElisha < detection.ValueRO.AttackRadius)
+                if (distToElisha < detection.ValueRO.AttackRadius * 0.5f)
                 {
                     state.EntityManager.SetComponentEnabled<MoveToTargetFlag>(entity, false);
-                    StartAttack(ref state, entity, elishaEntity, elishaFaith);
+                    state.EntityManager.SetComponentEnabled<AttackFlag>(entity, true);
                 }
             }
 
@@ -102,7 +100,7 @@ namespace Systems.Behavior
                 if (distToElisha > detection.ValueRO.DetectionRadius)
                 {
                     state.EntityManager.SetComponentEnabled<MoveToTargetFlag>(entity, true);
-                    EndAttack(ref state, entity, elishaEntity, elishaFaith);
+                    state.EntityManager.SetComponentEnabled<AttackFlag>(entity, false);
                     continue;
                 }
 
@@ -117,7 +115,7 @@ namespace Systems.Behavior
                 if (!bearIsClose) continue;
                 
                 StartFleeing(ref state, entity);
-                EndAttack(ref state, entity, elishaEntity, elishaFaith);
+                state.EntityManager.SetComponentEnabled<AttackFlag>(entity, false);
             }
 
             foreach (var (detection, localTransform, entity) in SystemAPI
@@ -172,36 +170,16 @@ namespace Systems.Behavior
                     //if within range of elisha, start mocking
                     var distToElisha = math.distance(localTransform.ValueRO.Position, elishaTransform.Position);
                     if (distToElisha < detection.ValueRO.AttackRadius)
-                    {
-                        StartAttack(ref state, entity, elishaEntity, elishaFaith);
-                        state.EntityManager.SetComponentEnabled<SneakFlag>(entity, false);
-                    }
+                        state.EntityManager.SetComponentEnabled<AttackFlag>(entity, true);
                     else
-                    {
                         state.EntityManager.SetComponentEnabled<MoveToTargetFlag>(entity, true);
-                        state.EntityManager.SetComponentEnabled<SneakFlag>(entity, false);
-                    }
+                    
+                    state.EntityManager.SetComponentEnabled<SneakFlag>(entity, false);
                 }
             }
             
             bearTransforms.Dispose();
             bearAnimationState.Dispose();
-        }
-
-        private static void StartAttack(ref SystemState state, Entity child,
-            Entity elisha, ElishaFaith faith)
-        {
-            state.EntityManager.SetComponentEnabled<AttackFlag>(child, true);
-            faith.NumChildren++;
-            state.EntityManager.SetComponentData(elisha, faith);
-        }
-
-        private static void EndAttack(ref SystemState state, Entity child,
-            Entity elisha, ElishaFaith faith)
-        {
-            state.EntityManager.SetComponentEnabled<AttackFlag>(child, false);
-            faith.NumChildren--;
-            state.EntityManager.SetComponentData(elisha, faith);
         }
 
         private static void StartFleeing(ref SystemState state, Entity child)
