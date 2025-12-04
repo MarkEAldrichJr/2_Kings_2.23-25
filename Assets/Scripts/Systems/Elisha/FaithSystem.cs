@@ -19,7 +19,9 @@ namespace Systems.Elisha
         [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
+            var gameOver = false;
             var deltaTime = SystemAPI.Time.DeltaTime;
+            
             foreach (var (faith, damage) in SystemAPI
                          .Query<RefRW<ElishaFaith>, DynamicBuffer<FaithDamageElement>>())
             {
@@ -28,8 +30,12 @@ namespace Systems.Elisha
                 faith.ValueRW.TimeSinceLastDamage += deltaTime;
                 
                 var totalDamage = 0f;
-                foreach (var dmg in damage)
-                    totalDamage += dmg.Damage;
+                for (var i = 0; i < damage.Length; i++)
+                {
+                    totalDamage += damage[i].Damage;
+                    //damage.RemoveAt(i);
+                }
+                damage.Clear();
                 
                 var heal = faith.ValueRO.CurrentFaith * faith.ValueRO.FaithRegen * deltaTime;
                 var newFaith = faith.ValueRO.CurrentFaith + heal - totalDamage;
@@ -40,9 +46,14 @@ namespace Systems.Elisha
 
                 if (faith.ValueRO.CurrentFaith < 0f)
                 {
-                    var gameOverEntity = state.EntityManager.CreateEntity();
-                    state.EntityManager.AddComponent<GameOverTag>(gameOverEntity);
+                    gameOver = true;
                 }
+            }
+
+            if (gameOver)
+            {
+                var gameOverEntity = state.EntityManager.CreateEntity();
+                state.EntityManager.AddComponent<GameOverTag>(gameOverEntity);
             }
         }
     }

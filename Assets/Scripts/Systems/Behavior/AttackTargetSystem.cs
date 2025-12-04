@@ -35,6 +35,7 @@ namespace Systems.Behavior
                     {
                         Damage = attack.ValueRO.attackDamage
                     });
+                    attack.ValueRW.timeSinceLastAttack = 0f;
                 }
             }
             var deltaTime = SystemAPI.Time.DeltaTime;
