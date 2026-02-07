@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 40042432}
   - component: {fileID: 40042431}
   - component: {fileID: 40042430}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(-1000.00, 0.00, -1000.00)
   m_TagString: Terrain
   m_Icon: {fileID: 0}
@@ -296,7 +296,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 101.55
+  m_fontSize: 122.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -357,9 +357,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 323982418}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: '****** Terrains ******'
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -394,7 +394,7 @@ GameObject:
   - component: {fileID: 360600954}
   - component: {fileID: 360600953}
   - component: {fileID: 360600952}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(0.00, 0.00, -1000.00)
   m_TagString: Terrain
   m_Icon: {fileID: 0}
@@ -566,7 +566,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40.6
+  m_fontSize: 44.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1457,7 +1457,7 @@ GameObject:
   - component: {fileID: 1239053449}
   - component: {fileID: 1239053448}
   - component: {fileID: 1239053447}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain_(-1000.00, 0.00, 0.00)
   m_TagString: Terrain
   m_Icon: {fileID: 0}
@@ -1735,13 +1735,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshSurface
   m_SerializedVersion: 0
   m_AgentTypeID: 0
-  m_CollectObjects: 0
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 2, z: 0}
+  m_CollectObjects: 1
+  m_Size: {x: 500, y: 100, z: 500}
+  m_Center: {x: 0, y: 0, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
-  m_UseGeometry: 0
+    m_Bits: 8
+  m_UseGeometry: 1
   m_DefaultArea: 0
   m_GenerateLinks: 0
   m_IgnoreNavMeshAgent: 1
@@ -1750,8 +1750,8 @@ MonoBehaviour:
   m_TileSize: 256
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
-  m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 0f39847109c2bf14698b1cc078f3ccea, type: 2}
+  m_MinRegionArea: 16
+  m_NavMeshData: {fileID: 23800000, guid: 3a5c1420c1774e445bd6b1965ae4e137, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &1412629846
 Transform:
@@ -2189,7 +2189,7 @@ GameObject:
   - component: {fileID: 1954390599}
   - component: {fileID: 1954390598}
   - component: {fileID: 1954390597}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain
   m_TagString: Terrain
   m_Icon: {fileID: 0}
