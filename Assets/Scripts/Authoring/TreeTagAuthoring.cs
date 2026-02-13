@@ -12,8 +12,6 @@ namespace Authoring
             {
                 var entity = GetEntity(TransformUsageFlags.Renderable);
                 AddComponent<TreeTag>(entity);
-                AddComponent<UrpMaterialPropertyBaseColor1>(entity);
-                AddComponent<UrpMaterialPropertyBaseColor>(entity);
             }
         }
     }

@@ -5,16 +5,16 @@ using Unity.Rendering;
 namespace Component
 {
     public struct TreeTag : IComponentData { }
-
-    [MaterialProperty("_BaseMapColor", 1)]
+/*
+    [MaterialProperty("_BaseColor")]
     public struct UrpMaterialPropertyBaseColor1 : IComponentData
     {
         public float4 Value;
     }
 
-    [MaterialProperty("_BaseMapColor", 0)]
-    public struct UrpMaterialPropertyBaseColor : IComponentData
+    [MaterialProperty("_BaseColor")]
+    public struct URPMaterialPropertyBaseColor : IComponentData
     {
         public float4 Value;
-    }
+    }*/
 }

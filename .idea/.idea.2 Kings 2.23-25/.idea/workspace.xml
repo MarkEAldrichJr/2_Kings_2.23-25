@@ -5,17 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/TreeTagAuthoring.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/TreeTagAuthoring.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeTreeColors.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeTreeColors.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Imported/Fantasy Forest Environment Free Sample/Materials/bark01_bottom.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Fantasy Forest Environment Free Sample/Materials/bark01_bottom.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imported/Fantasy Forest Environment Free Sample/Materials/tree_branches.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imported/Fantasy Forest Environment Free Sample/Materials/tree_branches.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainGameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainGameScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mono/Trees/RandomizeRotation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mono/Trees/RandomizeRotation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/PC_RPAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/PC_RPAsset.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Authoring/TreeTagAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/TreeTagAuthoring.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Component/TreeTag.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Component/TreeTag.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeTreeColors.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeTreeColorsSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeTreeColors.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeTreeColorsSystem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/DefaultVolumeProfile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/DefaultVolumeProfile.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,15 +238,8 @@
       <workItem from="1764878157888" duration="4683000" />
       <workItem from="1770473112544" duration="145000" />
       <workItem from="1770476829393" duration="5000" />
-      <workItem from="1770930979717" duration="6274000" />
-    </task>
-    <task id="LOCAL-00028" summary="Attack system now works.  Needs tweaking so deaths match attack animation.">
-      <option name="closed" value="true" />
-      <created>1762807818854</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1762807818854</updated>
+      <workItem from="1770930979717" duration="6313000" />
+      <workItem from="1771011437035" duration="2396000" />
     </task>
     <task id="LOCAL-00029" summary="Bear attack now works properly, and kills DeathByBearTag holders midway through attack animations.">
       <option name="closed" value="true" />
@@ -632,7 +625,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770473194070</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="Added tree color changes.  Still doesn't work.">
+      <option name="closed" value="true" />
+      <created>1770951177941</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1770951177942</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -659,7 +660,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Removed trees the player will never see. Removed Mobile URP assets and unused Physics materials." />
     <MESSAGE value="Replaced magic numbers in child spawn with difficulty settings component.  Added UI element to show faith levels." />
     <MESSAGE value="Faith slider changes color as Elisha loses faith" />
     <MESSAGE value="Added UI Elements to both the game start camera and the individual player cameras." />
@@ -684,7 +684,8 @@
     <MESSAGE value="Fixed Dynamic Buffer damage change." />
     <MESSAGE value="Removed several Magic Numbers from the faith attack systems." />
     <MESSAGE value="Updated to latest Unity version to fix weird engine bug." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated to latest Unity version to fix weird engine bug." />
+    <MESSAGE value="Added tree color changes.  Still doesn't work." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added tree color changes.  Still doesn't work." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
