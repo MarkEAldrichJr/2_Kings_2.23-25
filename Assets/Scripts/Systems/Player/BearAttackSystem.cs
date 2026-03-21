@@ -97,6 +97,7 @@ namespace Systems.Player
                 var distanceToAttack = math.distance(attackPosition, transform.Position);
                 if (distanceToAttack < BearAttacks[i].Radius)
                 {
+                    //TODO: fix system: kills children instantly: doesnt check if attack was unique
                     hits.Value--;
                     if (hits.Value <= 0)
                     {

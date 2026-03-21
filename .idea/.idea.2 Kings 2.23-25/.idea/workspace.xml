@@ -4,36 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="Updated to Unity 6.4">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/Child.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/Child/ChildAuthoring.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/Elisha.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/HitsToKillAuthoring.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/HitsToKillAuthoring.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Agent.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Agent.prefab" afterDir="false" />
+    <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainGameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainGameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Authoring/ChildBrainAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/Child/ChildBrainAuthoring.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Authoring/ChildBrainAuthoring.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/Child/ChildBrainAuthoring.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Authoring/DeathByBearAuthoring.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Authoring/DeathByBearAuthoring.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/Child/ChildAuthoring.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Authoring/FaithAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/Elisha/FaithAuthoring.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Authoring/FaithAuthoring.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/Elisha/FaithAuthoring.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Authoring/FollowTrailAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/Elisha/FollowTrailAuthoring.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Authoring/FollowTrailAuthoring.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/Elisha/FollowTrailAuthoring.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Authoring/WalkingPointAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/Elisha/WalkingPointAuthoring.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Authoring/WalkingPointAuthoring.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/Elisha/WalkingPointAuthoring.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Component/BearAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Component/BearAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/ChildBrainSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/ChildBrainSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/FleeSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/FleeSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/PlayAnimationAudioSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/PlayAnimationAudioSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Player/BearAttackSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Player/BearAttackSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,16 +35,14 @@
     <setting file="file://$PROJECT_DIR$/Assets/Imported/_TerrainAutoUpgrade.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Input/InputSystem_Actions.inputactions" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Player/Bear.prefab" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Test Obstacle.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/MainGameScene.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/AnimationPrefabAuthoring.cs.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/BearAttackAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/BearBaker.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/DeathByBearAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/FaithAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/NpcTagAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/NpcTagAuthoring.cs.meta" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/ObstacleAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/TerrainAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/TreeTagAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Component/AnimationStateComp.cs" root0="FORCE_HIGHLIGHTING" />
@@ -255,15 +225,7 @@
       <workItem from="1770476829393" duration="5000" />
       <workItem from="1770930979717" duration="6313000" />
       <workItem from="1771011437035" duration="3077000" />
-      <workItem from="1774116235585" duration="2746000" />
-    </task>
-    <task id="LOCAL-00030" summary="Added an Entity that follows the player to test Agents Navigation.  Added NavMeshObstacles to trees so they stop generating Navmeshes inside themselves.">
-      <option name="closed" value="true" />
-      <created>1762882296357</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1762882296357</updated>
+      <workItem from="1774116235585" duration="3400000" />
     </task>
     <task id="LOCAL-00031" summary="Entities with AnimationPrefabAuthoring can now spawn their own animator GO!">
       <option name="closed" value="true" />
@@ -649,7 +611,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771014014105</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="Swapped child's &quot;DeathByBearTag&quot; with &quot;HitsToKill&quot; in preparation for large children that take multiple hits to kill, added obscacles start,">
+      <option name="closed" value="true" />
+      <created>1774120046433</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1774120046433</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -676,7 +646,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Added UI Elements to both the game start camera and the individual player cameras." />
     <MESSAGE value="Players now have an icon leading them to Elisha." />
     <MESSAGE value="Removed old and redundant code." />
     <MESSAGE value="Started work on Audio Sources" />
@@ -701,7 +670,8 @@
     <MESSAGE value="Added tree color changes.  Still doesn't work." />
     <MESSAGE value="Trees are now all slightly different colors, but nonstatic.  next change will change them in the editor so I can keep them static" />
     <MESSAGE value="Updated to Unity 6.4" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated to Unity 6.4" />
+    <MESSAGE value="Swapped child's &quot;DeathByBearTag&quot; with &quot;HitsToKill&quot; in preparation for large children that take multiple hits to kill, added obscacles start," />
+    <option name="LAST_COMMIT_MESSAGE" value="Swapped child's &quot;DeathByBearTag&quot; with &quot;HitsToKill&quot; in preparation for large children that take multiple hits to kill, added obscacles start," />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
