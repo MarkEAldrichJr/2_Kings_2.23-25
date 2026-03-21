@@ -43,7 +43,7 @@ namespace Systems
             //Attack
             foreach (var (audioRef, animationState) in SystemAPI
                          .Query<RefRO<AudioRefComponent>, RefRO<AnimationStateComp>>()
-                         .WithAll<DeathByBearTag, AttackFlag>())
+                         .WithAll<ChildTag, AttackFlag>())
             {
                 if (!animationState.ValueRO.HasChangedThisFrame) continue;
                 audioRef.ValueRO.AudioControllerGo.Value.SetAudioState(SoundClipEnum.Attack);
@@ -51,7 +51,7 @@ namespace Systems
             //Flee
             foreach (var (audioRef, animationState) in SystemAPI
                          .Query<RefRO<AudioRefComponent>, RefRO<AnimationStateComp>>()
-                         .WithAll<DeathByBearTag, FleeFlag>())
+                         .WithAll<ChildTag, FleeFlag>())
             {
                 if (!animationState.ValueRO.HasChangedThisFrame) continue;
                 audioRef.ValueRO.AudioControllerGo.Value.SetAudioState(SoundClipEnum.Fear);
@@ -59,7 +59,7 @@ namespace Systems
             //Run
             foreach (var (audioRef, animationState) in SystemAPI
                          .Query<RefRO<AudioRefComponent>, RefRO<AnimationStateComp>>()
-                         .WithAll<DeathByBearTag, MoveToTargetFlag>())
+                         .WithAll<ChildTag, MoveToTargetFlag>())
             {
                 if (!animationState.ValueRO.HasChangedThisFrame) continue;
                 audioRef.ValueRO.AudioControllerGo.Value.SetAudioState(SoundClipEnum.Run);
@@ -67,7 +67,7 @@ namespace Systems
             //Sneak
             foreach (var (audioRef, animationState) in SystemAPI
                          .Query<RefRO<AudioRefComponent>, RefRO<AnimationStateComp>>()
-                         .WithAll<DeathByBearTag, SneakFlag>())
+                         .WithAll<ChildTag, SneakFlag>())
             {
                 if (!animationState.ValueRO.HasChangedThisFrame) continue;
                 audioRef.ValueRO.AudioControllerGo.Value.SetAudioState(SoundClipEnum.Walk);

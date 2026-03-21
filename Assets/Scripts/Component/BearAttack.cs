@@ -17,5 +17,10 @@ namespace Component
         public float Radius;
     }
     
-    public struct DeathByBearTag: IComponentData { }
+    public struct ChildTag: IComponentData { }
+
+    public struct BearAttacksToDestroy : IComponentData
+    {
+        public int BearAttacksNeeded;
+    }
 }

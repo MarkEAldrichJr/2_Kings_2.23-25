@@ -1,4 +1,5 @@
-﻿using Component;
+﻿using Authoring;
+using Component;
 using Component.NPCs;
 using Imported.Samples.Character_Controller._1._3._12.Standard_Characters.ThirdPerson.Scripts;
 using Unity.Burst;
@@ -21,7 +22,7 @@ namespace Systems.Player
                 new EntityQueryBuilder(Allocator.Temp)
                     .WithAll<LocalTransform, BearAttack>());
             
-            state.RequireForUpdate<DeathByBearTag>();
+            state.RequireForUpdate<ChildTag>();
             state.RequireForUpdate(_bearQuery);
         }
 
@@ -67,6 +68,11 @@ namespace Systems.Player
         }
     }
 
+    
+    /// <summary>
+    /// Takes all the children, gets their distance from the BearAttackEntity,
+    /// and adds them to the kill list if they're close enough.
+    /// </summary>
     [BurstCompile]
     public partial struct KillEvilChildrenJob : IJobEntity
     {
@@ -75,15 +81,15 @@ namespace Systems.Player
         [ReadOnly] public NativeArray<LocalTransform> Transforms;
         [WriteOnly] public NativeList<Entity>.ParallelWriter KillList;
         
-        private void Execute(Entity entity, in LocalTransform transform, in DeathByBearTag tag)
+        [BurstCompile]
+        private void Execute(Entity entity, in LocalTransform transform, ref HitsToKill hits)
         {
-            var length = Transforms.Length;
-
-            for (var i = 0; i < length; i++)
+            for (var i = 0; i < Transforms.Length; i++)
             {
                 if (BearAttacks[i].FrameToStart > TimeElapsed) continue;
                 if (TimeElapsed > BearAttacks[i].FrameStopDamage) continue;
                 
+                //Get position of the attack sphere
                 var attackPosition = Transforms[i].Position +
                                      Transforms[i].Forward() *
                                      BearAttacks[i].DistanceForward;
@@ -91,7 +97,11 @@ namespace Systems.Player
                 var distanceToAttack = math.distance(attackPosition, transform.Position);
                 if (distanceToAttack < BearAttacks[i].Radius)
                 {
-                    KillList.AddNoResize(entity);
+                    hits.Value--;
+                    if (hits.Value <= 0)
+                    {
+                        KillList.AddNoResize(entity);
+                    }
                 }
             }
         }

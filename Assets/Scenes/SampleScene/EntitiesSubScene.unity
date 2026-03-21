@@ -37852,6 +37852,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f274db82aa04ec0a8ceb4389277b6a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Authoring.TreeTagAuthoring
+--- !u!1001 &614422930
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1654406541021087111, guid: cfc74b77ac88c3245ba72e322dd1a8e6, type: 3}
+      propertyPath: m_Name
+      value: Test Obstacle (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155313307006643910, guid: cfc74b77ac88c3245ba72e322dd1a8e6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155313307006643910, guid: cfc74b77ac88c3245ba72e322dd1a8e6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155313307006643910, guid: cfc74b77ac88c3245ba72e322dd1a8e6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -46.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155313307006643910, guid: cfc74b77ac88c3245ba72e322dd1a8e6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8093168
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155313307006643910, guid: cfc74b77ac88c3245ba72e322dd1a8e6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155313307006643910, guid: cfc74b77ac88c3245ba72e322dd1a8e6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.58737236
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155313307006643910, guid: cfc74b77ac88c3245ba72e322dd1a8e6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155313307006643910, guid: cfc74b77ac88c3245ba72e322dd1a8e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155313307006643910, guid: cfc74b77ac88c3245ba72e322dd1a8e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -71.942
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155313307006643910, guid: cfc74b77ac88c3245ba72e322dd1a8e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cfc74b77ac88c3245ba72e322dd1a8e6, type: 3}
 --- !u!1 &616353983
 GameObject:
   m_ObjectHideFlags: 0
@@ -112545,6 +112602,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f274db82aa04ec0a8ceb4389277b6a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Authoring.TreeTagAuthoring
+--- !u!1001 &1758445933
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1654406541021087111, guid: cfc74b77ac88c3245ba72e322dd1a8e6, type: 3}
+      propertyPath: m_Name
+      value: Test Obstacle (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155313307006643910, guid: cfc74b77ac88c3245ba72e322dd1a8e6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 47.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155313307006643910, guid: cfc74b77ac88c3245ba72e322dd1a8e6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155313307006643910, guid: cfc74b77ac88c3245ba72e322dd1a8e6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -54.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155313307006643910, guid: cfc74b77ac88c3245ba72e322dd1a8e6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8093168
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155313307006643910, guid: cfc74b77ac88c3245ba72e322dd1a8e6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155313307006643910, guid: cfc74b77ac88c3245ba72e322dd1a8e6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.58737236
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155313307006643910, guid: cfc74b77ac88c3245ba72e322dd1a8e6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155313307006643910, guid: cfc74b77ac88c3245ba72e322dd1a8e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155313307006643910, guid: cfc74b77ac88c3245ba72e322dd1a8e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -71.942
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155313307006643910, guid: cfc74b77ac88c3245ba72e322dd1a8e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8052052342038738601, guid: cfc74b77ac88c3245ba72e322dd1a8e6, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cfc74b77ac88c3245ba72e322dd1a8e6, type: 3}
 --- !u!1 &1758665822
 GameObject:
   m_ObjectHideFlags: 0
@@ -138455,6 +138570,8 @@ SceneRoots:
   - {fileID: 144524903}
   - {fileID: 1416433621}
   - {fileID: 833573629}
+  - {fileID: 1758445933}
+  - {fileID: 614422930}
   - {fileID: 463526957}
   - {fileID: 1252920486}
   - {fileID: 1083288035}

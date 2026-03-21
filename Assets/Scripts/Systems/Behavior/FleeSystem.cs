@@ -21,7 +21,7 @@ namespace Systems.Behavior
             _random = Random.CreateFromIndex((uint)System.DateTime.Now.Millisecond);
             
             var builder = new EntityQueryBuilder(Allocator.Temp)
-                .WithAll<FleeFlag, LocalTransform, AgentBody, DeathByBearTag>();
+                .WithAll<FleeFlag, LocalTransform, AgentBody, ChildTag>();
             state.RequireForUpdate(state.GetEntityQuery(builder));
         }
 
@@ -30,7 +30,7 @@ namespace Systems.Behavior
         {
             foreach (var (transform, body) in SystemAPI
                          .Query<RefRO<LocalTransform>, RefRW<AgentBody>>()
-                         .WithAll<FleeFlag, DeathByBearTag>())
+                         .WithAll<FleeFlag, ChildTag>())
             {
                 var dist = math.distancesq(transform.ValueRO.Position, body.ValueRO.Destination);
                 if (dist > 0.1f) continue;
@@ -78,7 +78,7 @@ namespace Systems.Behavior
         {
             _random = Random.CreateFromIndex((uint)System.DateTime.Now.Millisecond - 7u);
             var builder = new EntityQueryBuilder(Allocator.Temp)
-                .WithAll<StartFleeFlag, LocalTransform, AgentBody, DeathByBearTag>();
+                .WithAll<StartFleeFlag, LocalTransform, AgentBody, ChildTag>();
             state.RequireForUpdate(state.GetEntityQuery(builder));
         }
 
@@ -87,7 +87,7 @@ namespace Systems.Behavior
         {
             foreach (var (transform, body, entity) in SystemAPI
                          .Query<RefRO<LocalTransform>, RefRW<AgentBody>>()
-                         .WithAll<StartFleeFlag, DeathByBearTag>().WithEntityAccess())
+                         .WithAll<StartFleeFlag, ChildTag>().WithEntityAccess())
             {
                 state.EntityManager.SetComponentEnabled<StartFleeFlag>(entity, false);
 

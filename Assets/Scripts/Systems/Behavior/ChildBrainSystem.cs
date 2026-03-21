@@ -29,7 +29,7 @@ namespace Systems.Behavior
             state.RequireForUpdate<ElishaFaith>();
             
             var childBuilder = new EntityQueryBuilder(Allocator.Temp)
-                .WithAll<DeathByBearTag>()
+                .WithAll<ChildTag>()
                 .WithAny<SneakFlag, FleeFlag, AttackFlag, MoveToTargetFlag>();
             _childQuery = state.GetEntityQuery(childBuilder);
             state.RequireForUpdate(_childQuery);
@@ -57,7 +57,7 @@ namespace Systems.Behavior
             
             foreach (var (detection, localTransform, entity) in SystemAPI
                          .Query<RefRO<Detection>, RefRO<LocalTransform>>()
-                         .WithAll<DeathByBearTag, MoveToTargetFlag>()
+                         .WithAll<ChildTag, MoveToTargetFlag>()
                          .WithEntityAccess())
             {
                 var bearIsClose = false;
@@ -93,7 +93,7 @@ namespace Systems.Behavior
 
             foreach (var (detection, localTransform, entity) in SystemAPI
                          .Query<RefRO<Detection>, RefRO<LocalTransform>>()
-                         .WithAll<DeathByBearTag, AttackFlag>()
+                         .WithAll<ChildTag, AttackFlag>()
                          .WithEntityAccess())
             {
                 var distToElisha = math.distance(elishaTransform.Position, localTransform.ValueRO.Position);
@@ -120,7 +120,7 @@ namespace Systems.Behavior
 
             foreach (var (detection, localTransform, entity) in SystemAPI
                          .Query<RefRO<Detection>, RefRO<LocalTransform>>()
-                         .WithAll<DeathByBearTag, FleeFlag>()
+                         .WithAll<ChildTag, FleeFlag>()
                          .WithEntityAccess())
             {
                 //check distance to player.  if outside of detection range, change back to MoveTotTargetFlag
@@ -139,7 +139,7 @@ namespace Systems.Behavior
             
             foreach (var (detection, localTransform, entity) in SystemAPI
                          .Query<RefRO<Detection>, RefRO<LocalTransform>>()
-                         .WithAll<DeathByBearTag, SneakFlag>()
+                         .WithAll<ChildTag, SneakFlag>()
                          .WithEntityAccess())
             {
                 var dangerIsClose = false;
