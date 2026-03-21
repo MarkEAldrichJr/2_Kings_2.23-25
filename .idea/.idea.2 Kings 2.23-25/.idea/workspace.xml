@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainGameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainGameScene.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/ObstacleAuthoring.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/ObstacleAuthoring.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Authoring/BearAttackAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/BearAttackAuthoring.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Component/BearAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Component/BearAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/General/KillNPCs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/General/KillNPCs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Player/BearAttackSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Player/BearAttackSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +41,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Imported/Samples/Unity Physics/1.3.14.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Imported/_TerrainAutoUpgrade.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Input/InputSystem_Actions.inputactions" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Animator Variant.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Player/Bear.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Test Obstacle.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/MainGameScene.meta" root0="FORCE_HIGHLIGHTING" />
@@ -43,6 +51,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/BearBaker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/NpcTagAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/NpcTagAuthoring.cs.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/ObstacleAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/TerrainAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Authoring/TreeTagAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Component/AnimationStateComp.cs" root0="FORCE_HIGHLIGHTING" />
@@ -225,15 +234,7 @@
       <workItem from="1770476829393" duration="5000" />
       <workItem from="1770930979717" duration="6313000" />
       <workItem from="1771011437035" duration="3077000" />
-      <workItem from="1774116235585" duration="3400000" />
-    </task>
-    <task id="LOCAL-00031" summary="Entities with AnimationPrefabAuthoring can now spawn their own animator GO!">
-      <option name="closed" value="true" />
-      <created>1762971066490</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1762971066490</updated>
+      <workItem from="1774116235585" duration="8943000" />
     </task>
     <task id="LOCAL-00032" summary="Spawned Animator now follows correct Entity.  Split off segments of Animator Ref Component and systems.">
       <option name="closed" value="true" />
@@ -619,7 +620,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774120046433</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="Added TODO to child to mark that it dies instantly, even if it has multiple hits to kill.  Make attack only count for one frame?">
+      <option name="closed" value="true" />
+      <created>1774120937414</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1774120937414</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -646,7 +655,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Players now have an icon leading them to Elisha." />
     <MESSAGE value="Removed old and redundant code." />
     <MESSAGE value="Started work on Audio Sources" />
     <MESSAGE value="Created (untested) audio controllers.  I was gonna go for a universal audio channel controller, but don't have time." />
@@ -671,7 +679,8 @@
     <MESSAGE value="Trees are now all slightly different colors, but nonstatic.  next change will change them in the editor so I can keep them static" />
     <MESSAGE value="Updated to Unity 6.4" />
     <MESSAGE value="Swapped child's &quot;DeathByBearTag&quot; with &quot;HitsToKill&quot; in preparation for large children that take multiple hits to kill, added obscacles start," />
-    <option name="LAST_COMMIT_MESSAGE" value="Swapped child's &quot;DeathByBearTag&quot; with &quot;HitsToKill&quot; in preparation for large children that take multiple hits to kill, added obscacles start," />
+    <MESSAGE value="Added TODO to child to mark that it dies instantly, even if it has multiple hits to kill.  Make attack only count for one frame?" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added TODO to child to mark that it dies instantly, even if it has multiple hits to kill.  Make attack only count for one frame?" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

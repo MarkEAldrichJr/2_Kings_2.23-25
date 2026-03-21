@@ -4,23 +4,17 @@ namespace Component
 {
     public struct BearAttack : IComponentData
     {
-        public double StartTime; //start damaging AFTER windup
-        public double FrameToStart;
+        public double AnimationDelay; //start damaging AFTER windup
+        public double FrameToHit;
         
         public double CooldownTime;
         public double FrameCooldownFinishes;
 
-        public double StopDamageTime;
-        public double FrameStopDamage;
+        public bool HasHit;
         
         public float DistanceForward;
         public float Radius;
     }
     
     public struct ChildTag: IComponentData { }
-
-    public struct BearAttacksToDestroy : IComponentData
-    {
-        public int BearAttacksNeeded;
-    }
 }

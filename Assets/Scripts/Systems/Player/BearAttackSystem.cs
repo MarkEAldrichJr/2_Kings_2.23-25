@@ -1,4 +1,5 @@
-﻿using Authoring;
+﻿using System;
+using Authoring;
 using Component;
 using Component.NPCs;
 using Imported.Samples.Character_Controller._1._3._12.Standard_Characters.ThirdPerson.Scripts;
@@ -40,10 +41,11 @@ namespace Systems.Player
                 
                 attack.ValueRW.FrameCooldownFinishes =
                     elapsedTime + attack.ValueRO.CooldownTime;
-                attack.ValueRW.FrameStopDamage =
-                    elapsedTime + attack.ValueRO.StopDamageTime;
-                attack.ValueRW.FrameToStart = 
-                    elapsedTime + attack.ValueRO.StartTime;
+                
+                attack.ValueRW.FrameToHit = 
+                    elapsedTime + attack.ValueRO.AnimationDelay;
+                
+                attack.ValueRW.HasHit = false;
             }
 
             var attacks = _bearQuery.ToComponentDataArray<BearAttack>(Allocator.TempJob);
@@ -60,6 +62,7 @@ namespace Systems.Player
             }.ScheduleParallel(state.Dependency);
             
             scheduleParallel.Complete();
+            
             state.EntityManager.AddComponent<KillTag>(killList.AsArray());
             
             attacks.Dispose();
@@ -86,8 +89,8 @@ namespace Systems.Player
         {
             for (var i = 0; i < Transforms.Length; i++)
             {
-                if (BearAttacks[i].FrameToStart > TimeElapsed) continue;
-                if (TimeElapsed > BearAttacks[i].FrameStopDamage) continue;
+                if (BearAttacks[i].HasHit) continue;
+                if (BearAttacks[i].FrameToHit > TimeElapsed) continue;
                 
                 //Get position of the attack sphere
                 var attackPosition = Transforms[i].Position +
@@ -97,12 +100,29 @@ namespace Systems.Player
                 var distanceToAttack = math.distance(attackPosition, transform.Position);
                 if (distanceToAttack < BearAttacks[i].Radius)
                 {
-                    //TODO: fix system: kills children instantly: doesnt check if attack was unique
                     hits.Value--;
                     if (hits.Value <= 0)
                     {
                         KillList.AddNoResize(entity);
                     }
+                }
+            }
+        }
+    }
+    
+    
+    [UpdateAfter(typeof(ObstacleAttackSystem))]
+    public partial struct BearAttackResetSystem : ISystem
+    {
+        public void OnUpdate(ref SystemState state)
+        {
+            var elapsedTime = SystemAPI.Time.ElapsedTime;
+            foreach (var attack in SystemAPI
+                         .Query<RefRW<BearAttack>>())
+            {
+                if (!attack.ValueRO.HasHit && attack.ValueRO.FrameToHit <= elapsedTime)
+                {
+                    attack.ValueRW.HasHit = true;
                 }
             }
         }
