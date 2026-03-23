@@ -1,5 +1,6 @@
 ﻿using Authoring;
 using Authoring.Elisha;
+using Component;
 using ProjectDawn.Navigation;
 using Unity.Burst;
 using Unity.Collections;
@@ -24,22 +25,17 @@ namespace Systems.Elisha
         {
             var collisionWorld = SystemAPI.GetSingleton<PhysicsWorldSingleton>().CollisionWorld;
 
-            foreach (var (agent, trans) in SystemAPI
-                         .Query<RefRW<AgentBody>, LocalTransform>()
+            foreach (var (agent, trans, faith) in SystemAPI
+                         .Query<RefRW<AgentBody>, LocalTransform, ElishaFaith>()
                          .WithAll<FollowTrail>()
                          .WithNone<FollowTrailStartTag, RequirePlayerTag>())
             {
                 var hits = new NativeList<ColliderCastHit>(Allocator.Temp);
-                collisionWorld.SphereCastAll(
-                    trans.Position,
-                    0.6f,
-                    trans.Forward(),
-                    1f,
-                    ref hits,
-                    CollisionFilter.Default);
+                collisionWorld.SphereCastAll(trans.Position, 0.6f,
+                    trans.Forward(), 1f,
+                    ref hits, CollisionFilter.Default);
 
                 var blocked = false;
-
                 foreach (var hit in hits)
                 {
                     if (SystemAPI.HasComponent<ObstacleTag>(hit.Entity))
@@ -48,10 +44,11 @@ namespace Systems.Elisha
                         break;
                     }
                 }
-
-                agent.ValueRW.IsStopped = blocked;
-
                 hits.Dispose();
+
+                var underAttack = faith.TimeSinceLastDamage < 1.1f;
+
+                agent.ValueRW.IsStopped = blocked || underAttack;
             }
         }
     }

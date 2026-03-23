@@ -80,14 +80,15 @@ namespace Systems.Animations
                 
                 if (elishaFaith.ValueRO.TimeSinceLastDamage < 1.1)
                 {
-                    body.ValueRW.IsStopped = true;
+                    //body.ValueRW.IsStopped = true;
                     animState.ValueRW.Value = AnimationStateEnum.Fear;
                 }
                 else
                 {
-                    body.ValueRW.IsStopped = false;
+                    //body.ValueRW.IsStopped = false;
                     animState.ValueRW.Value = AnimationStateEnum.Walk;
-                } //Elisha will not stand idle at any point after the game starts
+                }
+
                 animState.ValueRW.HasChangedThisFrame = animState.ValueRO.Value != currentState;
             }
         }

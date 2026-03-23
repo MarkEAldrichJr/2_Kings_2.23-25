@@ -24,7 +24,6 @@ namespace Systems.Behavior
         {
             var damageBuffer = SystemAPI.GetSingletonBuffer<FaithDamageElement>();
             
-            
             foreach (var (body, attack) in SystemAPI
                          .Query<RefRW<AgentBody>, RefRW<AttackFlag>>())
             {

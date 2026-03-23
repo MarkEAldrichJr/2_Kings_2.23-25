@@ -79,6 +79,8 @@ namespace Systems.Behavior
                         {
                             if (!SystemAPI.HasComponent<NoFleeTag>(entity))
                                 StartFleeing(ref state, entity);
+                            else
+                                state.EntityManager.SetComponentEnabled<MoveToTargetFlag>(entity, true);
                         }
                     }
                 }
@@ -117,9 +119,12 @@ namespace Systems.Behavior
                 }
                 if (!bearIsClose) continue;
                 
+                state.EntityManager.SetComponentEnabled<AttackFlag>(entity, false);
                 if (!SystemAPI.HasComponent<NoFleeTag>(entity))
                     StartFleeing(ref state, entity);
-                state.EntityManager.SetComponentEnabled<AttackFlag>(entity, false);
+                else
+                    state.EntityManager.SetComponentEnabled<AttackFlag>(entity, true);
+                
             }
 
             foreach (var (detection, localTransform, entity) in SystemAPI
@@ -161,9 +166,11 @@ namespace Systems.Behavior
 
                 if (dangerIsClose)
                 {
+                    state.EntityManager.SetComponentEnabled<SneakFlag>(entity, false);
                     if (!SystemAPI.HasComponent<NoFleeTag>(entity))
                         StartFleeing(ref state, entity);
-                    state.EntityManager.SetComponentEnabled<SneakFlag>(entity, false);
+                    else 
+                        state.EntityManager.SetComponentEnabled<SneakFlag>(entity, true);
                     continue;
                 }
                 // ReSharper disable once ConditionIsAlwaysTrueOrFalse
