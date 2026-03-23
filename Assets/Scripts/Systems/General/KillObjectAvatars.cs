@@ -10,7 +10,7 @@ namespace Systems.General
 {
     [UpdateInGroup(typeof(LateSimulationSystemGroup))]
     [UpdateBefore(typeof(KillEntities))]
-    public partial class KillNpCs : SystemBase
+    public partial class KillObjectAvatars : SystemBase
     {
         protected override void OnUpdate()
         {
@@ -33,7 +33,7 @@ namespace Systems.General
     }
 
     [UpdateInGroup(typeof(LateSimulationSystemGroup))]
-    [UpdateAfter(typeof(KillNpCs))]
+    [UpdateAfter(typeof(KillObjectAvatars))]
     public partial struct KillEntities : ISystem
     {
         private EntityQuery _killQuery;

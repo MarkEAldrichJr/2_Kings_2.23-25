@@ -54,7 +54,16 @@ namespace Systems.Player
                     hitsToKill.Value--;
 
                     if (hitsToKill.Value <= 0)
-                        killList.Add(e);
+                    {
+                        if (SystemAPI.HasBuffer<Child>(e))
+                        {
+                            var linked = SystemAPI.GetBuffer<Child>(e);
+                            for (var i = 0; i < linked.Length; i++)
+                                killList.Add(linked[i].Value);
+                        }
+                        else
+                            killList.Add(e);
+                    }
                     else
                         SystemAPI.SetComponent(e, hitsToKill);
                 }

@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/ObstacleAuthoring.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/ObstacleAuthoring.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Authoring/BearAttackAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/BearAttackAuthoring.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Component/BearAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Component/BearAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/General/KillNPCs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/General/KillNPCs.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Player/BearAttackSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Player/BearAttackSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Test Obstacle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Test Obstacle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/General/KillNPCs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/General/KillObjectAvatars.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/General/KillNPCs.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/General/KillObjectAvatars.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Player/ObstacleAttackSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Player/ObstacleAttackSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -234,15 +232,8 @@
       <workItem from="1770476829393" duration="5000" />
       <workItem from="1770930979717" duration="6313000" />
       <workItem from="1771011437035" duration="3077000" />
-      <workItem from="1774116235585" duration="8943000" />
-    </task>
-    <task id="LOCAL-00032" summary="Spawned Animator now follows correct Entity.  Split off segments of Animator Ref Component and systems.">
-      <option name="closed" value="true" />
-      <created>1762971777371</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1762971777371</updated>
+      <workItem from="1774116235585" duration="9010000" />
+      <workItem from="1774222176276" duration="1669000" />
     </task>
     <task id="LOCAL-00033" summary="Removed some unused assets (tech debt) and created two new prefabs for Elisha and Children.">
       <option name="closed" value="true" />
@@ -628,7 +619,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774120937414</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="Added a HasHit value, which updates after the animation delay so attacks only hit on one frame.">
+      <option name="closed" value="true" />
+      <created>1774126309126</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1774126309126</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -655,7 +654,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Removed old and redundant code." />
     <MESSAGE value="Started work on Audio Sources" />
     <MESSAGE value="Created (untested) audio controllers.  I was gonna go for a universal audio channel controller, but don't have time." />
     <MESSAGE value="Added audio to gitignore so we don't flood the git with audio imports.  Tested audio system.  Needs work so we only have one AudioListener." />
@@ -680,7 +678,8 @@
     <MESSAGE value="Updated to Unity 6.4" />
     <MESSAGE value="Swapped child's &quot;DeathByBearTag&quot; with &quot;HitsToKill&quot; in preparation for large children that take multiple hits to kill, added obscacles start," />
     <MESSAGE value="Added TODO to child to mark that it dies instantly, even if it has multiple hits to kill.  Make attack only count for one frame?" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added TODO to child to mark that it dies instantly, even if it has multiple hits to kill.  Make attack only count for one frame?" />
+    <MESSAGE value="Added a HasHit value, which updates after the animation delay so attacks only hit on one frame." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a HasHit value, which updates after the animation delay so attacks only hit on one frame." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
