@@ -41,7 +41,19 @@ namespace Systems
             if (timeLastFrame > 0.033333f) return;
             
             var elishaPos = _elishaQuery.GetSingleton<LocalTransform>().Position;
-            var prefab = SystemAPI.GetSingleton<EntityPrefabComponent>().BaseChild;
+            
+            //TODO: get the prefab components and pick a child at random
+            //var prefab = SystemAPI.GetSingleton<EntityPrefabComponent>().BaseChild;
+            var prefabs = SystemAPI.GetSingleton<EntityPrefabComponent>();
+            var roll = _random.NextFloat(0f, 1f);
+            var prefab = roll switch
+            {
+                < 0.55f => prefabs.BaseChild,
+                < 0.75f => prefabs.FastChild,
+                < 0.90f => prefabs.TankyChild,
+                _ => prefabs.LargeChild
+            };
+
             var currentFrame = SystemAPI.Time.ElapsedTime;
             
             foreach (var (settings, current) in SystemAPI

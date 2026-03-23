@@ -1,4 +1,5 @@
 ﻿using Authoring;
+using Authoring.Child;
 using Authoring.Elisha;
 using Component;
 using Component.NPCs;
@@ -76,7 +77,8 @@ namespace Systems.Behavior
                         }
                         else
                         {
-                            StartFleeing(ref state, entity);
+                            if (!SystemAPI.HasComponent<NoFleeTag>(entity))
+                                StartFleeing(ref state, entity);
                         }
                     }
                 }
@@ -115,7 +117,8 @@ namespace Systems.Behavior
                 }
                 if (!bearIsClose) continue;
                 
-                StartFleeing(ref state, entity);
+                if (!SystemAPI.HasComponent<NoFleeTag>(entity))
+                    StartFleeing(ref state, entity);
                 state.EntityManager.SetComponentEnabled<AttackFlag>(entity, false);
             }
 
@@ -158,7 +161,8 @@ namespace Systems.Behavior
 
                 if (dangerIsClose)
                 {
-                    StartFleeing(ref state, entity);
+                    if (!SystemAPI.HasComponent<NoFleeTag>(entity))
+                        StartFleeing(ref state, entity);
                     state.EntityManager.SetComponentEnabled<SneakFlag>(entity, false);
                     continue;
                 }

@@ -13,6 +13,9 @@ namespace Authoring
         
         [Header("NPCs")]
         public GameObject baseChildPrefab;
+        public GameObject fastChildPrefab;
+        public GameObject tankyChildPrefab;
+        public GameObject largeChildPrefab;
         
         public class PrefabAuthoringBaker : Baker<PrefabAuthoring>
         {
@@ -23,6 +26,9 @@ namespace Authoring
                 var playerEntity = GetEntity(authoring.playerPrefab, TransformUsageFlags.None);
                 
                 var baseChildEntity = GetEntity(authoring.baseChildPrefab, TransformUsageFlags.Dynamic);
+                var fastChildEntity = GetEntity(authoring.fastChildPrefab, TransformUsageFlags.Dynamic);
+                var tankyChildEntity = GetEntity(authoring.tankyChildPrefab, TransformUsageFlags.Dynamic);
+                var largeChildEntity = GetEntity(authoring.largeChildPrefab, TransformUsageFlags.Dynamic);
 
                 var prefabStorageEntity = GetEntity(TransformUsageFlags.None);
                 
@@ -32,7 +38,10 @@ namespace Authoring
                     ThirdPersonCharacter = characterEntity,
                     ThirdPersonPlayer = playerEntity,
                     
-                    BaseChild = baseChildEntity
+                    BaseChild = baseChildEntity,
+                    FastChild = fastChildEntity,
+                    TankyChild = tankyChildEntity,
+                    LargeChild = largeChildEntity
                 });
             }
         }

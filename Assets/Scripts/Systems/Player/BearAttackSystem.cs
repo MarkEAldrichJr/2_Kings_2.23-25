@@ -1,5 +1,5 @@
-﻿using System;
-using Authoring;
+﻿using Authoring;
+using Authoring.Child;
 using Component;
 using Component.NPCs;
 using Imported.Samples.Character_Controller._1._3._12.Standard_Characters.ThirdPerson.Scripts;
@@ -15,6 +15,7 @@ namespace Systems.Player
     public partial struct BearAttackSystem : ISystem
     {
         private EntityQuery _bearQuery;
+        private ComponentLookup<Knockback> _largeChildLookup;
         
         [BurstCompile]
         public void OnCreate(ref SystemState state)
@@ -25,11 +26,13 @@ namespace Systems.Player
             
             state.RequireForUpdate<ChildTag>();
             state.RequireForUpdate(_bearQuery);
+            _largeChildLookup = state.GetComponentLookup<Knockback>(true);
         }
 
         [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
+            _largeChildLookup.Update(ref state);
             var elapsedTime = SystemAPI.Time.ElapsedTime;
             
             foreach (var (control, attack) in SystemAPI
@@ -52,17 +55,30 @@ namespace Systems.Player
             var transforms = _bearQuery.ToComponentDataArray<LocalTransform>(Allocator.TempJob);
             var killList = new NativeList<Entity>(Allocator.TempJob);
             var killListWriter = killList.AsParallelWriter();
+            var knockbackRequests = new NativeList<(Entity, float3, float)>(Allocator.TempJob);
+            var knockbackWriter = knockbackRequests.AsParallelWriter();
             
             var scheduleParallel = new KillEvilChildrenJob
             {
                 TimeElapsed = elapsedTime,
                 BearAttacks = attacks,
                 Transforms = transforms,
-                KillList = killListWriter
+                KillList = killListWriter,
+                BearEntities = _bearQuery.ToEntityArray(Allocator.TempJob),
+                KnockbackRequests = knockbackWriter,
+                LargeChildLookup = _largeChildLookup
             }.ScheduleParallel(state.Dependency);
             
             scheduleParallel.Complete();
             
+            foreach (var (bear, dir, force) in knockbackRequests)
+            {
+                if (state.EntityManager.HasComponent<KnockbackRequest>(bear))
+                    // Accumulate — just overwrite, one knockback per frame is fine
+                    state.EntityManager.SetComponentData(bear, new KnockbackRequest { Direction = dir, Force = force });
+                else
+                    state.EntityManager.AddComponentData(bear, new KnockbackRequest { Direction = dir, Force = force });
+            }
             state.EntityManager.AddComponent<KillTag>(killList.AsArray());
             
             attacks.Dispose();
@@ -84,6 +100,11 @@ namespace Systems.Player
         [ReadOnly] public NativeArray<LocalTransform> Transforms;
         [WriteOnly] public NativeList<Entity>.ParallelWriter KillList;
         
+        // Add to KillEvilChildrenJob fields:
+        [ReadOnly] public NativeArray<Entity> BearEntities;
+        [WriteOnly] public NativeList<(Entity bear, float3 direction, float force)>.ParallelWriter KnockbackRequests;
+        [ReadOnly] public ComponentLookup<Knockback> LargeChildLookup;
+        
         [BurstCompile]
         private void Execute(Entity entity, in LocalTransform transform, ref HitsToKill hits)
         {
@@ -100,6 +121,15 @@ namespace Systems.Player
                 var distanceToAttack = math.distance(attackPosition, transform.Position);
                 if (distanceToAttack < BearAttacks[i].Radius)
                 {
+                    //Large children add a knockback force when attacked.
+                    if (LargeChildLookup.TryGetComponent(entity, out var knockbackComp))
+                    {
+                        var knockDir = math.normalize(Transforms[i].Position - transform.Position);
+                        knockDir.y = 10;
+                        var force = knockbackComp.Force;
+                        KnockbackRequests.AddNoResize((BearEntities[i], knockDir, force));
+                    }
+                    
                     hits.Value--;
                     if (hits.Value <= 0)
                     {

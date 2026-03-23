@@ -14,5 +14,8 @@ namespace Component
         
         //npcs
         public Entity BaseChild;
+        public Entity FastChild;
+        public Entity TankyChild;
+        public Entity LargeChild;
     }
 }
