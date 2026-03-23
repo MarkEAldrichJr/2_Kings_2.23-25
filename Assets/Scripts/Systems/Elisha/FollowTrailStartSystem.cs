@@ -1,4 +1,5 @@
 ﻿using Authoring;
+using Authoring.Elisha;
 using ProjectDawn.Navigation;
 using Unity.Burst;
 using Unity.Collections;
@@ -10,7 +11,7 @@ namespace Systems.Elisha
     [UpdateInGroup(typeof(InitializationSystemGroup))]
     public partial struct FollowTrailStartSystem : ISystem
     {
-        EntityQuery _followTrailStartQuery;
+        private EntityQuery _followTrailStartQuery;
         
         [BurstCompile]
         public void OnCreate(ref SystemState state)
@@ -26,11 +27,10 @@ namespace Systems.Elisha
         [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
-            foreach (var (agentBody, trail, e) in SystemAPI
+            foreach (var (agentBody, trail) in SystemAPI
                          .Query<RefRW<AgentBody>, RefRO<FollowTrail>>()
                          .WithAll<FollowTrailStartTag>()
-                         .WithNone<RequirePlayerTag>()
-                         .WithEntityAccess())
+                         .WithNone<RequirePlayerTag>())
             {
                 var firstDest = state.EntityManager
                     .GetComponentData<LocalToWorld>(trail.ValueRO.Target).Position;

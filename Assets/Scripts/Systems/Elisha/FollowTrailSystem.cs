@@ -1,4 +1,5 @@
 ﻿using Authoring;
+using Authoring.Elisha;
 using ProjectDawn.Navigation;
 using Unity.Burst;
 using Unity.Collections;

@@ -86,7 +86,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: ProjectDawn.Navigation.Hybrid::ProjectDawn.Navigation.Hybrid.AgentNavMeshAuthoring
   AgentTypeId: 0
-  AreaMask: -1
+  AreaMask: 7
   AutoRepath: 1
   m_Grounded: 1
   m_OptimizePath: 0

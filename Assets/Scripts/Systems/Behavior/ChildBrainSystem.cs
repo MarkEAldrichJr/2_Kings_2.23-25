@@ -1,4 +1,5 @@
 ﻿using Authoring;
+using Authoring.Elisha;
 using Component;
 using Component.NPCs;
 using Unity.Burst;

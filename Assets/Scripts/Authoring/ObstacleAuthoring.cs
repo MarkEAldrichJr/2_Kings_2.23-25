@@ -15,5 +15,5 @@ namespace Authoring
         }
     }
 
-    internal class ObstacleTag: IComponentData { }
+    public struct ObstacleTag: IComponentData { }
 }

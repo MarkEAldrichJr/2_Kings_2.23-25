@@ -2,7 +2,7 @@ using Systems;
 using Unity.Entities;
 using UnityEngine;
 
-namespace Authoring
+namespace Authoring.Elisha
 {
     public class FollowTrailAuthoring : MonoBehaviour
     {
