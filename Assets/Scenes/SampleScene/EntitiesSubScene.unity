@@ -8412,6 +8412,9 @@ MonoBehaviour:
   spawnTimeDropPerSpawn: 0.98
   minSpawnDistance: 20
   maxSpawnDistance: 150
+  spawnBaseChance: 0
+  spawnFastChance: 0
+  spawnTankyChance: 0
 --- !u!4 &158515571
 Transform:
   m_ObjectHideFlags: 0
@@ -26797,8 +26800,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75b6961b78d0454799fa82b93bb259b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Authoring.FaithAuthoring
-  maxFaith: 100
-  faithRegen: 0.01
+  maxFaith: 10000
+  faithRegen: 100
 --- !u!114 &463526966
 MonoBehaviour:
   m_ObjectHideFlags: 0

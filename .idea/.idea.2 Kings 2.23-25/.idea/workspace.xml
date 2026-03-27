@@ -4,7 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="" />
+    <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Agent Variant Fast.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Agent Variant Fast.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Agent Variant Large.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Agent Variant Large.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Agent Variant Tanky.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Agent Variant Tanky.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Agent.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Agent.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Animator Fast Variant Variant.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Animator Fast Variant Variant.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Animator Large Variant Variant.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Animator Large Variant Variant.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Animator Tanky Variant Variant.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Animator Tanky Variant Variant.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Animator Variant.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Animator Variant.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Elisha Animator Variant.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Elisha Animator Variant.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Elisha Walking Point.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Elisha Walking Point.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Test Obstacle.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Test Obstacle.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainGameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainGameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/EntitiesSubScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Authoring/Child/KnockbackAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/Child/KnockbackAuthoring.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Authoring/DifficultyAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Authoring/DifficultyAuthoring.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/ChildSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/ChildSpawnerSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/ChildSpawner.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/ChildSpawnerSystem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Player/BearAttackSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Player/BearAttackSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Player/KnockbackSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Player/KnockbackSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,6 +66,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Imported/_TerrainAutoUpgrade.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Input/InputSystem_Actions.inputactions" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Agent Variant Fast.prefab" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Animator Fast Variant Variant.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/NPCs/Child Animator Variant.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Player/Bear.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Test Obstacle.prefab" root0="FORCE_HIGHLIGHTING" />
@@ -233,14 +267,7 @@
       <workItem from="1774116235585" duration="9010000" />
       <workItem from="1774222176276" duration="1935000" />
       <workItem from="1774269735389" duration="11950000" />
-    </task>
-    <task id="LOCAL-00037" summary="Elisha now only walks *after* the first player spawns.">
-      <option name="closed" value="true" />
-      <created>1763151199022</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1763151199022</updated>
+      <workItem from="1774638498934" duration="3513000" />
     </task>
     <task id="LOCAL-00038" summary="Created Child Agent Entity.  Holds locomotion, animator, and AI state.">
       <option name="closed" value="true" />
@@ -626,7 +653,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774308897208</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="Added models for armored, large, and fast children characters.">
+      <option name="closed" value="true" />
+      <created>1774638534994</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1774638534994</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -653,7 +688,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Sound is now fully functional.  It's held together with duct tape, but it works so I can move on." />
     <MESSAGE value="Added a game over scene, fleshed out sound effects some more, added a restart button to the end screen.  Have not tested in build yet." />
     <MESSAGE value="Removed unneeded using" />
     <MESSAGE value="Added a prompt to join, edited some main text material.  Tested build." />
@@ -678,7 +712,8 @@
     <MESSAGE value="Elisha now stops when coming face-to-face with an obstacle.  Children phase through them.  Will look into navmesh changes later." />
     <MESSAGE value="Added variants to the children.  Still need visual distinguishers and minor bugfixes" />
     <MESSAGE value="Fixed Elisha and children not stopping when they're supposed to." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Elisha and children not stopping when they're supposed to." />
+    <MESSAGE value="Added models for armored, large, and fast children characters." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added models for armored, large, and fast children characters." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

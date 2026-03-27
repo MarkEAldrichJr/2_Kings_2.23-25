@@ -11,7 +11,7 @@ using Random = Unity.Mathematics.Random;
 
 namespace Systems
 {
-    public partial struct ChildSpawner : ISystem
+    public partial struct ChildSpawnerSystem : ISystem
     {
         private EntityQuery _elishaQuery;
         private Random _random;
@@ -19,6 +19,8 @@ namespace Systems
         [BurstCompile]
         public void OnCreate(ref SystemState state)
         {
+            state.RequireForUpdate<DifficultySettings>();
+            
             _random = Random.CreateFromIndex((uint)(SystemAPI.Time.DeltaTime * 100000));
             state.RequireForUpdate<EntityPrefabComponent>();
             
@@ -41,18 +43,20 @@ namespace Systems
             if (timeLastFrame > 0.033333f) return;
             
             var elishaPos = _elishaQuery.GetSingleton<LocalTransform>().Position;
+            var difSettings = SystemAPI.GetSingleton<DifficultySettings>();
             
-            //TODO: get the prefab components and pick a child at random
-            //var prefab = SystemAPI.GetSingleton<EntityPrefabComponent>().BaseChild;
             var prefabs = SystemAPI.GetSingleton<EntityPrefabComponent>();
             var roll = _random.NextFloat(0f, 1f);
-            var prefab = roll switch
-            {
-                < 0.55f => prefabs.BaseChild,
-                < 0.75f => prefabs.FastChild,
-                < 0.90f => prefabs.TankyChild,
-                _ => prefabs.LargeChild
-            };
+
+            Entity prefab;
+            if (roll < difSettings.SpawnBaseChance)
+                prefab = prefabs.BaseChild;
+            else if (roll < difSettings.SpawnFastChance)
+                prefab = prefabs.FastChild;
+            else if (roll < difSettings.SpawnTankyChance)
+                prefab = prefabs.TankyChild;
+            else
+                prefab = prefabs.LargeChild;
 
             var currentFrame = SystemAPI.Time.ElapsedTime;
             

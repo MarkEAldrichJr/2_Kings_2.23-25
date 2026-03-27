@@ -28,7 +28,8 @@ namespace Systems.Player
             foreach (var (knockbackRequest, body) in SystemAPI
                          .Query<KnockbackRequest, RefRW<KinematicCharacterBody>>())
             {
-                body.ValueRW.RelativeVelocity +=
+                body.ValueRW.IsGrounded = false;
+                body.ValueRW.RelativeVelocity =
                     knockbackRequest.Direction * knockbackRequest.Force;
             }
             

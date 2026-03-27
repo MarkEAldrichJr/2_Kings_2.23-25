@@ -7,6 +7,7 @@ namespace Authoring.Child
     public class KnockbackAuthoring : MonoBehaviour
     {
         public float knockbackForce = 5f;
+        public float launchAngle = 45f;
         
         private class KnockbackBaker : Baker<KnockbackAuthoring>
         {
@@ -15,7 +16,8 @@ namespace Authoring.Child
                 var entity = GetEntity(TransformUsageFlags.Dynamic);
                 AddComponent(entity, new Knockback
                 {
-                    Force = authoring.knockbackForce
+                    Force = authoring.knockbackForce,
+                    LaunchAngle = authoring.launchAngle,
                 });
             }
         }
@@ -24,6 +26,7 @@ namespace Authoring.Child
     public struct Knockback : IComponentData
     {
         public float Force;
+        public float LaunchAngle;
     }
 
     public struct KnockbackRequest : IComponentData

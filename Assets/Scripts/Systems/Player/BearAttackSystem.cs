@@ -55,7 +55,7 @@ namespace Systems.Player
             var transforms = _bearQuery.ToComponentDataArray<LocalTransform>(Allocator.TempJob);
             var killList = new NativeList<Entity>(Allocator.TempJob);
             var killListWriter = killList.AsParallelWriter();
-            var knockbackRequests = new NativeList<(Entity, float3, float)>(Allocator.TempJob);
+            var knockbackRequests = new NativeList<KnockbackRequestData>(Allocator.TempJob);
             var knockbackWriter = knockbackRequests.AsParallelWriter();
             
             var scheduleParallel = new KillEvilChildrenJob
@@ -71,13 +71,21 @@ namespace Systems.Player
             
             scheduleParallel.Complete();
             
-            foreach (var (bear, dir, force) in knockbackRequests)
+            foreach (var request in knockbackRequests)
             {
-                if (state.EntityManager.HasComponent<KnockbackRequest>(bear))
+                if (state.EntityManager.HasComponent<KnockbackRequest>(request.Target))
                     // Accumulate — just overwrite, one knockback per frame is fine
-                    state.EntityManager.SetComponentData(bear, new KnockbackRequest { Direction = dir, Force = force });
+                    state.EntityManager.SetComponentData(request.Target, new KnockbackRequest
+                    {
+                        Direction = request.Direction,
+                        Force = request.Force
+                    });
                 else
-                    state.EntityManager.AddComponentData(bear, new KnockbackRequest { Direction = dir, Force = force });
+                    state.EntityManager.AddComponentData(request.Target, new KnockbackRequest
+                    {
+                        Direction = request.Direction,
+                        Force = request.Force
+                    });
             }
             state.EntityManager.AddComponent<KillTag>(killList.AsArray());
             
@@ -87,6 +95,12 @@ namespace Systems.Player
         }
     }
 
+    public struct KnockbackRequestData
+    {
+        public Entity Target;
+        public float3 Direction;
+        public float Force;
+    }
     
     /// <summary>
     /// Takes all the children, gets their distance from the BearAttackEntity,
@@ -102,7 +116,7 @@ namespace Systems.Player
         
         // Add to KillEvilChildrenJob fields:
         [ReadOnly] public NativeArray<Entity> BearEntities;
-        [WriteOnly] public NativeList<(Entity bear, float3 direction, float force)>.ParallelWriter KnockbackRequests;
+        [WriteOnly] public NativeList<KnockbackRequestData>.ParallelWriter KnockbackRequests;
         [ReadOnly] public ComponentLookup<Knockback> LargeChildLookup;
         
         [BurstCompile]
@@ -124,10 +138,26 @@ namespace Systems.Player
                     //Large children add a knockback force when attacked.
                     if (LargeChildLookup.TryGetComponent(entity, out var knockbackComp))
                     {
-                        var knockDir = math.normalize(Transforms[i].Position - transform.Position);
-                        knockDir.y = 10;
-                        var force = knockbackComp.Force;
-                        KnockbackRequests.AddNoResize((BearEntities[i], knockDir, force));
+                        // Get horizontal-only direction from child to bear (away from child)
+                        var towardBear = Transforms[i].Position - transform.Position;
+                        towardBear.y = 0f;
+                        var horizontalDir = math.normalizesafe(towardBear, math.forward());
+
+                        // Build a fixed-angle launch vector (tune the angle to taste)
+                        var launchAngle = math.radians(knockbackComp.LaunchAngle); // e.g. 30 degrees
+                        var knockDir = new float3(
+                            horizontalDir.x * math.cos(launchAngle),
+                            math.sin(launchAngle),
+                            horizontalDir.z * math.cos(launchAngle)
+                        );
+                        // knockDir is now a unit vector at a consistent upward angle
+
+                        KnockbackRequests.AddNoResize(new KnockbackRequestData
+                        {
+                            Target = BearEntities[i],
+                            Direction = knockDir,
+                            Force = knockbackComp.Force
+                        });
                     }
                     
                     hits.Value--;

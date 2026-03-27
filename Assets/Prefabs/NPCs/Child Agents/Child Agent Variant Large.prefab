@@ -100,4 +100,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1ffd110c44d4a15bd9ff381a689eb74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Authoring.Child.KnockbackAuthoring
-  knockbackForce: 50
+  knockbackForce: 20
+  launchAngle: 75
