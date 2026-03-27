@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Child Agent Variant Large
       objectReference: {fileID: 0}
+    - target: {fileID: 7178983366747648303, guid: d921037274e925d47843991062c232f2, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 8703729275036212232, guid: 672a253cb0f809a478d6957a3e1fc0dc, type: 3}
     - target: {fileID: 8647920495503993178, guid: d921037274e925d47843991062c232f2, type: 3}
       propertyPath: hitsToDestroy
       value: 2

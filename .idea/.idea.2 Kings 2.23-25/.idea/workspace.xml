@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2 Kings 2.23-25/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Animations/AnimationStateDiscoverySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Animations/AnimationStateDiscoverySystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/AttackTargetSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/AttackTargetSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/ChildBrainSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Behavior/ChildBrainSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Elisha/ElishaObstacleDetectionSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Elisha/ElishaObstacleDetectionSystem.cs" afterDir="false" />
-    </list>
+    <list default="true" id="be7dda62-7e83-4355-8765-523dc2b0b279" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -238,15 +232,7 @@
       <workItem from="1771011437035" duration="3077000" />
       <workItem from="1774116235585" duration="9010000" />
       <workItem from="1774222176276" duration="1935000" />
-      <workItem from="1774269735389" duration="11921000" />
-    </task>
-    <task id="LOCAL-00036" summary="Elisha now follows a path around the map.">
-      <option name="closed" value="true" />
-      <created>1763070712550</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1763070712550</updated>
+      <workItem from="1774269735389" duration="11950000" />
     </task>
     <task id="LOCAL-00037" summary="Elisha now only walks *after* the first player spawns.">
       <option name="closed" value="true" />
@@ -632,7 +618,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774281320617</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Fixed Elisha and children not stopping when they're supposed to.">
+      <option name="closed" value="true" />
+      <created>1774308897208</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1774308897208</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -659,7 +653,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Added distance to the audio controllers, allowing one audio listener to handle as many players as I can create." />
     <MESSAGE value="Sound is now fully functional.  It's held together with duct tape, but it works so I can move on." />
     <MESSAGE value="Added a game over scene, fleshed out sound effects some more, added a restart button to the end screen.  Have not tested in build yet." />
     <MESSAGE value="Removed unneeded using" />
@@ -684,7 +677,8 @@
     <MESSAGE value="Obstacles can now be destroyed (along with their children) after suffering damage." />
     <MESSAGE value="Elisha now stops when coming face-to-face with an obstacle.  Children phase through them.  Will look into navmesh changes later." />
     <MESSAGE value="Added variants to the children.  Still need visual distinguishers and minor bugfixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added variants to the children.  Still need visual distinguishers and minor bugfixes" />
+    <MESSAGE value="Fixed Elisha and children not stopping when they're supposed to." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Elisha and children not stopping when they're supposed to." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

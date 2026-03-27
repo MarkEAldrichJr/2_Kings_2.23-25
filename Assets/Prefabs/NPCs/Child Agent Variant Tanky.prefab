@@ -50,8 +50,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2999348020274293141, guid: d921037274e925d47843991062c232f2, type: 3}
       propertyPath: m_Name
-      value: Child Agent Variant
+      value: Child Agent Variant Tanky
       objectReference: {fileID: 0}
+    - target: {fileID: 7178983366747648303, guid: d921037274e925d47843991062c232f2, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 8585724076025085445, guid: 358596443674d0148994b61bee56f29e, type: 3}
     - target: {fileID: 8647920495503993178, guid: d921037274e925d47843991062c232f2, type: 3}
       propertyPath: hitsToDestroy
       value: 5

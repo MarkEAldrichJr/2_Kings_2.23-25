@@ -58,8 +58,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2999348020274293141, guid: d921037274e925d47843991062c232f2, type: 3}
       propertyPath: m_Name
-      value: Fast Child Agent Variant
+      value: Child Agent Variant Fast
       objectReference: {fileID: 0}
+    - target: {fileID: 7178983366747648303, guid: d921037274e925d47843991062c232f2, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 4710909259389450249, guid: 8686585bc72724340a64a944a71fb871, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
