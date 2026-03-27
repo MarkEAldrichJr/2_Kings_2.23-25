@@ -31,6 +31,8 @@ namespace Systems
                     AnimationStateEnum.Run => SoundClipEnum.Run,
                     AnimationStateEnum.Jump => SoundClipEnum.Jump,
                     AnimationStateEnum.Attack => SoundClipEnum.Attack,
+                    AnimationStateEnum.Prone => SoundClipEnum.Idle,
+                    AnimationStateEnum.Fear => SoundClipEnum.Idle,
                     _ => throw new ArgumentOutOfRangeException()
                 };
 
@@ -40,37 +42,24 @@ namespace Systems
 
         private void HandleChildSounds(ref SystemState state)
         {
-            //Attack
-            foreach (var (audioRef, animationState) in SystemAPI
+            foreach (var (audioRef, animationState, entity) in SystemAPI
                          .Query<RefRO<AudioRefComponent>, RefRO<AnimationStateComp>>()
-                         .WithAll<ChildTag, AttackFlag>())
+                         .WithAll<ChildTag>()
+                         .WithEntityAccess())
             {
                 if (!animationState.ValueRO.HasChangedThisFrame) continue;
-                audioRef.ValueRO.AudioControllerGo.Value.SetAudioState(SoundClipEnum.Attack);
-            }
-            //Flee
-            foreach (var (audioRef, animationState) in SystemAPI
-                         .Query<RefRO<AudioRefComponent>, RefRO<AnimationStateComp>>()
-                         .WithAll<ChildTag, FleeFlag>())
-            {
-                if (!animationState.ValueRO.HasChangedThisFrame) continue;
-                audioRef.ValueRO.AudioControllerGo.Value.SetAudioState(SoundClipEnum.Fear);
-            }
-            //Run
-            foreach (var (audioRef, animationState) in SystemAPI
-                         .Query<RefRO<AudioRefComponent>, RefRO<AnimationStateComp>>()
-                         .WithAll<ChildTag, MoveToTargetFlag>())
-            {
-                if (!animationState.ValueRO.HasChangedThisFrame) continue;
-                audioRef.ValueRO.AudioControllerGo.Value.SetAudioState(SoundClipEnum.Run);
-            }
-            //Sneak
-            foreach (var (audioRef, animationState) in SystemAPI
-                         .Query<RefRO<AudioRefComponent>, RefRO<AnimationStateComp>>()
-                         .WithAll<ChildTag, SneakFlag>())
-            {
-                if (!animationState.ValueRO.HasChangedThisFrame) continue;
-                audioRef.ValueRO.AudioControllerGo.Value.SetAudioState(SoundClipEnum.Walk);
+                
+                var soundClipType = SoundClipEnum.Run;
+                if (SystemAPI.IsComponentEnabled<AttackFlag>(entity))
+                    soundClipType = SoundClipEnum.Attack;
+                else if (SystemAPI.IsComponentEnabled<FleeFlag>(entity))
+                    soundClipType = SoundClipEnum.Fear;
+                else if (SystemAPI.IsComponentEnabled<MoveToTargetFlag>(entity))
+                    soundClipType = SoundClipEnum.Run;
+                else if (SystemAPI.IsComponentEnabled<SneakFlag>(entity))
+                    soundClipType = SoundClipEnum.Walk;
+                
+                audioRef.ValueRO.AudioControllerGo.Value.SetAudioState(soundClipType);
             }
         }
 
