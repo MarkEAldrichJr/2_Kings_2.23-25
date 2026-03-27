@@ -6,6 +6,7 @@ using Unity.Collections;
 using Unity.Entities;
 using Unity.Physics;
 using Unity.Transforms;
+// ReSharper disable PossiblyImpureMethodCallOnReadonlyVariable
 
 namespace Systems.Player
 {
@@ -61,8 +62,7 @@ namespace Systems.Player
                             for (var i = 0; i < linked.Length; i++)
                                 killList.Add(linked[i].Value);
                         }
-                        else
-                            killList.Add(e);
+                        killList.Add(e);
                     }
                     else
                         SystemAPI.SetComponent(e, hitsToKill);
